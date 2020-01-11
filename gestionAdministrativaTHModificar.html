@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Gestión Administrativa</title>
+    <meta charset="utf-8">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-firestore.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#config-web-app -->
+
+    <link href="https://fonts.googleapis.com/css?family=Laila" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans|Noto+Sans|Stylish" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos.css">
+    
+    <script type="text/javascript" src="js/app.js"></script>
+	<script type="text/javascript" src="js/usuarios.js"></script>
+	<script type="text/javascript" src="js/datospei.js"></script>
+    
+</head>
+<body>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Gestión Directiva</title>
+    <meta charset="utf-8">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-firestore.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#config-web-app -->
+
+    <link href="https://fonts.googleapis.com/css?family=Laila" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans|Noto+Sans|Stylish" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Livvic&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos.css">
+    
+    <script type="text/javascript" src="js/app.js"></script>
+	<script type="text/javascript" src="js/usuarios.js"></script>
+	
+	<script>
+		
+	//Observador
+
+	firebase.auth().onAuthStateChanged(function(user) {
+			  if (user) {
+				console.log('existe usuario activo');
+				
+				// User is signed in.
+				var displayName = user.displayName;
+				var email = user.email;
+
+				// ...
+			  } else {
+
+				  
+				 location.href="index.html"; 
+				 console.log('NO TIENE PERMISOS');
+				  
+			  }
+	});   
+
+	
+	
+	</script>
+    
+</head>
+<body>
+	<nav class= " teal lighten-2">
+		<div class="nav-wrapper">
+			<ul>
+				<li><a href="modificar.html" class="brand-logo left"> <i class="material-icons medium">arrow_back</i> </a></li>
+
+				<li><a onclick = "consultarGestionAdministrativa()" class ="espacio-izquierda "> Consultar Gestion Administrativa </a></li>
+			<ul>
+		</div>
+	</nav>
+
+			   
+
+	<h3 style="text-align:center" class="laila espacio-arriba">Gestión Administrativa y Talento Humano</h3>
+	<br>
+	<br>
+    
+     
+	<div class="row espacios">
+    
+		 <div class="row">
+		  <label for="textarea1">Proceso de Matricula </label>
+			<div class="input-field col s12">
+			  <textarea id="procesoMatricula"  ></textarea>
+			</div>
+			
+		 </div>
+		 <br>
+		  
+		<div class="row">
+		  <label for="textarea1">Archivo Académico </label>
+			<div class="input-field col s12">
+			  <textarea id="archivoAcademico"  ></textarea>
+			</div>
+			
+		 </div>
+		 <br>
+		 
+		 <label for="textarea1">Registro de Evaluación</label>
+		  <div class="input-field col s12">
+			  <textarea id="registroEvaluacion"  ></textarea>
+		  </div>
+		  <br>
+		  <br>
+		  <br>
+		  <div class="file-field input-field">
+			  <div class="btn botones" >
+				<span>Buscar</span>
+				<input type="file" id="registroEvaluacionIMG" accept="image/png, .jpeg, .jpg, image/gif">
+			  </div>
+			  <div class="file-path-wrapper">
+				<input class="file-path validate" type="text">
+			  </div>
+		  </div>
+		  <br>
+			 
+		 
+		 <div class="row">
+		  <label for="textarea1">Proyecto de Mantenimiento de Planta Física</label>
+			<div class="input-field col s12">
+			  <textarea id="mantenimientoPlantaFisica"  ></textarea>
+			</div>
+			
+		 </div>
+		 <br>
+		 
+		 
+		 <label for="textarea1">Seguimiento al Uso de los Espacios</label>
+		  <br>
+		  <br>
+		  <div class="file-field input-field">
+			  <div class="btn botones" >
+				<span>Buscar</span>
+				<input type="file" id="seguimientoEspacios" accept="image/png, .jpeg, .jpg, image/gif">
+			  </div>
+			  <div class="file-path-wrapper">
+				<input class="file-path validate" type="text">
+			  </div>
+		  </div>
+		  <br>	
+
+		<div class="row">
+		  <label for="textarea1">Suministro y Dotación</label>
+			<div class="input-field col s12">
+			  <textarea id="suministroDotacion"  ></textarea>
+			</div>
+			
+		 </div>
+		 <br>	
+
+		
+		<div class="row">
+		  <label for="textarea1">Recursos para el Aprendizaje</label>
+			<div class="input-field col s12">
+			  <textarea id="recursosAprendizaje"  ></textarea>
+			</div>
+			
+		 </div>
+		 <br>
+		
+		<label for="textarea1">Seguridad y Protección</label>
+		  <div class="input-field col s12">
+			  <textarea id="seguridadProteccion"  ></textarea>
+		  </div>
+		  <br>
+		  <br>
+		  <br>
+		  <div class="file-field input-field">
+			  <div class="btn botones" >
+				<span>Buscar</span>
+				<input type="file" id="seguridadProteccionIMG" accept="image/png, .jpeg, .jpg, image/gif">
+			  </div>
+			  <div class="file-path-wrapper">
+				<input class="file-path validate" type="text">
+			  </div>
+		  </div>
+		  <br>
+		 
+		 <div class="row">
+		  <label for="textarea1">Bienestar Social</label>
+			<div class="input-field col s12">
+			  <textarea id="bienestarSocial"  ></textarea>
+			</div>
+			
+		 </div>
+		 <br>
+		 
+		 <div class="row">
+		  <label for="textarea1">Talento Humano</label>
+			<div class="input-field col s12">
+			  <textarea id="talentoHumano"  ></textarea>
+			</div>
+			
+		 </div>
+		 <br>
+		 
+		 <div class="row">
+		  <label for="textarea1">Induccion</label>
+			<div class="input-field col s12">
+			  <textarea id="induccionDocentes"  ></textarea>
+			</div>
+			
+		 </div>
+		 <br>
+		 
+		 <div class="row">
+		  <label for="textarea1">Asignación Académica</label>
+			<div class="input-field col s12">
+			  <textarea id="asignacionAcademica"  ></textarea>
+			</div>
+			
+		 </div>
+		 <br>
+		 
+		 <div class="row">
+		  <label for="textarea1">Evaluación de Desempeño</label>
+			<div class="input-field col s12">
+			  <textarea id="evaluacionDesempeño"  ></textarea>
+			</div>
+			
+		 </div>
+		 <br>
+		 
+		 <div class="row">
+		  <label for="textarea1">Estímulos</label>
+			<div class="input-field col s12">
+			  <textarea id="estimulos"  ></textarea>
+			</div>
+			
+		 </div>
+		 <br>
+		 
+		 <div class="row">
+		  <label for="textarea1">Apoyo a la Investigación</label>
+			<div class="input-field col s12">
+			  <textarea id="apoyoInvestigacion"  ></textarea>
+			</div>
+			
+		 </div>
+		 <br>
+		 
+		 <div class="row">
+		  <label for="textarea1">Bienestar del Talento Humano</label>
+			<div class="input-field col s12">
+			  <textarea id="bienestarTH"  ></textarea>
+			</div>
+			
+		 </div>
+		 <br>
+		 
+		 <div class="row">
+		  <label for="textarea1">Contabilidad</label>
+			<div class="input-field col s12">
+			  <textarea id="contabilidad"  ></textarea>
+			</div>
+			
+		 </div>
+		 <br>
+		 
+		  
+		  
+      <div >
+        <div class= "align-center">
+            <center><a class="botonesModificar waves-effect #00695c teal darken-3 btn pulse modal-trigger" data-target="modal1" onclick ="guardarGestionAdministrativaModificacion()">Guardar Modificaciones <i class=" material-icons rigth">system_update_alt</i></a>
+        </div>
+     </div>
+	 
+	 
+  		   <!-- Modal Structure -->
+	  <div id="modal1" class="modal divModal">
+		<div class="modal-content ">
+			<div id="container" class = " align-center" >			
+			
+			</div>
+	
+		</div>
+	  </div>          
+	   
+	  
+	 </div>
+	 
+        <footer class="page-footer teal lighten-2">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">Instituto de Educación a Distancia</h5>
+				<img class="imgUT" src="img/ut.png">
+                <p class="grey-text text-lighten-4">Especialización en Gerencia de Instituciones Educativas</p>
+              </div>
+              </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            © 2019 Copyright Text
+            </div>
+          </div>
+        </footer>    
+ 
+
+
+</body>
+
+</html> 

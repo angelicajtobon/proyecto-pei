@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Gestión de la Comunidad</title>
+    <meta charset="utf-8">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-firestore.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#config-web-app -->
+
+    <link href="https://fonts.googleapis.com/css?family=Laila" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans|Noto+Sans|Stylish" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos.css">
+    
+    <script type="text/javascript" src="js/app.js"></script>
+	<script type="text/javascript" src="js/usuarios.js"></script>
+	
+	<script>
+		
+	//Observador
+
+	firebase.auth().onAuthStateChanged(function(user) {
+			  if (user) {
+				console.log('existe usuario activo');
+				
+				// User is signed in.
+				var displayName = user.displayName;
+				var email = user.email;
+
+				// ...
+			  } else {
+
+				  
+				 location.href="index.html"; 
+				 console.log('NO TIENE PERMISOS');
+				  
+			  }
+	});   
+
+	
+	
+	</script>
+    
+</head>
+<body>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Gestión Directiva</title>
+    <meta charset="utf-8">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-firestore.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#config-web-app -->
+
+    <link href="https://fonts.googleapis.com/css?family=Laila" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans|Noto+Sans|Stylish" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Livvic&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos.css">
+    
+    <script type="text/javascript" src="js/app.js"></script>
+	<script type="text/javascript" src="js/usuarios.js"></script>
+	<script type="text/javascript" src="js/datospei.js"></script>
+    
+</head>
+<body>
+	  <nav class= " teal lighten-2">
+		<div class="nav-wrapper">
+		  <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+		  <ul class="right hide-on-med-and-down">
+			<li><a href="principal.html" >Principal</a></li>
+			<li><a href="identificacion.html" >Identificación</a></li>
+			<li><a href="horizonteInstitucional.html" >Horizonte Institucional</a></li>
+			<li><a href="gestionDirectiva.html" >Gestión Directiva</a></li>
+			<li><a href="gestionPedagogica.html">Gestión Pedagógica</a></li>
+			<li><a href="gestionAdministrativaTH.html" >Gestión Administrativa y Talento Humano</a></li>
+			<li><a href="gestionComunidad.html" class="actual">Gestión de la Comunidad</a></li>
+			<li><a onclick="cerrarCesion()">Cerrar Cesion</a></li>
+		  </ul>
+		</div>
+	  </nav>
+
+	  <ul class="sidenav" id="mobile-demo">
+			<li><a href="principal.html" >Principal</a></li>
+			<li><a href="identificacion.html">Identificación</a></li>
+			<li><a href="horizonteInstitucional.html" >Horizonte Institucional</a></li>
+			<li><a href="gestionDirectiva.html" >Gestión Directiva</a></li>
+			<li><a href="gestionPedagogica.html">Gestión Pedagógica</a></li>
+			<li><a href="gestionAdministrativaTH.html" >Gestión Administrativa y TH</a></li>
+			<li><a href="gestionComunidad.html" class="actual">Gestión de la Comunidad</a></li>
+			<li><a onclick="cerrarCesion()">Cerrar Cesion</a></li>
+	  </ul>   
+			   
+			   
+			   
+
+	<h3 style="text-align:center" class="laila espacio-arriba">Gestión de la Comunidad</h3>
+	<br>
+	<br>
+    
+     
+	  <div class="row espacios">
+		
+		  <div class="row">
+		  <label for="textarea1" class="tooltipped" data-position ="right" data-tooltip =" La institucion como continua en contacto con sus egresados ">Asociación y Seguimiento de Egresados </label>
+			<div class="input-field col s12">
+			  <textarea id="egresados" class="materialize-textarea " placeholder= "Escribe aqui qué estrategia usa la institucion y copia los links de las redes sociales para para este fin"></textarea>
+			</div>
+			
+		  </div>
+		  <br>
+		  
+		  <div class="row">
+		  <label for="textarea1" class="tooltipped" data-position ="right" data-tooltip = "Plan institucional para casos especiales" >Atención educativa a grupos poblacionales o en situación de vulnerabilidad que experimentan barreras al aprendizaje y la participación</label>
+			<div class="input-field col s12">
+			  <textarea id="atencionVulnerabilidad" class="materialize-textarea " placeholder="Escribe aquí la estrategia institucional para tal fin"></textarea>
+			</div>
+			
+		 </div>
+		 <br>
+		 
+		 
+		 <div class="row">
+		  <label for="textarea1" class="tooltipped" data-position ="right" data-tooltip = "Plan institucional para casos especiales">Atención a la diversidad educativa a estudiantes pertenecientes a grupos étnicos y estudiantes con necesidades especiales</label>
+			<div class="input-field col s12">
+			  <textarea id="atencionEtnias" class="materialize-textarea " placeholder = "Escribe aquí la estrategia institucional para tal fin"></textarea>
+			</div>
+			
+		 </div>
+		 <br>
+		 
+		 <div class="row">
+		  <label for="textarea1" class="tooltipped" data-position ="right" data-tooltip = "Plan institucional incluir a padres de familia">Escuela de Padres</label>
+			<div class="input-field col s12">
+			  <textarea id="escuelaPadres" class="materialize-textarea " placeholder ="Escribe aquí la estrategia institucional para tal fin"></textarea>
+			</div>
+			
+		 </div>
+		 <br>
+		 
+		 
+		 <div class="row">
+			<div class="col s12  " style ="text-align:right">
+				<a class = "links "  href= "ayudas/4210-1996.pdf"   target="_blank"> Resolución 4210 de 1996 <i class="material-icons small">info</i> </a></br>
+			</div>
+			<label for="textarea1" class="tooltipped" data-position ="right" data-tooltip ="Cómo desarrollan los estudiantes el servicio social obligatorio en la institucion">Servicio Social</label>
+			<div class="input-field col s12">
+			  <textarea id="servicioSocial" class="materialize-textarea " placeholder = "Escribe aquí de manera general como la institución cumple con el servicio social"></textarea>
+			</div>
+			
+		 </div>
+		 <br>
+		 
+		 <div class="row"> 
+		  <label for="textarea1" class="tooltipped" data-position ="right" data-tooltip ="como la institucion incluye a los padres de familia a las diferentes actividades que esta realiza">Participación de la comunidad, estudiantes y padres de familia</label>
+			<div class="input-field col s12">
+			  <textarea id="participacionComunidad" class="materialize-textarea" placeholder="Escribe aquí las diferentes estrategias que usa la institucion, responsables y tiempos de ejecución" ></textarea>
+			</div>
+			
+		 </div>
+		 <br>
+		 
+		 
+		 
+		 <div class="row">
+			<div class="col s12  " style ="text-align:right">
+				<a class = "links "  href= "ayudas/2646-2008.pdf"   target="_blank"> Resolución 002646 de 2008<i class="material-icons small">info</i> </a></br>
+			</div>
+			<label for="textarea1" class="tooltipped" data-position ="right" data-tooltip ="Como previene los riesgos psicosociales la institucion">Prevención de Riesgos Sociales</label>
+			<div class="input-field col s12">
+			  <textarea id="prevencionRiesgosSociales" class="materialize-textarea " placeholder ="Escribe aquí la estrategia institucional para tal fin"></textarea>
+			</div>
+			
+		 </div>
+		 <br>
+		 
+
+
+      <div >
+        <div class= "align-center">
+            <center><a class="waves-effect #00695c teal darken-3 btn botones pulse modal-trigger" data-target="modal1" onclick ="guardarGestionComunidad()">Finalizar<i class="material-icons rigth">save</i></a>
+        </div>
+     </div>
+      <br>
+	  <br>
+	  <br>
+		     
+	   
+	  
+		   <!-- Modal Structure -->
+	  <div id="modal1" class="modal divModal">
+		<div class="modal-content ">
+			<div id="container" class = " align-center" >			
+			
+			</div>
+			<div class= "align-center">
+				<center><a  id = "continuar" class="waves-effect waves-light btn botones esconder" href="modificar.html">Consultar P.E.I <i class="material-icons rigth">send</i></a></center>
+			</div>
+			
+		</div>
+	  </div>    
+	
+	
+	
+        <footer class="page-footer teal lighten-2">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">Instituto de Educación a Distancia</h5>
+				<img class="imgUT" src="img/ut.png">
+                <p class="grey-text text-lighten-4">Especialización en Gerencia de Instituciones Educativas</p>
+              </div>
+              </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            © 2019 Copyright Text
+            </div>
+          </div>
+        </footer>    
+
+
+</body>
+
+</html> 
+

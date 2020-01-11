@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Gestión Directiva</title>
+    <meta charset="utf-8">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-firestore.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#config-web-app -->
+
+    <link href="https://fonts.googleapis.com/css?family=Laila" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans|Noto+Sans|Stylish" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Livvic&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos.css">
+    
+    <script type="text/javascript" src="js/app.js"></script>
+	<script type="text/javascript" src="js/usuarios.js"></script>
+	<script type="text/javascript" src="js/datospei.js"></script>
+	
+	
+	<script>
+		
+		//Observador
+
+		firebase.auth().onAuthStateChanged(function(user) {
+				  if (user) {
+					console.log('existe usuario activo');
+					
+					// User is signed in.
+					var displayName = user.displayName;
+					var email = user.email;
+
+					// ...
+				  } else {
+
+					  
+					 location.href="index.html"; 
+					 console.log('NO TIENE PERMISOS');
+					  
+				  }
+		});   
+
+	
+	
+	</script>
+    
+</head>
+<body>
+	<nav class= " teal lighten-2">
+		<div class="nav-wrapper">
+			<ul>
+				<li><a href="modificar.html" class="brand-logo left"> <i class="material-icons medium">arrow_back</i> </a></li>
+
+				<li><a onclick = "consultarGestionDirectiva()" class ="espacio-izquierda "> Consultar Gestion Directiva </a></li>
+			<ul>
+		</div>
+	</nav>
+
+	<h3 style="text-align:center" class="laila espacio-arriba">Gestión Directiva</h3>
+	<br>
+	<br>
+    
+     
+  <div class="row espacios">
+    
+      <div class="row">
+      <label for="textarea1">Metas Institucionales </label>
+        <div class="input-field col s12">
+          <textarea id="metasInstitucionales" ></textarea>
+        </div>
+        
+      </div>
+      <br>
+      
+	  <div class="row">
+		<label for="textarea1">Políticas de Inclusión - Propuesta de la IE</label>
+        <div class="input-field col s12">
+          <textarea id="politicasInclusion" ></textarea>
+        </div>        
+      </div>
+	  <br>
+	  
+   
+	  <div class="row">
+		<label for="textarea1">Políticas de Articulación - con otras entidades </label>
+        <div class="input-field col s12">
+          <textarea id="politicasArticulacion" ></textarea>
+        </div>        
+      </div>
+	  <br>
+	  
+	  <div class="row">
+		<label for="textarea1" class ="tooltipped" data-tooltip="Modelo Curricular">Estrategia Pedagógica</label>
+        <div class="input-field col s12">
+          <textarea id="estrategiaPedagogica" ></textarea>
+        </div>        
+      </div>
+	  <br>
+	  
+	  <div class="row">
+		<h5 class ="laila align-center">Gobierno Escolar </h5>
+			<br>
+			<div class="row subTemas">
+				<br>
+				<h6>Consejo Directivo</h6>
+				<div class="input-field col s12">
+				  <textarea id="consejoDirectivo" ></textarea>
+				</div> 
+				<br>
+				<h6>Consejo Académico</h6>
+				<div class="input-field col s12">
+				  <textarea id="consejoAcademico" ></textarea>
+				</div>	
+				<br>
+				<h6>Consejo de Evaluación y Promoción</h6>
+				<div class="input-field col s12">
+				  <textarea id="consejoEvaluacion" ></textarea>
+				</div>	
+				<br>
+				<h6>Comité de Convivencia Escolar</h6>
+				<div class="input-field col s12">
+				  <textarea id="comiteConvivencia" ></textarea>
+				</div>	
+				<br>
+				<h6>Consejo Estudiantil</h6>
+				<div class="input-field col s12">
+				  <textarea id="consejoEstudiantil" ></textarea>
+				</div>
+				<br>
+				<h6>Consejo de Padres de Familia</h6>
+				<div class="input-field col s12">
+				  <textarea id="consejoPadres" ></textarea>
+				</div>
+			</div>
+			
+      </div>
+	  <br>
+
+	  <div class="row">
+		<label for="textarea1" class ="tooltipped" data-tooltip="Canales">Mecanismos de Comunicación</label>
+        <div class="input-field col s12">
+          <textarea id="mecanismosComunicacion" ></textarea>
+        </div>        
+      </div>
+	  <br>
+	  
+	  <div class="row">
+		<label for="textarea1" >Políticas para el Reconocimiento de Logros</label>
+        <div class="input-field col s12">
+          <textarea id="reconocimientoLogros" ></textarea>
+        </div>        
+      </div>
+	  <br>
+	  
+	  <div class="row">
+		<label for="textarea1" >Inducción de Nuevos Estudiantes y Docentes</label>
+        <div class="input-field col s12">
+          <textarea id="induccion" ></textarea>
+        </div>        
+      </div>
+	  <br>
+
+	  <div class="row">
+		<label for="textarea1" >Plan de Estímulos Educativos</label>
+        <div class="input-field col s12">
+          <textarea id="planEstimulos" ></textarea>
+        </div>        
+      </div>
+	  <br>
+	  
+	  
+	<div class="row">
+		<h5 class ="laila align-center tooltipped" data-tooltip="Ley 1620 de 2013, dec 1965 de 2013,Ley 115 de 199 - art73 y 87">Manual de Convivencia</h5>
+		<div class = "row subTemas">
+		
+			<br>
+			<h6>1.- Las reglas de higiene personal y de salud pública que preserven el bienestar de la comunidad educativa, la conservación individual de la salud y la prevención frente al consumo de sustancias psicotrópicas.</h6>
+			<div class="input-field col s12">
+				 <textarea id="reglasHigienePersonal" ></textarea>
+			</div>
+			
+			<br>
+			<h6>2.- Criterios de respeto, valoración y compromiso frente a la utilización y conservación de los bienes personales y de uso colectivo, tales como equipos, instalaciones e implementos.</h6>
+			<div class="input-field col s12">
+				 <textarea id="criteriosRespeto" ></textarea>
+			</div>
+			
+			<br>
+			<h6>3.- Pautas de comportamiento en relación con el cuidado del medio ambiente escolar.</h6>
+			<div class="input-field col s12">
+				 <textarea id="pautasComportamiento" ></textarea>
+			</div>			
+			
+			<br>
+			<h6>4.- Normas de conducta de alumnos y profesores que garanticen el mutuo respeto. Deben incluir la definición de claros procedimientos para formular las quejas o reclamos al respecto.</h6>
+			<div class="input-field col s12">
+				 <textarea id="normasConducta" ></textarea>
+			</div>	
+			
+			<br>
+			<h6>5.- Procedimientos para resolver con oportunidad y justicia los conflictos individuales o colectivos que se presenten entre miembros de la comunidad. Deben incluir instancias de diálogo y de conciliación.</h6>
+			<div class="input-field col s12">
+				 <textarea id="procedimientosConflictos"  ></textarea>
+			</div>	
+			
+			<br>
+			<h6>6.- Pautas de presentación personal que preserven a los alumnos de la discriminación por razones de apariencia.</h6>
+			<div class="input-field col s12">
+				 <textarea id="pautasPresentacionPersonal"  ></textarea>
+			</div>	
+			
+			<br>
+			<h6>7.- Definición de sanciones disciplinarias aplicables a los alumnos, incluyendo el derecho a la defensa.</h6>
+			<div class="input-field col s12">
+				 <textarea id="definicionSanciones"  ></textarea>
+			</div>	
+			
+			<br>
+			<h6>8.- Reglas para la elección de representantes al Consejo Directivo y para la escogencia de voceros en los demás consejos previstos en el presente Decreto. Debe incluir el proceso de elección del personero de
+			los estudiantes.</h6>
+			<div class="input-field col s12">
+				 <textarea id="eleccionRepresentantes"  ></textarea>
+			</div>	
+			
+			<br>
+			<h6>9.- Calidades y condiciones de los servicios de alimentación, transporte, recreación dirigida y demás conexos con el servicio de educación que ofrezca la institución a los alumnos.</h6>
+			<div class="input-field col s12">
+				 <textarea id="calidadAlimentacion"  ></textarea>
+			</div>	
+			
+			<br>
+			<h6>10.- Funcionamiento y operación de los medios de comunicación interna del establecimiento, tales como periódicos, revistas o emisiones radiales que sirvan</h6>
+			<div class="input-field col s12">
+				 <textarea id="funcionamientoComunicacion"  ></textarea>
+			</div>
+			
+			<br>
+			<h6>11.- Encargos hechos al establecimiento para aprovisionar a los alumnos de material didáctico de uso general, libros, uniformes, seguros de vida y de salud.</h6>
+			<div class="input-field col s12">
+				 <textarea id="provisionMaterialDidactico"  ></textarea>
+			</div>
+			
+			<br>
+			<h6>12.- Reglas para uso del bibliobanco y la biblioteca escolar.</h6>
+			<div class="input-field col s12">
+				 <textarea id="usoBibliobanco"  ></textarea>
+			</div>			
+			
+		</div>		
+    </div>
+			  		
+	  <div class="row">
+		<label for="textarea1" >Actividades Extracurriculares</label>
+        <div class="input-field col s12">
+          <textarea id="actividadesExtracurriculares"  ></textarea>
+        </div>        
+      </div>
+	  <br>
+	  
+
+		<label for="textarea1" >Autoevaluacion Institucional</label>
+         <br>
+		 <br>
+		  <div class="file-field input-field">
+			  <div class="btn botones" >
+				<span>Buscar</span>
+				<input type="file" id="autoevaluacionInstitucional" accept="image/png, .jpeg, .jpg, image/gif">
+			  </div>
+			  <div class="file-path-wrapper">
+				<input class="file-path validate" type="text">
+			  </div>
+		  </div>
+		  <br>
+		         
+      </div>
+	  <br>	
+	  					
+						  
+						  
+     <div >
+        <div class= "align-center">
+            <center><a class="waves-effect #00695c teal darken-3 btn botonesModificar pulse modal-trigger" data-target="modal1" onclick ="guardarGestionDirectivaModificacion()">Guardar Modificaciones <i class=" material-icons rigth">system_update_alt</i></a>
+        </div>
+        
+      
+      
+      </div>
+
+  		   <!-- Modal Structure -->
+	  <div id="modal1" class="modal divModal">
+		<div class="modal-content ">
+			<div id="container" class = " align-center" >			
+			
+			</div>
+
+			
+		</div>
+	  </div>
+
+  
+  </div>
+    
+        <footer class="page-footer teal lighten-2">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">Instituto de Educación a Distancia</h5>
+				<img class="imgUT" src="img/ut.png">
+                <p class="grey-text text-lighten-4">Especialización en Gerencia de Instituciones Educativas</p>
+              </div>
+              </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            © 2019 Copyright Text
+            </div>
+          </div>
+        </footer>    
+
+
+</body>
+
+</html>

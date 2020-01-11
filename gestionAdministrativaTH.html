@@ -1,0 +1,325 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Gestión Directiva</title>
+    <meta charset="utf-8">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-firestore.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#config-web-app -->
+
+    <link href="https://fonts.googleapis.com/css?family=Laila" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans|Noto+Sans|Stylish" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Livvic&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos.css">
+    
+    <script type="text/javascript" src="js/app.js"></script>
+	<script type="text/javascript" src="js/usuarios.js"></script>
+	<script type="text/javascript" src="js/datospei.js"></script>
+	
+	<script>
+		
+	//Observador
+
+	firebase.auth().onAuthStateChanged(function(user) {
+			  if (user) {
+				console.log('existe usuario activo');
+				
+				// User is signed in.
+				var displayName = user.displayName;
+				var email = user.email;
+
+				// ...
+			  } else {
+
+				  
+				 location.href="index.html"; 
+				 console.log('NO TIENE PERMISOS');
+				  
+			  }
+	});   
+
+	
+	
+	</script>
+    
+</head>
+<body>
+	  <nav class= " teal lighten-2">
+		<div class="nav-wrapper">
+		  <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+		  <ul class="right hide-on-med-and-down">
+			<li><a href="principal.html" >Principal</a></li>
+			<li><a href="identificacion.html" >Identificación</a></li>
+			<li><a href="horizonteInstitucional.html" >Horizonte Institucional</a></li>
+			<li><a href="gestionDirectiva.html" >Gestión Directiva</a></li>
+			<li><a href="gestionPedagogica.html">Gestión Pedagógica</a></li>
+			<li><a href="gestionAdministrativaTH.html" class="actual">Gestión Administrativa y Talento Humano</a></li>
+			<li><a href="gestionComunidad.html">Gestión de la Comunidad</a></li>
+			<li><a onclick="cerrarCesion()">Cerrar Cesion</a></li>
+		  </ul>
+		</div>
+	  </nav>
+
+	  <ul class="sidenav" id="mobile-demo">
+			<li><a href="principal.html" >Principal</a></li>
+			<li><a href="identificacion.html">Identificación</a></li>
+			<li><a href="horizonteInstitucional.html" >Horizonte Institucional</a></li>
+			<li><a href="gestionDirectiva.html" >Gestión Directiva</a></li>
+			<li><a href="gestionPedagogica.html">Gestión Pedagógica</a></li>
+			<li><a href="gestionAdministrativaTH.html" class="actual">Gestión Administrativa y TH</a></li>
+			<li><a href="gestionComunidad.html">Gestión de la Comunidad</a></li>
+			<li><a onclick="cerrarCesion()">Cerrar Cesion</a></li>
+	  </ul>    
+			   
+
+	<h3 style="text-align:center" class="laila espacio-arriba">Gestión Administrativa y Talento Humano</h3>
+	<br>
+	<br>
+    
+     
+	<div class="row espacios">
+    
+		 <div class="row">
+		  <label for="textarea1" class ="tooltipped " data-position="right" data-tooltip="Cómo matricula la institucion a sus estudiantes">Proceso de Matricula </label>
+			<div class="input-field col s12">
+			  <textarea id="procesoMatricula" class="materialize-textarea " placeholder ="Escribe como lo hace y los responsables de este proceso"></textarea>
+			</div>
+			
+		 </div>
+		 <br>
+		  
+		<div class="row">
+			<div class="col s12  " style ="text-align:right">
+				<a class = "links "  href= "ayudas/594-2000.pdf"   target="_blank">  Ley 594 de 2000 <i class="material-icons small">info</i> </a>
+			</div>	
+			<label for="textarea1" class="tooltipped" data-position ="right" data-tooltip = "Cómo maneja el archivo general y el inventario la institución">Archivo Académico </label>
+			<div class="input-field col s12"> 
+			  <textarea id="archivoAcademico" class="materialize-textarea " placeholder = "Escribe una descripción de cómo lo se hace la institucion y los responsables de este proceso"></textarea>
+			</div>
+			
+		 </div>
+		 <br>
+		 
+		 <label for="textarea1" class="tooltipped" data-position ="right" data-tooltip = "Que instrumento o plataforma usa la institucion para registrar las notas de sus estudiantes">Registro de Evaluación</label>
+		  <div class="input-field col s12">
+			  <textarea id="registroEvaluacion" class="materialize-textarea " placeholder ="Escribe cómo hace este proceso y la plataforma informática usada para tal fin"></textarea>
+		  </div>
+		  <br>
+		  <br>
+		  <br>
+		  <div class="file-field input-field">
+			  <div class="btn botones" >
+				<span>Buscar</span>
+				<input type="file" id="registroEvaluacionIMG" accept="image/png, .jpeg, .jpg, image/gif">
+			  </div>
+			  <div class="file-path-wrapper">
+				<input class="file-path validate" type="text" placeholder ="Diseña el formato y súbelo en formato JPEG en la mejor calidad posible">
+			  </div>
+		  </div>
+		  <br>
+			 
+		 
+		 <div class="row">
+			<div class="col s12  " style ="text-align:right">
+				<a class = "links "  href= "ayudas/4791-2008.pdf"   target="_blank">  Decreto 4791 de 2008<i class="material-icons small">info</i> </a></br>
+				<a class = "links "  href= "ayudas/610-2000.pdf"   target="_blank">  Ley 610 de 2000 <i class="material-icons small">info</i> </a></br>
+				<a class = "links "  href= "ayudas/normas.pdf"   target="_blank">  Normas Tecnicas Colombianas <i class="material-icons small">info</i> </a>
+			</div>
+			<label for="textarea1" class="tooltipped" data-position ="right" data-tooltip = "Como hace la institucion para preservar en buen estado los bienes inmuebles ">Proyecto de Mantenimiento de Planta Física</label>
+			<div class="input-field col s12">
+			  <textarea id="mantenimientoPlantaFisica" class="materialize-textarea " placeholder ="Escribe una descripción general del proyecto"></textarea>
+			</div>
+			
+		 </div>
+		 <br>
+		 
+		 
+		 <label for="textarea1" class="tooltipped" data-position ="right" data-tooltip = "Cómo le hace seguimiento al uso de los espacios la institucion">Seguimiento al Uso de los Espacios</label>
+		  <br>
+		  <br>
+		  <div class="file-field input-field">
+			  <div class="btn botones" >
+				<span>Buscar</span>
+				<input type="file" id="seguimientoEspacios" accept="image/png, .jpeg, .jpg, image/gif">
+			  </div>
+			  <div class="file-path-wrapper">
+				<input class="file-path validate" type="text" placeholder = "Diseña el formato y súbelo en formato JPEG en la mejor calidad posible">
+			  </div>
+		  </div>
+		  <br>	
+
+		<div class="row">
+		  <label for="textarea1" class="tooltipped" data-position ="right" data-tooltip = "Cómo realiza la institucion la adquisición de bienes muebles">Suministro y Dotación</label>
+			<div class="input-field col s12">
+			  <textarea id="suministroDotacion" class="materialize-textarea " placeholder= "Escribe una descripción general del proceso, responsables y tiempos de ejecución"></textarea>
+			</div>
+			
+		 </div>
+		 <br>	
+
+		
+		<div class="row">
+		  <label for="textarea1"  class="tooltipped" data-position ="right" data-tooltip ="Con que instrumento realiza la institucion la adquisición de recursos para el aprendizaje">Recursos para el Aprendizaje</label>
+			<div class="input-field col s12">
+			  <textarea id="recursosAprendizaje" class="materialize-textarea " placeholder ="Escribe una descripción general del proceso, responsables y tiempos de ejecución"></textarea>
+			</div>
+			
+		 </div>
+		 <br>
+		
+		<div class="col s12  " style ="text-align:right">
+			<a class = "links "  href= "ayudas/1523-2012.pdf"   target="_blank"> Ley 1523 de 2012 <i class="material-icons small">info</i> </a></br>
+		</div>
+		<label for="textarea1" class="tooltipped" data-position ="right" data-tooltip ="Como Enfrenta la institucion los riesgos y desastres a los que es vulnerable">Seguridad y Protección</label>
+		  <div class="input-field col s12">
+			  <textarea id="seguridadProteccion" class="materialize-textarea " placeholder ="Escribe una descripción general del proceso, responsables y tiempos de ejecución"></textarea>
+		  </div>
+		  <br>
+			 
+		 <div class="row">
+		  <label for="textarea1" class="tooltipped" data-position ="right" data-tooltip ="la institucion cuenta con enfermería, odontología, psicología">Bienestar Social</label>
+			<div class="input-field col s12">
+			  <textarea id="bienestarSocial" class="materialize-textarea " placeholder ="Escribe una descripción general de la forma como la institucion aborda el cumplimiento de estos requisitos"></textarea>
+			</div>
+			
+		 </div>
+		 <br>
+		 
+		 <div class="row">
+		  <label for="textarea1" class="tooltipped" data-position ="right" data-tooltip ="Con qué profesionales cuenta la institucion">Talento Humano</label>
+			<div class="input-field col s12">
+			  <textarea id="talentoHumano" class="materialize-textarea " placeholder ="Escribe una aquí el nombre, el cargo y el título de los profesionales que actualmente están vinculados con la institucion"></textarea>
+			</div>
+			
+		 </div>
+		 <br>
+		 
+		 <div class="row">
+		  <label for="textarea1" class="tooltipped" data-position ="right" data-tooltip ="como la institucion hace la introducción a los nuevos docentes">Induccion</label>
+			<div class="input-field col s12">
+			  <textarea id="induccionDocentes" class="materialize-textarea " placeholder ="Escribe aqui las funciones a desempeñar en la institución, sus derechos y deberes"></textarea>
+			</div>
+			
+		 </div>
+		 <br>
+		 
+		 <div class="row">
+		  <label for="textarea1" class="tooltipped" data-position ="right" data-tooltip ="cómo asigna la institucion las cargas académicas a sus docentes">Asignación Académica</label>
+			<div class="input-field col s12">
+			  <textarea id="asignacionAcademica" class="materialize-textarea " placeholder = "Escribe aqui una descripción de las cargas académicas y horario de los docentes"></textarea>
+			</div>
+			
+		 </div>
+		 <br>
+		 
+		 <div class="row">
+		  <label for="textarea1" class="tooltipped" data-position ="right" data-tooltip ="como la institucion hace la evaluación de desempeño a los docentes">Evaluación de Desempeño</label>
+			<div class="input-field col s12">
+			  <textarea id="evaluacionDesempeño" class="materialize-textarea " placeholder = "Escribe aquí una descripción del proceso con el cual se evalua a los docentes"></textarea>
+			</div>
+			
+		 </div>
+		 <br>
+		 
+		 <div class="row">
+			<div class="col s12  " style ="text-align:right">
+				<a class = "links "  href= "ayudas/1278-2002.pdf"   target="_blank"> Decreto 1278 de Junio 19 de 2002 <i class="material-icons small">info</i> </a></br>
+			</div>
+			<label for="textarea1" class="tooltipped" data-position ="right" data-tooltip ="Plan de estímulos institucional">Estímulos</label>
+			<div class="input-field col s12">
+			  <textarea id="estimulos" class="materialize-textarea " placeholder ="Escribe aqui una descripcion general de como la institucion estimula la buena labor de sus funcionarios"></textarea>
+			</div>
+			
+		 </div>
+		 <br>
+		 
+		 <div class="row">
+			
+			<label for="textarea1" class="tooltipped" data-position ="right" data-tooltip ="Plan de investigación institucional">Apoyo a la Investigación</label>
+			<div class="input-field col s12">
+			  <textarea id="apoyoInvestigacion" class="materialize-textarea" placeholder = "Escribe como la institución plantea, promueve y desarrolla la investigación"></textarea>
+			</div>
+			
+		 </div>
+		 <br>
+		 
+		 <div class="row">
+		  <label for="textarea1" class="tooltipped" data-position ="right" data-tooltip ="Plan institucional de Bienestar del talento humano">Bienestar del Talento Humano</label>
+			<div class="input-field col s12">
+			  <textarea id="bienestarTH" class="materialize-textarea" placeholder ="Escribe aqui como la institucion promueve la sana convivencia y esparcimiento entre sus funcionarios"></textarea>
+			</div>
+			
+		 </div>
+		 <br>
+		 
+		 <div class="row">
+			<div class="col s12  " style ="text-align:right">
+				<a class = "links "  href= "ayudas/355-2007.pdf"   target="_blank"> Resolución 355 de 2007 <i class="material-icons small">info</i> </a></br>
+				<a class = "links "  href= "ayudas/80-1993.pdf"   target="_blank"> Decreto 1170 de 2015 <i class="material-icons small">info</i> </a>
+			</div>
+		 
+			<label for="textarea1" class="tooltipped" data-position ="right" data-tooltip ="Como maneja la institucion los aspectos contables">Contabilidad</label>
+			<div class="input-field col s12">
+			  <textarea id="contabilidad" class="materialize-textarea" placeholder = "Escribe de manera general como la institucion maneja todo lo relacionado con la contabilidad"></textarea>
+			</div>
+			
+		 </div>
+		 <br>
+		 
+		  
+		  
+      <div >
+        <div class= "align-center">
+            <center><a class="waves-effect #00695c teal darken-3 btn botones pulse modal-trigger" data-target="modal1" onclick ="guardarGestionAdministrativa()">Guardar <i class="material-icons rigth">save</i></a>
+        </div>
+     </div>
+          
+	   
+	  
+		   <!-- Modal Structure -->
+	  <div id="modal1" class="modal divModal">
+		<div class="modal-content ">
+			<div id="container" class = " align-center" >			
+			
+			</div>
+			<div class= "align-center">
+				<center><a  id = "continuar" class="waves-effect waves-light btn botones esconder" href="gestionComunidad.html">Continuar <i class="material-icons rigth">send</i></a></center>
+			</div>
+			
+		</div>
+	  </div>	   
+	      
+	  
+	 </div>
+	 
+        <footer class="page-footer teal lighten-2">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">Instituto de Educación a Distancia</h5>
+				<img class="imgUT" src="img/ut.png">
+                <p class="grey-text text-lighten-4">Especialización en Gerencia de Instituciones Educativas</p>
+              </div>
+              </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            © 2019 Copyright Text
+            </div>
+          </div>
+        </footer>    
+
+
+</body>
+
+</html> 

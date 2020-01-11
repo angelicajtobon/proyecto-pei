@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Registro Usuarios</title>
+    <meta charset="utf-8">
+    
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-firestore.js"></script>
+    
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+
+    
+    <link href="https://fonts.googleapis.com/css?family=Laila" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans|Noto+Sans|Stylish" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos.css">
+    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/usuarios.js"></script>
+	<script type="text/javascript" src="js/datospei.js"></script>
+    
+    
+</head>
+<body>
+
+<h1 class="espacio-arriba espacio-derecha center-align laila">Formulario de registro</h1>
+
+<div class="container">
+    <form class="col s12">
+        <div class ="container">
+            <i class="material-icons prefix">face</i>
+            <input id="nombre" placeholder ="Ingrese nombre completo" type="text" class="validate" required="required">
+        </div>
+        <br>      
+
+        <div class ="container">
+            <label class="notosans"><h6>Tipo de identificacion</h6></label>
+            <select id="tipoID">
+                  <option value="" disabled selected>Seleccione</option>
+                  <option value="1" id="cedulaCiudadania">Cedula de ciudadania</option>
+                  <option value="2" id="cedulaExtranjeria">Cedula de Extranjeria</option>
+                  <option value="3" id="nit">NIT</option>
+            </select>
+        </div>
+        <br> 
+        
+        <div class ="container">
+            <i class="material-icons prefix">assignment_ind</i>
+            <input id="identificacion" placeholder ="Ingrese numero de identificacion" type="text" class="validate" required="required">
+        </div>
+        <br> 
+        
+        <div class ="container">
+            <i class="material-icons prefix">email</i>
+            <input id="email" placeholder ="Ingrese email" type="email" class="validate" required="required">
+        </div>
+        <br> 
+        
+
+		<div class ="container">
+            <i class="material-icons prefix">school</i>
+            <input id="institucion" placeholder ="Ingrese nombre institución" type="text" class="validate" required="required">
+        </div>
+        <br> 
+
+		<div class ="container">
+            <i class="material-icons prefix">assignment</i>
+            <input id="nit" placeholder ="NIT" type="text" class="validate" required="required">
+        </div>
+        <br> 
+        
+		
+        <div class ="container">
+            <i class="material-icons prefix">contact_phone</i>
+            <input id="telefono" placeholder ="Ingrese numero telefonico" type="text" class="validate" required="required">
+        </div>
+        <br> 
+        
+        <div class ="container">
+            <label class="notosans"><h6>Departamento</h6></label>
+            <select id="departamento">
+                  <option value="" disabled selected>Seleccione</option>
+                  <option value="1" id="tolima">Tolima</option>
+
+            </select>
+        </div>
+        <br>
+        
+        <div class ="container">
+            <label class="notosans"><h6>Ciudad</h6></label>
+            <select id="ciudad">
+                  <option value="" disabled selected>Seleccione</option>
+                  <option value="1" id="ibague">Ibagué</option>
+
+            </select>
+        </div>
+        <br>
+        
+        <div class ="container">
+            <i class="material-icons prefix">vpn_key</i>
+            <input id="contraseña" placeholder ="Ingrese contraseña" type="password" class="validate" required="required">
+        </div>
+        <br>
+        
+        <div class ="container">
+            <input id="contraseñaConf" placeholder ="Confirmar contraseña" type="password" class="validate" required="required">
+        </div>
+        <br>
+        
+        <div class="row">
+            <div class = "col s4" align ="center">
+                <a class="waves-effect #00695c teal darken-3 btn " onclick = "registrar()"><i class="material-icons left">accessibility</i>Registrar</a>
+            </div>
+            <div class = "col s4 " align ="center">
+                <a class="red lighten-1 waves-effect waves-light btn " href="index.html"><i class="material-icons left">cancel</i>Cancelar</a>
+            </div>
+			<div class = "col s4 " align ="center">
+                <a class=" waves-effect waves-light btn " href="index.html"><i class="material-icons left">account_circle</i>Iniciar Sesión</a>
+            </div>
+        </div>
+        
+        
+        <br />
+        <br />
+        
+       
+    </form>
+</div>
+
+
+
+        <footer class="page-footer teal lighten-2">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">Instituto de Educación a Distancia</h5>
+				<img class="imgUT" src="img/ut.png">
+                <p class="grey-text text-lighten-4">Especialización en Gerencia de Instituciones Educativas</p>
+              </div>
+              </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            © 2019 Copyright Text
+            </div>
+          </div>
+        </footer>    
+
+
+
+</body>
+</html>

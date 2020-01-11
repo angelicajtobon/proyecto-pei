@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>PEI</title>
+    <meta charset="utf-8">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+   
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-firestore.js"></script>
+
+    
+    <link href="https://fonts.googleapis.com/css?family=Laila" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans|Noto+Sans|Stylish" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC:700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Livvic&display=swap" rel="stylesheet">
+	
+	
+    <link rel="stylesheet" href="css/estilos.css">
+	<script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/usuarios.js"></script>
+	<script type="text/javascript" src="js/datospei.js"></script>
+	<script type="text/javascript" src="js/generar.js"></script>
+	<script type="text/javascript" src="js/html2canvas.min.js"></script>
+    
+	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/canvas2image@1.0.5/canvas2image.min.js"></script>
+	
+	<style type="text/css" media="print">
+		@media print {
+		#espacioGenerar {display:none;}
+
+			}
+	</style>
+	
+	<script>
+		
+	//Observador
+
+	firebase.auth().onAuthStateChanged(function(user) {
+			  if (user) {
+				console.log('existe usuario activo');
+				
+				// User is signed in.
+				var displayName = user.displayName;
+				var email = user.email;
+
+				// ...
+			  } else {
+				  
+				 location.href="index.html"; 
+				 console.log('NO TIENE PERMISOS');
+				  
+			  }
+	});   
+
+	
+	
+	</script>
+    
+       
+</head>
+
+
+<body class="margenes">
+	
+	<div class = "espacioGenerar" id = "espacioGenerar">
+		<a class="waves-effect waves-light btn " href= "modificar.html"><i class="material-icons rigth">arrow_back</i></a>
+		<a id = "generar" class="waves-effect waves-light btn botones" onclick = "window.print()"> Imprimir <i class="material-icons rigth">print</i></a>
+	</div>
+	
+	
+	<div class ="estructuraPei" id = "estructuraPei">
+	
+	
+		<h5 style="text-align:center; font-weight:500"> PROYECTO EDUCATIVO INSTITUCIONAL </h5>
+		<br>
+		<br>
+		
+		<!--Identificación-->
+		<h5 class = "titulos">1. Identificación </h5>		
+		<br>
+		<span class = "subtitulos">1.1 Código Dane </span>		
+		<br><br>
+		<p id="codigoDane" class = "contenido"> </p> <br>
+		<br>
+		<span class = "subtitulos">1.2 Nombre de la Institución </span>		
+		<br><br>
+		<p id="institucionNombre" class = "contenido"> </p> <br>
+		<br>
+		<span class = "subtitulos">1.3 Reseña Histórica </span>		
+		<br><br>
+		<p id="reseña" class = "contenido"> </p> <br>
+		<br>
+		<span class = "subtitulos">1.4 Ubicación Geográfica</span>		
+		<br><br>
+		<p id="ubicacion" class = "contenido"> </p> <br>
+		<br>
+		<span class = "subtitulos">1.5 Escudo o Bandera</span>		
+		<br><br>
+		
+		<img class="bandera" src="https://firebasestorage.googleapis.com/v0/b/proyecto-pei-dd5d7.appspot.com/o/identificacion%2Fbandera.jpg?alt=media&token=b68501f8-5aa3-4060-99f3-25a8ba6b81c1"/>
+		
+		<br><br>
+		<span class = "subtitulos">1.6 Himno</span>		
+		<br><br>
+		<p id="himno" class = "contenido"> </p> <br>
+		<br>
+		<span class = "subtitulos">1.7 Liderazgo</span>		
+		<br><br>
+		<p id="liderazgo" class = "contenido"> </p> <br>
+		<br>
+
+		
+		<!--Horizonte Institucional-->
+		<br>
+		<h5 class = "titulos">2. Horizonte Institucional </h5>		
+		<br>
+		<span class = "subtitulos">2.1 Misión </span>		
+		<br><br>
+		<p id="mision" class = "contenido"> </p> <br>
+		<br>		
+		<span class = "subtitulos">2.2 Visión </span>		
+		<br><br>
+		<p id="vision" class = "contenido"> </p> <br>
+		<br>			
+		<span class = "subtitulos">2.3 Principios </span>		
+		<br><br>
+		<p id="principios" class = "contenido"> </p> <br>
+		<br>
+		<span class = "subtitulos">2.4 Filosofía </span>		
+		<br><br>
+		<p id="filosofia" class = "contenido"> </p> <br>
+		<br>
+		<span class = "subtitulos">2.5 Cultura institucional </span>		
+		<br><br>
+		<p id="culturaInstitucional" class = "contenido"> </p> <br><br>
+
+
+		<!--Gestión Directiva-->
+		<br>
+		<h5 class = "titulos">3. Gestión Directiva </h5>		
+		<br>		
+		<span class = "subtitulos">3.1 Metas Institucionales </span>		
+		<br><br>
+		<p id="metasInstitucionales" class = "contenido"> </p> <br>
+		<br>
+		<span class = "subtitulos">3.2 Políticas de inclusión </span>		
+		<br><br>
+		<p id="politicasInclusion" class = "contenido"> </p> <br>
+		<br>
+			
+		<span class = "subtitulos">3.3 Políticas de Articulación </span>		
+		<br><br>
+		<p id="politicasArticulacion" class = "contenido"> </p> <br>
+		<br>		
+		<span class = "subtitulos">3.4 Estrategia Pedagógica </span>		
+		<br><br>
+		<p id="estrategiaPedagogica" class = "contenido"> </p> <br>
+		<br>		
+		<span class = "subtitulos">3.5 Gobierno Escolar </span>		
+		<br><br>
+		<br>
+		<span class = "subtitulos">3.5.1 Consejo Directivo </span>		
+		<br><br>
+		<p id="consejoDirectivo" class = "contenido"> </p> <br>
+		<br>		
+		<span class = "subtitulos">3.5.2 Consejo académico </span>		
+		<br><br>
+		<p id="consejoAcademico" class = "contenido"> </p> <br>
+		<br>		
+		<span class = "subtitulos">3.5.3 Comisión de evaluación y promoción </span>		
+		<br><br>
+		<p id="consejoEvaluacion" class = "contenido"> </p> <br>
+		<br>		
+		<span class = "subtitulos">3.5.4 Comité de convivencia Escolar </span>		
+		<br><br>
+		<p id="comiteConvivencia" class = "contenido"> </p> <br>
+		<br>		
+		<span class = "subtitulos">3.5.5 Consejo estudiantil </span>		
+		<br><br>
+		<p id="consejoEstudiantil" class = "contenido"> </p> <br>
+		<br>		
+		<span class = "subtitulos">3.5.6 Consejo de padres de familia </span>		
+		<br><br>
+		<p id="consejoPadres" class = "contenido"> </p> <br>
+		<br>		
+		<span class = "subtitulos">3.6 Mecanismos de comunicación</span>		
+		<br><br>
+		<p id="mecanismosComunicacion" class = "contenido"> </p> <br>
+		<br>		
+		<span class = "subtitulos">3.7 Políticas para el reconocimiento de logros </span>		
+		<br><br>
+		<p id="reconocimientoLogros" class = "contenido"> </p> <br>
+		<br>		
+		<span class = "subtitulos">3.8 Inducción de nuevos estudiantes y Docentes </span>		
+		<br><br>
+		<p id="induccion" class = "contenido"> </p> <br>
+		<br>		
+		<span class = "subtitulos">3.9 Plan de estímulos educativos </span>		
+		<br><br>
+		<p id="planEstimulos" class = "contenido"> </p> <br>
+		<br>		
+		<span class = "subtitulos">3.10 Manual de convivencia </span>		
+		<br>
+		<br>
+		<span class = "subtitulos">3.10.1 Las reglas de higiene personal y de salud pública que preserven el bienestar de la comunidad educativa, la conservación individual de la salud y la prevención frente al consumo de sustancias psicotrópicas. </span>		
+		<br><br>
+		<p id="reglasHigienePersonal" class = "contenido"> </p> <br>
+		<br>		
+		<span class = "subtitulos">3.10.2  Criterios de respeto, valoración y compromiso frente a la utilización y conservación de los bienes personales y de uso colectivo, tales como equipos, instalaciones e implementos. </span>		
+		<br><br>
+		<p id="criteriosRespeto" class = "contenido"> </p> <br>
+		<br>		
+		<span class = "subtitulos">3.10.3 Pautas de comportamiento en relación con el cuidado del medio ambiente escolar.</span>		
+		<br><br>
+		<p id="pautasComportamiento" class = "contenido"> </p> <br>
+		<br>		
+		<span class = "subtitulos">3.10.4 Normas de conducta de alumnos y profesores que garanticen el mutuo respeto. Deben incluir la definición de claros procedimientos para formular las quejas o reclamos al respecto. </span>		
+		<br><br>
+		<p id="normasConducta" class = "contenido"> </p> <br>
+		<br>		
+		<span class = "subtitulos">3.10.5 Procedimientos para resolver con oportunidad y justicia los conflictos individuales o colectivos que se presenten entre miembros de la comunidad. Deben incluir instancias de diálogo y de conciliación.
+		</span><br>		
+		<br>
+		<p id="procedimientosConflictos" class = "contenido"> </p> <br>
+		<br>		
+		<span class = "subtitulos">3.10.6 Pautas de presentación personal que preserven a los alumnos de la discriminación por razones de apariencia. </span>		
+		<br><br>
+		<p id="pautasPresentacionPersonal" class = "contenido"> </p> <br>
+		<br>		
+		<span class = "subtitulos">3.10.7 Definición de sanciones disciplinarias aplicables a los alumnos, incluyendo el derecho a la defensa. </span>		
+		<br><br>
+		<p id="definicionSanciones" class = "contenido"> </p> <br>
+		<br>		
+		<span class = "subtitulos">3.10.8 Reglas para la elección de representantes al Consejo Directivo y para la escogencia de voceros en los demás consejos previstos en el presente Decreto. Debe incluir el proceso de elección del personero de los estudiantes. </span>		
+		<br><br>
+		<p id="eleccionRepresentantes" class = "contenido"> </p> <br>
+		<br>		
+		<span class = "subtitulos">3.10.9 Calidades y condiciones de los servicios de alimentación, transporte, recreación dirigida y demás conexos con el servicio de educación que ofrezca la institución a los alumnos. </span>		
+		<br><br>
+		<p id="calidadAlimentacion" class = "contenido"> </p> <br>
+		<br>		
+		<span class = "subtitulos">3.10.10 Funcionamiento y operación de los medios de comunicación interna del establecimiento, tales como periódicos, revistas o emisiones radiales que sirvan de instrumentos efectivos al libre pensamiento y a la libre expresión. </span>		
+		<br><br>
+		<p id="funcionamientoComunicacion" class = "contenido"> </p> <br>
+		<br>		
+		<span class = "subtitulos">3.10.11 Encargos hechos al establecimiento para aprovisionar a los alumnos de material didáctico de uso general, libros, uniformes, seguros de vida y de salud </span>		
+		<br><br>
+		<p id="provisionMaterialDidactico" class = "contenido"> </p> <br>
+		<br>		
+		<span class = "subtitulos">3.10.12 Reglas para uso del bibliobanco y la biblioteca escolar. </span>		
+		<br><br>
+		<p id="usoBibliobanco" class = "contenido"> </p> <br>
+		<br>		
+		<span class = "subtitulos">3.11 Actividades extracurriculares </span>		
+		<br><br>
+		<p id="actividadesExtracurriculares" class = "contenido"> </p> <br>
+		<br>		
+		<span class = "subtitulos">3.12 Autoevaluación Institucional</span>		
+		<br><br>
+		<img class="imagen" src="https://firebasestorage.googleapis.com/v0/b/proyecto-pei-dd5d7.appspot.com/o/gestionDirectiva%2FautoevaluacionInstitucional.jpg?alt=media&token=135a861f-fa90-4486-932f-ead7150743bd"/>
+
+		
+		<!--Gestión Pedagógica-->
+		<br>
+		<h5 class = "titulos">4. Gestión Pedagógica </h5>		
+		<br>
+		
+		<span class = "subtitulos">4.1 Plan de estudio </span>		
+		<br><br>
+		<img class="imagen" src="https://firebasestorage.googleapis.com/v0/b/proyecto-pei-dd5d7.appspot.com/o/gestionPedagogica%2FplanEstudio.jpg?alt=media&token=a040bffe-68d5-4720-8fd2-a699f771e32c"/>
+		<br>		
+		<span class = "subtitulos">4.2 Modelo pedagógico </span>		
+		<br><br>
+		<p id="modeloPedagogico" class = "contenido"> </p> <br>
+		<br>		
+		<span class = "subtitulos">4.3 Jornada escolar </span>		
+		<br><br>
+		<p id="jornadaEscolar" class = "contenido"> </p> <br>
+		<br>		
+		<span class = "subtitulos">4.4 Sistema institucional de evaluación (SIEE) (Dec 1290) </span>		
+		<br><br>
+		<br>		
+		<span class = "subtitulos">4.4.1 Los criterios de evaluación y promoción. </span>		
+		<br><br>
+		<p id="criteriosEvaluacion" class = "contenido"> </p> <br>
+		<br>		
+		<span class = "subtitulos">4.4.2 La escala de valoración institucional y su respectiva equivalencia con la escala nacional. </span>		
+		<br><br>
+		<p id="escalaValoracion" class = "contenido"> </p> <br>
+		<br>		
+		<span class = "subtitulos">4.4.3 Las estrategias de valoración integral de los desempeños de los estudiantes. </span>		
+		<br><br>
+		<p id="estrategiasValoracion" class = "contenido"> </p> <br>
+		<br>		
+		<span class = "subtitulos">4.4.4 Las acciones de seguimiento para el mejoramiento de los desempeños de los estudiantes durante el año escolar. </span>		
+		<br><br>
+		<p id="accionesSeguimiento" class = "contenido"> </p> <br>
+		<br>		
+		<span class = "subtitulos">4.4.5 Los procesos de autoevaluación de los estudiantes. </span>		
+		<br><br>
+		<p id="procesosAutoevaluacion" class = "contenido"> </p> <br>
+		<br>		
+		<span class = "subtitulos">4.4.6 Las estrategias de apoyo necesarias para resolver situaciones pedagógicas pendientes de los estudiantes. </span>		
+		<br><br>
+		<p id="estategiasApoyo" class = "contenido"> </p> <br>
+		<br>		
+		<span class = "subtitulos">4.4.7 Las acciones para garantizar que los directivos docentes y docentes del establecimiento educativo cumplan con los procesos evaluativos estipulados
+		en el sistema institucional de evaluación. </span>		
+		<br><br>
+		<p id="accionesCumplimientoEvaluacion" class = "contenido"> </p> <br>
+		<br>		
+		<span class = "subtitulos">4.4.8 La periodicidad de entrega de informes a los padres de familia. </span>		
+		<br><br>
+		<p id="periodicidadInformes" class = "contenido"> </p> <br>
+		<br>		
+		<span class = "subtitulos">4.4.9 La estructura de los informes de los estudiantes, para que sean claros, comprensibles y den información integral del avance en la formación.</span>		
+		<br><br>
+		<p id="estructuraInformes" class = "contenido"> </p> <br>
+		<br>		
+		<span class = "subtitulos">4.4.10 Las instancias, procedimientos y mecanismos de atención y resolución de reclamaciones de padres de familia y estudiantes sobre la evaluación y
+		promoción. </span>		
+		<br><br>
+		<p id="resolucionReclamos" class = "contenido"> </p> <br>
+		<br>		
+		<span class = "subtitulos">4.4.11 Los mecanismos de participación de la comunidad educativa en la construcción del sistema institucional de evaluación de los estudiantes. </span>		
+		<br><br>
+		<p id="participacionComunidadMecanismos" class = "contenido"> </p> <br>
+		<br>		
+		<span class = "subtitulos">4.5 Proyectos transversales </span>		
+		<br><br>
+		<p id="proyectosTransversales" class = "contenido"> </p> <br>
+		<br>		
+		<span class = "subtitulos">4.6 Uso de los tiempos de aprendizaje </span>		
+		<br><br>
+		<p id="tiemposAprendizaje" class = "contenido"> </p> <br>
+		<br>	
+		<br>		
+		<span class = "subtitulos">4.7 Planeación de clase</span>		
+		<br><br>	
+		
+		<img class="imagen" src="https://firebasestorage.googleapis.com/v0/b/proyecto-pei-dd5d7.appspot.com/o/gestionPedagogica%2FplaneacionClase.jpg?alt=media&token=cd8de20e-f117-4ebf-8b37-798e9c13ac4a"/>
+		<br>	
+		<span class = "subtitulos">4.8 Seguimiento a los resultados </span>		
+		<br>
+		<p id="seguimientoResultados" class = "contenido"> </p> <br>
+		<br>
+		<span class = "subtitulos">4.9 Seguimiento a la asistencia</span>		
+		<br><br>
+		<img class="imagen" src="https://firebasestorage.googleapis.com/v0/b/proyecto-pei-dd5d7.appspot.com/o/gestionPedagogica%2FseguimientoAsistencia.jpg?alt=media&token=adc05038-948c-43cd-bd90-215c607453b9"/>
+		<br>
+		<span class = "subtitulos">4.10 Seguimiento a la deserción</span>		
+		<br><br>		
+		
+		<img class="imagen" src="https://firebasestorage.googleapis.com/v0/b/proyecto-pei-dd5d7.appspot.com/o/gestionPedagogica%2FseguimientoDesercion.jpg?alt=media&token=ea87c1aa-0b0f-434f-a3c9-086e5d04cb46"/>
+		
+
+		<!--Gestión Administrativa y Talento Humano-->
+		<br>
+		<h5 class = "titulos">5. Gestión Administrativa y Talento Humano </h5>		
+		<br>
+		
+		<span class = "subtitulos">5.1 Proceso de matrícula </span>		
+		<br><br>		
+		
+		<p id="procesoMatricula" class = "contenido"> </p> <br>
+		<br>		
+		<span class = "subtitulos">5.2 Archivo académico (ley 594 de 2000) </span>		
+		<br><br>	
+		<p id="archivoAcademico" class = "contenido"> </p> <br>
+		<br>		
+		<span class = "subtitulos">5.3 Registro de evaluación  </span>		
+		<br>	<br>
+		<p id="registroEvaluacion" class = "contenido"> </p> <br>
+		<img class="imagen" src="https://firebasestorage.googleapis.com/v0/b/proyecto-pei-dd5d7.appspot.com/o/gestionAdministrativa%2FregistroEvaluacionIMG.jpg?alt=media&token=063d5ec4-d729-4f30-ab30-c2cf0a1bf5fa"/>
+		<br>		
+		<span class = "subtitulos">5.4 Proyecto de Mantenimiento de la Planta Física </span>		
+		<br>	<br>
+		<p id="mantenimientoPlantaFisica" class = "contenido"> </p> <br>
+		<br>		
+		<span class = "subtitulos">5.5 Seguimiento al uso de los espacios </span>		
+		<br><br>
+		<img class="imagen" src="https://firebasestorage.googleapis.com/v0/b/proyecto-pei-dd5d7.appspot.com/o/gestionAdministrativa%2FseguimientoEspacios?alt=media&token=ec6535f5-aa93-4b15-a565-3187de5902e8"/>
+		<br>		
+		<span class = "subtitulos">5.6 Suministro y dotación </span>		
+		<br><br>		
+		<p id="suministroDotacion" class = "contenido"> </p> <br>
+		<br>		
+		<span class = "subtitulos">5.7 Recursos para el Aprendizaje </span>		
+		<br><br>	
+		<p id="recursosAprendizaje" class = "contenido"> </p> <br>
+		<br>		
+		<span class = "subtitulos">5.8 Seguridad y Protección </span>		
+		<br><br>	
+		<p id="seguridadProteccion" class = "contenido"> </p> 
+		<br><br>		
+		<span class = "subtitulos">5.9 Bienestar social </span>		
+		<br><br>	
+		<p id="bienestarSocial" class = "contenido"> </p> <br>
+		<br>		
+		<span class = "subtitulos">5.10 Talento humano </span>		
+		<br><br>	
+		<p id="talentoHumano" class = "contenido"> </p> <br>
+		<br>		
+		<span class = "subtitulos">5.11 Inducción </span>		
+		<br><br>	
+		<p id="induccionDocentes" class = "contenido"> </p> <br>
+		<br>		
+		<span class = "subtitulos">5.12 Asignación Académica </span>		
+		<br><br>	
+		<p id="asignacionAcademica" class = "contenido"> </p> <br>
+		<br>		
+		<span class = "subtitulos">5.13 Evaluación de Desempeño (Dec 1278 de 2002) </span>		
+		<br><br>	
+		<p id="evaluacionDesempeño" class = "contenido"> </p> <br>
+		<br>		
+		<span class = "subtitulos">5.14 Estímulos </span>		
+		<br><br>	
+		<p id="estimulos" class = "contenido"> </p> <br>
+		<br>		
+		<span class = "subtitulos">5.15 Apoyo a la Investigación </span>		
+		<br><br>	
+		<p id="apoyoInvestigacion" class = "contenido"> </p> <br>
+		<br>		
+		<span class = "subtitulos">5.16 Bienestar del Talento Humano </span>		
+		<br><br>	
+		<p id="bienestarTH" class = "contenido"> </p> <br>
+		<br>		
+		<span class = "subtitulos">5.17 Contabilidad </span>		
+		<br><br>	
+		<p id="contabilidad" class = "contenido"> </p> <br>
+
+
+		<!--Gestión de la Comunidad-->
+		<br>
+		<h5 class = "titulos">6. Gestión de la Comunidad </h5>		
+		<br>
+		<br>		
+		<span class = "subtitulos">6.1 Asociación y eguimiento de egresados </span>		
+		<br><br>
+		<p id="egresados" class = "contenido"> </p> <br>
+		<br>		
+		<span class = "subtitulos">6.2 Atención educativa a grupos poblacionales o en situación de vulnerabilidad que experimentan barreras al aprendizaje y la participación </span>		
+		<br><br>
+		<p id="atencionVulnerabilidad" class = "contenido"> </p> <br>
+		<br>		
+		<span class = "subtitulos">6.3 Atención a la diversidad educativa a estudiantes pertenecientes a grupos étnicos y estudiantes con necesidades especiales</span>		
+		<br><br>
+		<p id="atencionEtnias" class = "contenido"> </p> <br>
+		<br>		
+		<span class = "subtitulos">6.4 Escuela de padres</span>		
+		<br><br>
+		<p id="escuelaPadres" class = "contenido"> </p> <br>
+		<br>		
+		<span class = "subtitulos">6.5 Servicio social estudiantil </span>		
+		<br><br>
+		<p id="servicioSocial" class = "contenido"> </p> <br>
+		<br>		
+		<span class = "subtitulos">6.6 Participación de la comunidad, estudiantes y padres de familia </span>		
+		<br><br>
+		<p id="participacionComunidad" class = "contenido"> </p> <br>
+		<br>		
+		<span class = "subtitulos">6.7 Prevención de riesgos psicosociales </span>		
+		<br><br>
+		<p id="prevencionRiesgosSociales" class = "contenido"> </p> <br>
+		<br>		
+
+	
+	
+	</div>
+
+
+   
+
+
+</body>
+
+
+</html>
