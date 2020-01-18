@@ -68,5 +68,9 @@
 			url : "URL",
 			metodo: "POST"
 		}
+		solicitudRegistro: {
+			url : "URL",
+			metodo: "POST"
+		}
 	}
 }
