@@ -1,5 +1,5 @@
 {
-  "name": "package",
+  "name": "proyectoPei",
   "version": "1.0.0",
   "description": "\u001bPROYECTO PEI",
   "main": "index.js",
@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/angelicajtobon/proyecto-pei/issues"
   },
-  "homepage": "https://github.com/angelicajtobon/proyecto-pei#readme"
+  "homepage": "https://github.com/angelicajtobon/proyecto-pei#readme",
+  "devDependencies": {
+    "webpack": "^4.41.5"
+  }
 }
