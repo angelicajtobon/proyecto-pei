@@ -4,7 +4,8 @@
   "description": "\u001bPROYECTO PEI",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "pack": "webpack ./js/app.js ./dist/bundle.js"
   },
   "repository": {
     "type": "git",
@@ -17,6 +18,7 @@
   },
   "homepage": "https://github.com/angelicajtobon/proyecto-pei#readme",
   "devDependencies": {
-    "webpack": "^4.41.5"
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10"
   }
 }
