@@ -25,31 +25,6 @@
 	<script type="text/javascript" src="js/usuarios.js"></script>
 	<script type="text/javascript" src="js/datospei.js"></script>
 	
-	<script>
-		
-	//Observador
-
-	firebase.auth().onAuthStateChanged(function(user) {
-			  if (user) {
-				console.log('existe usuario activo');
-				
-				// User is signed in.
-				var displayName = user.displayName;
-				var email = user.email;
-
-				// ...
-			  } else {
-
-				  
-				 location.href="index.html"; 
-				 console.log('NO TIENE PERMISOS');
-				  
-			  }
-	});   
-
-	
-	
-	</script>
     
 </head>
 <body>
