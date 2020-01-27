@@ -1,19 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Gestión Directiva</title>
+	<title><%= titulo%></title>
     <meta charset="utf-8">
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-firestore.js"></script>
 
-    <!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#config-web-app -->
 
     <link href="https://fonts.googleapis.com/css?family=Laila" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans|Noto+Sans|Stylish" rel="stylesheet">
@@ -25,33 +20,7 @@
 	<script type="text/javascript" src="js/usuarios.js"></script>
 	<script type="text/javascript" src="js/datospei.js"></script>
 	
-	
-	<script>
-		
-		//Observador
 
-		firebase.auth().onAuthStateChanged(function(user) {
-				  if (user) {
-					console.log('existe usuario activo');
-					
-					// User is signed in.
-					var displayName = user.displayName;
-					var email = user.email;
-
-					// ...
-				  } else {
-
-					  
-					 location.href="index.html"; 
-					 console.log('NO TIENE PERMISOS');
-					  
-				  }
-		});   
-
-	
-	
-	</script>
-    
 </head>
 <body>
 	<nav class= " teal lighten-2">
@@ -59,12 +28,12 @@
 			<ul>
 				<li><a href="modificar.html" class="brand-logo left"> <i class="material-icons medium">arrow_back</i> </a></li>
 
-				<li><a onclick = "consultarGestionDirectiva()" class ="espacio-izquierda "> Consultar Gestion Directiva </a></li>
+				<li><a onclick = "consultarGestionDirectiva()" class ="espacio-izquierda ">  <%= consultar%></a></li>
 			<ul>
 		</div>
 	</nav>
 
-	<h3 style="text-align:center" class="laila espacio-arriba">Gestión Directiva</h3>
+	<h3 style="text-align:center" class="laila espacio-arriba"><%= titulo%></h3>
 	<br>
 	<br>
     
@@ -72,7 +41,7 @@
   <div class="row espacios">
     
       <div class="row">
-      <label for="textarea1">Metas Institucionales </label>
+      <label for="textarea1"><%= metasInstitucionales%> </label>
         <div class="input-field col s12">
           <textarea id="metasInstitucionales" ></textarea>
         </div>
@@ -81,7 +50,7 @@
       <br>
       
 	  <div class="row">
-		<label for="textarea1">Políticas de Inclusión - Propuesta de la IE</label>
+		<label for="textarea1"><%= politicasInclusion%></label>
         <div class="input-field col s12">
           <textarea id="politicasInclusion" ></textarea>
         </div>        
@@ -90,7 +59,7 @@
 	  
    
 	  <div class="row">
-		<label for="textarea1">Políticas de Articulación - con otras entidades </label>
+		<label for="textarea1"><%= politicasArticulacion%> </label>
         <div class="input-field col s12">
           <textarea id="politicasArticulacion" ></textarea>
         </div>        
@@ -98,7 +67,7 @@
 	  <br>
 	  
 	  <div class="row">
-		<label for="textarea1" class ="tooltipped" data-tooltip="Modelo Curricular">Estrategia Pedagógica</label>
+		<label for="textarea1" class ="tooltipped" data-tooltip="Modelo Curricular"><%= estrategiaPedagogica%></label>
         <div class="input-field col s12">
           <textarea id="estrategiaPedagogica" ></textarea>
         </div>        
@@ -106,36 +75,36 @@
 	  <br>
 	  
 	  <div class="row">
-		<h5 class ="laila align-center">Gobierno Escolar </h5>
+		<h5 class ="laila align-center"><%= gobiernoEscolar%></h5>
 			<br>
 			<div class="row subTemas">
 				<br>
-				<h6>Consejo Directivo</h6>
+				<h6><%= consejoDirectivo%></h6>
 				<div class="input-field col s12">
 				  <textarea id="consejoDirectivo" ></textarea>
 				</div> 
 				<br>
-				<h6>Consejo Académico</h6>
+				<h6><%= consejoAcademico%></h6>
 				<div class="input-field col s12">
 				  <textarea id="consejoAcademico" ></textarea>
 				</div>	
 				<br>
-				<h6>Consejo de Evaluación y Promoción</h6>
+				<h6><%= consejoEvaluacion%></h6>
 				<div class="input-field col s12">
 				  <textarea id="consejoEvaluacion" ></textarea>
 				</div>	
 				<br>
-				<h6>Comité de Convivencia Escolar</h6>
+				<h6><%= comiteConvivencia%></h6>
 				<div class="input-field col s12">
 				  <textarea id="comiteConvivencia" ></textarea>
 				</div>	
 				<br>
-				<h6>Consejo Estudiantil</h6>
+				<h6><%= consejoEstudiantil%></h6>
 				<div class="input-field col s12">
 				  <textarea id="consejoEstudiantil" ></textarea>
 				</div>
 				<br>
-				<h6>Consejo de Padres de Familia</h6>
+				<h6><%= consejoPadres%></h6>
 				<div class="input-field col s12">
 				  <textarea id="consejoPadres" ></textarea>
 				</div>
@@ -314,15 +283,11 @@
               <div class="col l6 s12">
                 <h5 class="white-text">Instituto de Educación a Distancia</h5>
 				<img class="imgUT" src="img/ut.png">
-                <p class="grey-text text-lighten-4">Especialización en Gerencia de Instituciones Educativas</p>
+
               </div>
               </div>
           </div>
-          <div class="footer-copyright">
-            <div class="container">
-            © 2019 Copyright Text
-            </div>
-          </div>
+
         </footer>    
 
 

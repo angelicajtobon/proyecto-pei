@@ -1,19 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Horizonte Institucional</title>
+	<title><%= titulo%></title>
     <meta charset="utf-8">
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-firestore.js"></script>
 
-    <!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#config-web-app -->
 
     <link href="https://fonts.googleapis.com/css?family=Laila" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans|Noto+Sans|Stylish" rel="stylesheet">
@@ -33,14 +28,14 @@
 		    <ul>
 				<li><a href="modificar.html" class="brand-logo left"> <i class="material-icons medium">arrow_back</i> </a></li>
 
-				<li><a onclick = "consultarHorizonte()" class ="espacio-izquierda "> Consultar Horizonte Institucional </a></li>
+				<li><a onclick = "consultarHorizonte()" class ="espacio-izquierda "><%= consultar%> </a></li>
 			<ul>
 		</div>
 	</nav>
 
 
 			   
-	<h3 style="text-align:center" class="laila espacio-arriba">Horizonte Institucional</h3>
+	<h3 style="text-align:center" class="laila espacio-arriba"><%= titulo%></h3>
 	<br>
 	<br>
     
@@ -48,7 +43,7 @@
   <div class="row espacios">
     
       <div class="row">
-      <label for="textarea1">Misión </label>
+      <label for="textarea1"><%= mision%> </label>
         <div class="input-field col s12">
           <textarea id="mision" ></textarea>
         </div>
@@ -57,7 +52,7 @@
       <br>
       
 	  <div class="row">
-		<label for="textarea1">Visión</label>
+		<label for="textarea1"><%= vision%></label>
         <div class="input-field col s12">
           <textarea id="vision" ></textarea>
         </div>        
@@ -66,7 +61,7 @@
 	  
    
 	  <div class="row">
-		<label for="textarea1">Principios</label>
+		<label for="textarea1"><%= principios%></label>
         <div class="input-field col s12">
           <textarea id="principios" ></textarea>
         </div>        
@@ -74,7 +69,7 @@
 	  <br>
 	  
 	  <div class="row">
-		<label for="textarea1">Filosofía</label>
+		<label for="textarea1"><%= filosofia%></label>
         <div class="input-field col s12">
           <textarea id="filosofia" ></textarea>
         </div>        
@@ -82,7 +77,7 @@
 	  <br>
 	  
 	  	  <div class="row">
-		<label for="textarea1">Cultura Institucional</label>
+		<label for="textarea1"><%= culturaInstitucional%></label>
         <div class="input-field col s12">
           <textarea id="culturaInstitucional" ></textarea>
         </div>        
@@ -92,7 +87,7 @@
 	  
       <div >
         <div class= "align-center">
-            <center><a class="waves-effect #00695c teal darken-3 btn botonesModificar pulse modal-trigger" data-target="modal1" onclick ="guardarHorizonteInstitucionalModificacion()">Guardar Modificaciones <i class=" material-icons rigth">system_update_alt</i></a>
+            <center><a class="waves-effect #00695c teal darken-3 btn botonesModificar pulse modal-trigger" data-target="modal1" onclick ="guardarHorizonteInstitucionalModificacion()"><%= guardar%> <i class=" material-icons rigth">system_update_alt</i></a>
         </div>
         
       
@@ -118,16 +113,10 @@
           <div class="container">
             <div class="row">
               <div class="col l6 s12">
-                <h5 class="white-text">Instituto de Educación a Distancia</h5>
+                <h5 class="white-text"><%= idead%></h5>
 				<img class="imgUT" src="img/ut.png">
-                <p class="grey-text text-lighten-4">Especialización en Gerencia de Instituciones Educativas</p>
+                </div>
               </div>
-              </div>
-          </div>
-          <div class="footer-copyright">
-            <div class="container">
-            © 2019 Copyright Text
-            </div>
           </div>
         </footer>    
 

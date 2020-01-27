@@ -2,20 +2,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Gestión Directiva</title>
+	<title><%= titulo%></title>
     <meta charset="utf-8">
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-firestore.js"></script>
-
-    <!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#config-web-app -->
-
+	
+   
     <link href="https://fonts.googleapis.com/css?family=Laila" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans|Noto+Sans|Stylish" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -26,32 +21,7 @@
 	<script type="text/javascript" src="js/usuarios.js"></script>
 	<script type="text/javascript" src="js/datospei.js"></script>
 	
-	<script>
-		
-	//Observador
-
-	firebase.auth().onAuthStateChanged(function(user) {
-			  if (user) {
-				console.log('existe usuario activo');
-				
-				// User is signed in.
-				var displayName = user.displayName;
-				var email = user.email;
-
-				// ...
-			  } else {
-
-				  
-				 location.href="index.html"; 
-				 console.log('NO TIENE PERMISOS');
-				  
-			  }
-	});   
-
-	
-	
-	</script>
-    
+	    
 </head>
 <body>
 
@@ -60,25 +30,25 @@
 			<ul>
 				<li><a href="modificar.html" class="brand-logo left"> <i class="material-icons medium">arrow_back</i> </a></li>
 
-				<li><a onclick = "consultarGestionPedagogica()" class ="espacio-izquierda "> Consultar Gestión Pedagógica </a></li>
+				<li><a onclick = "consultarGestionPedagogica()" class ="espacio-izquierda "> <%= consultar%> </a></li>
 			<ul>
 		</div>
 	</nav>
 			   
 
-	<h3 style="text-align:center" class="laila espacio-arriba">Gestión Pedagógica</h3>
+	<h3 style="text-align:center" class="laila espacio-arriba"><%= titulo%></h3>
 	<br>
 	<br>
     
      
   <div class="row espacios">
   
-      <label for="textarea1">Plan de Estudio </label>
+      <label for="textarea1"><%= planEstudio%> </label>
       <br>
       <br>
       <div class="file-field input-field">
           <div class="btn botones" >
-            <span>Buscar</span>
+            <span><%= buscar%></span>
             <input type="file" id="planEstudio" accept="image/png, .jpeg, .jpg, image/gif">
           </div>
           <div class="file-path-wrapper">
@@ -89,7 +59,7 @@
 	  
     
       <div class="row">
-      <label for="textarea1">Modelo Pedagógico </label>
+      <label for="textarea1"><%= modeloPedagogico%> </label>
         <div class="input-field col s12">
           <textarea id="modeloPedagogico"  ></textarea>
         </div>
@@ -98,7 +68,7 @@
       <br>
       
       <div class="row">
-      <label for="textarea1">Jornada Escolar </label>
+      <label for="textarea1"><%= jornadaEscolar%></label>
         <div class="input-field col s12">
           <textarea id="jornadaEscolar"  ></textarea>
         </div>
@@ -107,71 +77,71 @@
       <br>
 	  
     <div class="row">
-		<h5 class ="laila align-center tooltipped" data-tooltip="Decreto 1290">Sistema Institucional de Evaluación (SIEE)</h5>
+		<h5 class ="laila align-center tooltipped" data-tooltip="Decreto 1290"><%= siee%></h5>
 		<div class = "row subTemas">
 		
 			<br>
-			<h6>1. Los criterios de evaluación y promoción.</h6>
+			<h6><%= criteriosEvaluacion%></h6>
 			<div class="input-field col s12">
 				 <textarea id="criteriosEvaluacion"  ></textarea>
 			</div>
 			
 			<br>
-			<h6>2. La escala de valoración institucional y su respectiva equivalencia con la escala nacional.</h6>
+			<h6><%= escalaValoracion%></h6>
 			<div class="input-field col s12">
 				 <textarea id="escalaValoracion"  ></textarea>
 			</div>
 			
 			<br>
-			<h6>3. Las estrategias de valoración integral de los desempeños de los estudiantes.</h6>
+			<h6><%= estrategiasValoracion%></h6>
 			<div class="input-field col s12">
 				 <textarea id="estrategiasValoracion"  ></textarea>
 			</div>
 			
 			<br>
-			<h6>4. Las acciones de seguimiento para el mejoramiento de los desempeños de los estudiantes durante el año escolar.</h6>
+			<h6><%= accionesSeguimiento%></h6>
 			<div class="input-field col s12">
 				 <textarea id="accionesSeguimiento"  ></textarea>
 			</div>
 			
 			<br>
-			<h6>5. Los procesos de autoevaluación de los estudiantes.</h6>
+			<h6><%= procesosAutoevaluacion%></h6>
 			<div class="input-field col s12">
 				 <textarea id="procesosAutoevaluacion"  ></textarea>
 			</div>
 			
 			<br>
-			<h6>6. Las estrategias de apoyo necesarias para resolver situaciones pedagógicas pendientes de los estudiantes.</h6>
+			<h6><%= estategiasApoyo%></h6>
 			<div class="input-field col s12">
 				 <textarea id="estategiasApoyo"  ></textarea>
 			</div>
 			
 			<br>
-			<h6>7. Las acciones para garantizar que los directivos docentes y docentes del establecimiento educativo cumplan con los procesos evaluativos estipulados en el sistema institucional de evaluación.</h6>
+			<h6><%= accionesCumplimientoEvaluacion%></h6>
 			<div class="input-field col s12">
 				 <textarea id="accionesCumplimientoEvaluacion"  ></textarea>
 			</div>
 			
 			<br>
-			<h6>8. La periodicidad de entrega de informes a los padres de familia.</h6>
+			<h6><%= periodicidadInformes%></h6>
 			<div class="input-field col s12">
 				 <textarea id="periodicidadInformes"  ></textarea>
 			</div>
 			
 			<br>
-			<h6>9. La estructura de los informes de los estudiantes, para que sean claros, comprensibles y den información integral del avance en la formación.</h6>
+			<h6><%= estructuraInformes%></h6>
 			<div class="input-field col s12">
 				 <textarea id="estructuraInformes"  ></textarea>
 			</div>
 			
 			<br>
-			<h6>10. Las instancias, procedimientos y mecanismos de atención y resolución de reclamaciones de padres de familia y estudiantes sobre la evaluación y promoción.</h6>
+			<h6><%= resolucionReclamos%></h6>
 			<div class="input-field col s12">
 				 <textarea id="resolucionReclamos"  ></textarea>
 			</div>
 			
 			<br>
-			<h6>11. Los mecanismos de participación de la comunidad educativa en la construcción del sistema institucional de evaluación de los estudiantes.</h6>
+			<h6><%= participacionComunidadMecanismos%></h6>
 			<div class="input-field col s12">
 				 <textarea id="participacionComunidadMecanismos"  ></textarea>
 			</div>
@@ -184,7 +154,7 @@
 	</div>
       
       <div class="row">
-      <label for="textarea1">Proyectos Transversales </label>
+      <label for="textarea1"><%= proyectosTransversales%></label>
         <div class="input-field col s12">
           <textarea id="proyectosTransversales"  ></textarea>
         </div>
@@ -193,7 +163,7 @@
       <br>	
 	  
 	  <div class="row">
-      <label for="textarea1" class="tooltipped" data-tooltip="Intensidad horaria">Uso de los Tiempos de Aprendizaje </label>
+      <label for="textarea1" class="tooltipped" data-tooltip="Intensidad horaria"><%= tiemposAprendizaje%> </label>
         <div class="input-field col s12">
           <textarea id="tiemposAprendizaje"  ></textarea>
         </div>
@@ -201,12 +171,12 @@
       </div>
       <br>
 	  
-	  <label for="textarea1" class="tooltipped" data-tooltip="Instrumento">Planeación de Clase </label>
+	  <label for="textarea1" class="tooltipped" data-tooltip="Instrumento"><%= planeacionClase%> </label>
       <br>
       <br>
       <div class="file-field input-field">
           <div class="btn botones" >
-            <span>Buscar</span>
+            <span><%= buscar%></span>
             <input type="file" id="planeacionClase" accept="image/png, .jpeg, .jpg, image/gif">
           </div>
           <div class="file-path-wrapper">
@@ -216,7 +186,7 @@
       <br>
 	  
 	  <div class="row">
-      <label for="textarea1" class="tooltipped" data-tooltip="Evaluación interna y externa">Seguimiento a los Resultados</label>
+      <label for="textarea1" class="tooltipped" data-tooltip="Evaluación interna y externa"><%= seguimientoResultados%></label>
         <div class="input-field col s12">
           <textarea id="seguimientoResultados"  ></textarea>
         </div>
@@ -224,7 +194,7 @@
       </div>
       <br>
 	  
-	  <label for="textarea1">Seguimiento a la Asistencia </label>
+	  <label for="textarea1"><%= seguimientoAsistencia%> </label>
       <br>
       <br>
       <div class="file-field input-field">
@@ -238,12 +208,12 @@
       </div>
       <br>
 	  
-	  <label for="textarea1">Seguimiento a la Deserción </label>
+	  <label for="textarea1"><%= seguimientoDesercion%> </label>
       <br>
       <br>
       <div class="file-field input-field">
           <div class="btn botones" >
-            <span>Buscar</span>
+            <span><%= buscar%></span>
             <input type="file" id="seguimientoDesercion" accept="image/png, .jpeg, .jpg, image/gif">
           </div>
           <div class="file-path-wrapper">
@@ -254,21 +224,11 @@
 	  
       <div >
         <div class= "align-center">
-            <center><a class="waves-effect #00695c teal darken-3 btn botonesModificar pulse modal-trigger" data-target="modal1" onclick ="guardarGestionPedagogicaModificacion()">Guardar Modificaciones <i class=" material-icons rigth">system_update_alt</i></a>
+            <center><a class="waves-effect #00695c teal darken-3 btn botonesModificar pulse modal-trigger" data-target="modal1" onclick ="guardarGestionPedagogicaModificacion()"><%= guardar%> <i class=" material-icons rigth">system_update_alt</i></a>
         </div>
      </div>
   
-  		   <!-- Modal Structure -->
-	  <div id="modal1" class="modal divModal">
-		<div class="modal-content ">
-			<div id="container" class = " align-center" >			
-			
-			</div>
-
-		</div>
-	  </div>  
-	   
-	   
+  		    
 	   
   
   </div>
@@ -277,16 +237,10 @@
           <div class="container">
             <div class="row">
               <div class="col l6 s12">
-                <h5 class="white-text">Instituto de Educación a Distancia</h5>
+                <h5 class="white-text"><%= idead%></h5>
 				<img class="imgUT" src="img/ut.png">
-                <p class="grey-text text-lighten-4">Especialización en Gerencia de Instituciones Educativas</p>
               </div>
               </div>
-          </div>
-          <div class="footer-copyright">
-            <div class="container">
-            © 2019 Copyright Text
-            </div>
           </div>
         </footer>    
 
