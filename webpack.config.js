@@ -7,49 +7,49 @@ const indextInput = './htlm/index.html';
 const indexOutput = 'index.html';
 
 const identificacionInput = './htlm/identificacion.html';
-const identificacionOutput = 'identificacion.html'
+const identificacionOutput = 'identificacion.html';
 
 const identificacionModificarInput = './htlm/identificacionModificar.html';
-const identificacionModificarOutput = 'identificacionModificar.html'
+const identificacionModificarOutput = 'identificacionModificar.html';
 
 const horizonteInstitucionalInput = './htlm/horizonteInstitucional.html';
-const horizonteInstitucionalOutput = 'horizonteInstitucional.html'
+const horizonteInstitucionalOutput = 'horizonteInstitucional.html';
 
 const horizonteInstitucionalModificarInput = './htlm/horizonteInstitucionalModificar.html';
-const horizonteInstitucionalModificarOutput = 'horizonteInstitucionalModificar.html'
+const horizonteInstitucionalModificarOutput = 'horizonteInstitucionalModificar.html';
 
 const gestionPedagogicaInput = './htlm/gestionPedagogica.html';
-const gestionPedagogicaOutput = 'gestionPedagogica.html'
+const gestionPedagogicaOutput = 'gestionPedagogica.html';
 
 const gestionPedagogicaModificarInput = './htlm/gestionPedagogicaModificar.html';
-const gestionPedagogicaModificarOutput = 'gestionPedagogicaModificar.html'
+const gestionPedagogicaModificarOutput = 'gestionPedagogicaModificar.html';
 
 const gestionDirectivaInput = './htlm/gestionDirectiva.html';
-const gestionDirectivaOutput = 'gestionDirectiva.html'
+const gestionDirectivaOutput = 'gestionDirectiva.html';
 
 const gestionDirectivaModificarInput = './htlm/gestionDirectivaModificar.html';
-const gestionDirectivaModificarOutput = 'gestionDirectivaModificar.html'
+const gestionDirectivaModificarOutput = 'gestionDirectivaModificar.html';
 
 const gestionComunidadInput = './htlm/gestionComunidad.html';
-const gestionComunidadOutput = 'gestionComunidad.html'
+const gestionComunidadOutput = 'gestionComunidad.html';
 
 const gestionComunidadModificarInput = './htlm/gestionComunidadModificar.html';
-const gestionComunidadModificarOutput = 'gestionComunidadModificar.html'
+const gestionComunidadModificarOutput = 'gestionComunidadModificar.html';
 
 const gestionAdministrativaTHInput = './htlm/gestionAdministrativaTH.html';
-const gestionAdministrativaTHOutput = 'gestionAdministrativaTH.html'
+const gestionAdministrativaTHOutput = 'gestionAdministrativaTH.html';
 
 const gestionAdministrativaTHModificarInput = './htlm/gestionAdministrativaTHModificar.html';
 const gestionAdministrativaTHModificarOutput = 'gestionAdministrativaTHModificar.html'
 
 const principalInput = './htlm/principal.html';
-const principalOutput = 'principal.html'
+const principalOutput = 'principal.html';
 
 const modificarInput = './htlm/modificar.html';
-const modificarOutput = 'modificar.html'
+const modificarOutput = 'modificar.html';
 
 const registroInput = './htlm/registro.html';
-const registroOutput = 'registro.html'
+const registroOutput = 'registro.html';
 
 
 
@@ -97,7 +97,7 @@ module.exports = {
 			horizonteInst: 'Horizonte Institucional',
 			gestionDir: 'Gestión Directiva',
 			gestionPed: 'Gestión Pedagógica',
-			gestionATH: 'Gestión Administrativa y Talento Humano'
+			gestionATH: 'Gestión Administrativa y Talento Humano',
 			gestionCom: 'Gestión de la Comunidad',
 			cerrarCesion: 'Cerrar Cesion',
 			nombreInst: 'Nombre de la Institución Educativa',
@@ -148,7 +148,7 @@ module.exports = {
 			horizonteInst: 'Horizonte Institucional',
 			gestionDir: 'Gestión Directiva',
 			gestionPed: 'Gestión Pedagógica',
-			gestionATH: 'Gestión Administrativa y Talento Humano'
+			gestionATH: 'Gestión Administrativa y Talento Humano',
 			gestionCom: 'Gestión de la Comunidad',
 			cerrarCesion: 'Cerrar Cesion',
 			ayuda1: 'Preguntas basicas para hacer una misión',
@@ -173,7 +173,7 @@ module.exports = {
 		hash: true,
 		templateParameters: {
 			titulo: 'Modificar Horizonte Institucional',
-			consultar: 'Consultar Horizonte Institucional'
+			consultar: 'Consultar Horizonte Institucional',
 			mision: 'Misión',
 			vision: 'Visión',
 			principios: 'Principios',
@@ -338,7 +338,7 @@ module.exports = {
 		hash: true,
 		templateParameters: {
 			titulo: 'Modificar Gestión Directiva',
-			consular: 'Consultar Gestion Directiva',
+			consultar: 'Consultar Gestion Directiva',
 			metasInstitucionales: 'Metas Institucionales',
 			politicasInclusion: 'Políticas de Inclusión - Propuesta de la IE',
 			politicasArticulacion: 'Políticas de Articulación',
@@ -382,6 +382,26 @@ module.exports = {
 		hash: true,
 		templateParameters: {
 			titulo: 'Gestión de la Comunidad',
+			principal: 'Principal',
+			identificacion: 'Identificación',
+			horizonteInst: 'Horizonte Institucional',
+			gestionDir: 'Gestión Directiva',
+			gestionPed: 'Gestión Pedagógica',
+			gestionATH: 'Gestión Administrativa y Talento Humano',
+			gestionCom: 'Gestión de la Comunidad',
+			cerrarCesion: 'Cerrar Cesion',
+			egresados: 'Asociación y Seguimiento de Egresados',
+			atencionVulnerabilidad: 'Atención educativa a grupos poblacionales o en situación de vulnerabilidad que experimentan barreras al aprendizaje y la participación',
+			atencionEtnias: 'Atención a la diversidad educativa a estudiantes pertenecientes a grupos étnicos y estudiantes con necesidades especiales',
+			escuelaPadres: 'Escuela de Padres',
+			ayuda1: 'Resolución 4210 de 1996',
+			servicioSocial: 'Servicio Social',
+			participacionComunidad: 'Participación de la comunidad, estudiantes y padres de familia',
+			prevencionRiesgosSociales: 'Prevención de Riesgos Sociales',
+			finalizar: 'Finalizar',
+			consultarPEI: 'Consultar P.E.I',
+			idead: 'Instituto de Educación a Distancia'
+
 		}
 	}),
 	new HtmlWebpackPlugin({  
@@ -391,6 +411,17 @@ module.exports = {
 		hash: true,
 		templateParameters: {
 			titulo: 'Modificar Gestión de la Comunidad',
+			consultar: 'Consultar Gestion Comunidad',
+			egresados: 'Asociación y Seguimiento de Egresados',
+			atencionVulnerabilidad: 'Atención educativa a grupos poblacionales o en situación de vulnerabilidad que experimentan barreras al aprendizaje y la participación',
+			atencionEtnias: 'Atención a la diversidad educativa a estudiantes pertenecientes a grupos étnicos y estudiantes con necesidades especiales',
+			escuelaPadres: 'Escuela de Padres',
+			servicioSocial: 'Servicio Social',
+			participacionComunidad: 'Participación de la comunidad, estudiantes y padres de familia',
+			prevencionRiesgosSociales: 'Prevención de Riesgos Sociales',
+			guardar: 'Guardar Modificaciones',
+			consultarPEI: 'Consultar P.E.I',
+			idead: 'Instituto de Educación a Distancia'
 		}
 	}),
 	new HtmlWebpackPlugin({  
