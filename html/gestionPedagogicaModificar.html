@@ -3,25 +3,25 @@
 <html>
 <head>
 	<title><%= titulo%></title>
-    <meta charset="utf-8">
-    <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <meta charset="utf-8">
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-	
-   
-    <link href="https://fonts.googleapis.com/css?family=Laila" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Fira+Sans|Noto+Sans|Stylish" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Livvic&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/estilos.css">
-    
-    <script type="text/javascript" src="js/app.js"></script>
-	<script type="text/javascript" src="js/usuarios.js"></script>
-	<script type="text/javascript" src="js/datospei.js"></script>
-	
-	    
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  
+  
+  <link href="https://fonts.googleapis.com/css?family=Laila" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Fira+Sans|Noto+Sans|Stylish" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Livvic&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilos.css">
+  
+  <script type="text/javascript" src="js/app.js"></script>
+  <script type="text/javascript" src="js/usuarios.js"></script>
+  <script type="text/javascript" src="js/datospei.js"></script>
+  
+  
 </head>
 <body>
 
@@ -31,35 +31,35 @@
 				<li><a href="modificar.html" class="brand-logo left"> <i class="material-icons medium">arrow_back</i> </a></li>
 
 				<li><a onclick = "consultarGestionPedagogica()" class ="espacio-izquierda "> <%= consultar%> </a></li>
-			<ul>
-		</div>
-	</nav>
-			   
-
-	<h3 style="text-align:center" class="laila espacio-arriba"><%= titulo%></h3>
-	<br>
-	<br>
-    
+       <ul>
+       </div>
+     </nav>
      
-  <div class="row espacios">
-  
+
+     <h3 style="text-align:center" class="laila espacio-arriba"><%= titulo%></h3>
+     <br>
+     <br>
+     
+     
+     <div class="row espacios">
+      
       <label for="textarea1"><%= planEstudio%> </label>
       <br>
       <br>
       <div class="file-field input-field">
-          <div class="btn botones" >
-            <span><%= buscar%></span>
-            <input type="file" id="planEstudio" accept="image/png, .jpeg, .jpg, image/gif">
-          </div>
-          <div class="file-path-wrapper">
-            <input class="file-path validate" type="text">
-          </div>
+        <div class="btn botones" >
+          <span><%= buscar%></span>
+          <input type="file" id="planEstudio" accept="image/png, .jpeg, .jpg, image/gif">
+        </div>
+        <div class="file-path-wrapper">
+          <input class="file-path validate" type="text">
+        </div>
       </div>
       <br>
-	  
-    
+      
+      
       <div class="row">
-      <label for="textarea1"><%= modeloPedagogico%> </label>
+        <label for="textarea1"><%= modeloPedagogico%> </label>
         <div class="input-field col s12">
           <textarea id="modeloPedagogico"  ></textarea>
         </div>
@@ -68,186 +68,186 @@
       <br>
       
       <div class="row">
-      <label for="textarea1"><%= jornadaEscolar%></label>
+        <label for="textarea1"><%= jornadaEscolar%></label>
         <div class="input-field col s12">
           <textarea id="jornadaEscolar"  ></textarea>
         </div>
         
       </div>
       <br>
-	  
-    <div class="row">
-		<h5 class ="laila align-center tooltipped" data-tooltip="Decreto 1290"><%= siee%></h5>
-		<div class = "row subTemas">
-		
-			<br>
-			<h6><%= criteriosEvaluacion%></h6>
-			<div class="input-field col s12">
-				 <textarea id="criteriosEvaluacion"  ></textarea>
-			</div>
-			
-			<br>
-			<h6><%= escalaValoracion%></h6>
-			<div class="input-field col s12">
-				 <textarea id="escalaValoracion"  ></textarea>
-			</div>
-			
-			<br>
-			<h6><%= estrategiasValoracion%></h6>
-			<div class="input-field col s12">
-				 <textarea id="estrategiasValoracion"  ></textarea>
-			</div>
-			
-			<br>
-			<h6><%= accionesSeguimiento%></h6>
-			<div class="input-field col s12">
-				 <textarea id="accionesSeguimiento"  ></textarea>
-			</div>
-			
-			<br>
-			<h6><%= procesosAutoevaluacion%></h6>
-			<div class="input-field col s12">
-				 <textarea id="procesosAutoevaluacion"  ></textarea>
-			</div>
-			
-			<br>
-			<h6><%= estategiasApoyo%></h6>
-			<div class="input-field col s12">
-				 <textarea id="estategiasApoyo"  ></textarea>
-			</div>
-			
-			<br>
-			<h6><%= accionesCumplimientoEvaluacion%></h6>
-			<div class="input-field col s12">
-				 <textarea id="accionesCumplimientoEvaluacion"  ></textarea>
-			</div>
-			
-			<br>
-			<h6><%= periodicidadInformes%></h6>
-			<div class="input-field col s12">
-				 <textarea id="periodicidadInformes"  ></textarea>
-			</div>
-			
-			<br>
-			<h6><%= estructuraInformes%></h6>
-			<div class="input-field col s12">
-				 <textarea id="estructuraInformes"  ></textarea>
-			</div>
-			
-			<br>
-			<h6><%= resolucionReclamos%></h6>
-			<div class="input-field col s12">
-				 <textarea id="resolucionReclamos"  ></textarea>
-			</div>
-			
-			<br>
-			<h6><%= participacionComunidadMecanismos%></h6>
-			<div class="input-field col s12">
-				 <textarea id="participacionComunidadMecanismos"  ></textarea>
-			</div>
-			
-			
-			
-			
-		</div>
-		
-	</div>
       
       <div class="row">
-      <label for="textarea1"><%= proyectosTransversales%></label>
-        <div class="input-field col s12">
-          <textarea id="proyectosTransversales"  ></textarea>
-        </div>
-        
-      </div>
-      <br>	
-	  
-	  <div class="row">
-      <label for="textarea1" class="tooltipped" data-tooltip="Intensidad horaria"><%= tiemposAprendizaje%> </label>
-        <div class="input-field col s12">
-          <textarea id="tiemposAprendizaje"  ></textarea>
-        </div>
-        
-      </div>
-      <br>
-	  
-	  <label for="textarea1" class="tooltipped" data-tooltip="Instrumento"><%= planeacionClase%> </label>
-      <br>
-      <br>
-      <div class="file-field input-field">
-          <div class="btn botones" >
-            <span><%= buscar%></span>
-            <input type="file" id="planeacionClase" accept="image/png, .jpeg, .jpg, image/gif">
-          </div>
-          <div class="file-path-wrapper">
-            <input class="file-path validate" type="text">
-          </div>
-      </div>
-      <br>
-	  
-	  <div class="row">
-      <label for="textarea1" class="tooltipped" data-tooltip="Evaluación interna y externa"><%= seguimientoResultados%></label>
-        <div class="input-field col s12">
-          <textarea id="seguimientoResultados"  ></textarea>
-        </div>
-        
-      </div>
-      <br>
-	  
-	  <label for="textarea1"><%= seguimientoAsistencia%> </label>
-      <br>
-      <br>
-      <div class="file-field input-field">
-          <div class="btn botones" >
-            <span>Buscar</span>
-            <input type="file" id="seguimientoAsistencia" accept="image/png, .jpeg, .jpg, image/gif">
-          </div>
-          <div class="file-path-wrapper">
-            <input class="file-path validate" type="text">
-          </div>
-      </div>
-      <br>
-	  
-	  <label for="textarea1"><%= seguimientoDesercion%> </label>
-      <br>
-      <br>
-      <div class="file-field input-field">
-          <div class="btn botones" >
-            <span><%= buscar%></span>
-            <input type="file" id="seguimientoDesercion" accept="image/png, .jpeg, .jpg, image/gif">
-          </div>
-          <div class="file-path-wrapper">
-            <input class="file-path validate" type="text">
-          </div>
-      </div>
-      <br>
-	  
-      <div >
-        <div class= "align-center">
-            <center><a class="waves-effect #00695c teal darken-3 btn botonesModificar pulse modal-trigger" data-target="modal1" onclick ="guardarGestionPedagogicaModificacion()"><%= guardar%> <i class=" material-icons rigth">system_update_alt</i></a>
-        </div>
+        <h5 class ="laila align-center tooltipped" data-tooltip="Decreto 1290"><%= siee%></h5>
+        <div class = "row subTemas">
+          
+         <br>
+         <h6><%= criteriosEvaluacion%></h6>
+         <div class="input-field col s12">
+           <textarea id="criteriosEvaluacion"  ></textarea>
+         </div>
+         
+         <br>
+         <h6><%= escalaValoracion%></h6>
+         <div class="input-field col s12">
+           <textarea id="escalaValoracion"  ></textarea>
+         </div>
+         
+         <br>
+         <h6><%= estrategiasValoracion%></h6>
+         <div class="input-field col s12">
+           <textarea id="estrategiasValoracion"  ></textarea>
+         </div>
+         
+         <br>
+         <h6><%= accionesSeguimiento%></h6>
+         <div class="input-field col s12">
+           <textarea id="accionesSeguimiento"  ></textarea>
+         </div>
+         
+         <br>
+         <h6><%= procesosAutoevaluacion%></h6>
+         <div class="input-field col s12">
+           <textarea id="procesosAutoevaluacion"  ></textarea>
+         </div>
+         
+         <br>
+         <h6><%= estategiasApoyo%></h6>
+         <div class="input-field col s12">
+           <textarea id="estategiasApoyo"  ></textarea>
+         </div>
+         
+         <br>
+         <h6><%= accionesCumplimientoEvaluacion%></h6>
+         <div class="input-field col s12">
+           <textarea id="accionesCumplimientoEvaluacion"  ></textarea>
+         </div>
+         
+         <br>
+         <h6><%= periodicidadInformes%></h6>
+         <div class="input-field col s12">
+           <textarea id="periodicidadInformes"  ></textarea>
+         </div>
+         
+         <br>
+         <h6><%= estructuraInformes%></h6>
+         <div class="input-field col s12">
+           <textarea id="estructuraInformes"  ></textarea>
+         </div>
+         
+         <br>
+         <h6><%= resolucionReclamos%></h6>
+         <div class="input-field col s12">
+           <textarea id="resolucionReclamos"  ></textarea>
+         </div>
+         
+         <br>
+         <h6><%= participacionComunidadMecanismos%></h6>
+         <div class="input-field col s12">
+           <textarea id="participacionComunidadMecanismos"  ></textarea>
+         </div>
+         
+         
+         
+         
+       </div>
+       
      </div>
-  
-  		    
-	   
-  
-  </div>
+     
+     <div class="row">
+      <label for="textarea1"><%= proyectosTransversales%></label>
+      <div class="input-field col s12">
+        <textarea id="proyectosTransversales"  ></textarea>
+      </div>
+      
+    </div>
+    <br>	
+    
+    <div class="row">
+      <label for="textarea1" class="tooltipped" data-tooltip="Intensidad horaria"><%= tiemposAprendizaje%> </label>
+      <div class="input-field col s12">
+        <textarea id="tiemposAprendizaje"  ></textarea>
+      </div>
+      
+    </div>
+    <br>
+    
+    <label for="textarea1" class="tooltipped" data-tooltip="Instrumento"><%= planeacionClase%> </label>
+    <br>
+    <br>
+    <div class="file-field input-field">
+      <div class="btn botones" >
+        <span><%= buscar%></span>
+        <input type="file" id="planeacionClase" accept="image/png, .jpeg, .jpg, image/gif">
+      </div>
+      <div class="file-path-wrapper">
+        <input class="file-path validate" type="text">
+      </div>
+    </div>
+    <br>
+    
+    <div class="row">
+      <label for="textarea1" class="tooltipped" data-tooltip="Evaluación interna y externa"><%= seguimientoResultados%></label>
+      <div class="input-field col s12">
+        <textarea id="seguimientoResultados"  ></textarea>
+      </div>
+      
+    </div>
+    <br>
+    
+    <label for="textarea1"><%= seguimientoAsistencia%> </label>
+    <br>
+    <br>
+    <div class="file-field input-field">
+      <div class="btn botones" >
+        <span>Buscar</span>
+        <input type="file" id="seguimientoAsistencia" accept="image/png, .jpeg, .jpg, image/gif">
+      </div>
+      <div class="file-path-wrapper">
+        <input class="file-path validate" type="text">
+      </div>
+    </div>
+    <br>
+    
+    <label for="textarea1"><%= seguimientoDesercion%> </label>
+    <br>
+    <br>
+    <div class="file-field input-field">
+      <div class="btn botones" >
+        <span><%= buscar%></span>
+        <input type="file" id="seguimientoDesercion" accept="image/png, .jpeg, .jpg, image/gif">
+      </div>
+      <div class="file-path-wrapper">
+        <input class="file-path validate" type="text">
+      </div>
+    </div>
+    <br>
+    
+    <div >
+      <div class= "align-center">
+        <center><a class="waves-effect #00695c teal darken-3 btn botonesModificar pulse modal-trigger" data-target="modal1" onclick ="guardarGestionPedagogicaModificacion()"><%= guardar%> <i class=" material-icons rigth">system_update_alt</i></a>
+        </div>
+      </div>
+      
+      
+      
+      
+    </div>
 
-        <footer class="page-footer teal lighten-2">
-          <div class="container">
-            <div class="row">
-              <div class="col l6 s12">
-                <h5 class="white-text"><%= idead%></h5>
-				<img class="imgUT" src="img/ut.png">
-              </div>
-              </div>
+    <footer class="page-footer teal lighten-2">
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+            <h5 class="white-text"><%= idead%></h5>
+            <img class="imgUT" src="img/ut.png">
           </div>
-        </footer>    
+        </div>
+      </div>
+    </footer>    
 
 
 
-</body>
+  </body>
 
 
-</html> 
+  </html> 
 

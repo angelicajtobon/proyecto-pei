@@ -2,22 +2,22 @@
 <html>
 <head>
 	<title><%= titulo%></title>
-    <meta charset="utf-8">
-    <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+	<meta charset="utf-8">
+	<!-- Compiled and minified CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    
-    <link href="https://fonts.googleapis.com/css?family=Laila" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Fira+Sans|Noto+Sans|Stylish" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<!-- Compiled and minified JavaScript -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+	
+	<link href="https://fonts.googleapis.com/css?family=Laila" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Fira+Sans|Noto+Sans|Stylish" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Livvic&display=swap" rel="stylesheet">
-   
-   <link rel="stylesheet" href="css/estilos.css">
-    
-    <script type="text/javascript" src="proyectopei/js/app.js"></script>
-    <script type="text/javascript" src="proyectopei/js/usuarios.js"></script>
+	
+	<link rel="stylesheet" href="css/estilos.css">
+	
+	<script type="text/javascript" src="proyectopei/js/app.js"></script>
+	<script type="text/javascript" src="proyectopei/js/usuarios.js"></script>
 	<script type="text/javascript" src="proyectopei/js/datospei.js"></script>
 	<script type="text/javascript" src="proyectopei/js/appService.js"></script>
 
@@ -27,128 +27,128 @@
 
 	<nav class= " teal lighten-2">
 		<div class="nav-wrapper">
-		    <ul>
+			<ul>
 				<li><a href="html/modificar.html" class="brand-logo left"> <i class="material-icons medium">arrow_back</i> </a></li>
 
 				<li><a onclick = "consultarIdentificacion()" class ="espacio-izquierda "> <%= consultar%></a></li>
-			<ul>
-		</div>
-	</nav>
+				<ul>
+				</div>
+			</nav>
 
 
 
-	<h3 style="text-align:center" class="laila espacio-arriba"><%= titulo%></h3>
-	<br>
-	<br>
-    
-     
-	  <div class="row espacios">
-	  
-	  
-		<div class="row">
-		  <label for="textarea1"><%= nombreInst%></label>
-			<div class="input-field col s12">
-			  <textarea id="institucionNombre"></textarea>
-			</div>
+			<h3 style="text-align:center" class="laila espacio-arriba"><%= titulo%></h3>
+			<br>
+			<br>
 			
-		  </div>
-		  <br>
-		  
-		  <div class="row">
-		  <label for="textarea1"><%= codigoDane%></label>
-			<div class="input-field col s12">
-			  <textarea id="codigoDane" ></textarea>
-			</div>
 			
-		  </div>
-		  <br>
-		
-		
-		  <div class="row">
-		  <label for="textarea1"><%= resenahist%> </label>
-			<div class="input-field col s12">
-			  <textarea id="reseña" ></textarea>
-			</div>
-			
-		  </div>
-		  <br>
-		  
-		  <div class="row">
-			<label for="textarea1"><%= ubicacionGeo%></label>
-			<div class="input-field col s12">
-			  <textarea id="ubicacion" ></textarea>
-			</div>        
-		  </div>
-		  <br>
-		  
-		  
-		  <label for="textarea1"><%= distintivo%> </label>
-		  <br>
-		  <br>
-		  <div class="file-field input-field">
-			  <div class="btn botones" >
-				<span><%= buscar%></span>
-				<input type="file" id="bandera" accept="image/png, .jpeg, .jpg, image/gif">
-			  </div>
-			  <div class="file-path-wrapper">
-				<input class="file-path validate" type="text">
-			  </div>
-		  </div>
-		  <br>
-		  
-		  
-		  <div class="row">
-			<label for="textarea1"><%= himno%></label>
-			<div class="input-field col s12">
-			  <textarea id="himno" ></textarea>
-			</div>        
-		  </div>
-		  <br>
-		  
-		  <div class="row">
-			<label for="textarea1" class ="tooltipped" data-tooltip="Perfil del rector, coordinador o directivos"><%= liderazgo%></label>
-			<div class="input-field col s12">
-			  <textarea id="liderazgo" ></textarea>
-			</div>        
-		  </div>
-		  <br>
-		  <br>
-		  <br>
-		  
-		  
-		  <div>
-			<div class= "align-center">
-				<center><a class="waves-effect #00695c teal darken-3 btn botonesModificar pulse modal-trigger" data-target="modal1" onclick="guardarIdentificacionModificacion()"><%guardar%><i class=" material-icons rigth">system_update_alt</i></a>
-			</div>
-				  
-		  </div>
-			  
-		</div>
-		
-		  		   <!-- Modal Structure -->
-	  <div id="modal1" class="modal divModal">
-		<div class="modal-content ">
-			<div id="container" class = " align-center" >			
-			
-			</div>
+			<div class="row espacios">
+				
+				
+				<div class="row">
+					<label for="textarea1"><%= nombreInst%></label>
+					<div class="input-field col s12">
+						<textarea id="institucionNombre"></textarea>
+					</div>
+					
+				</div>
+				<br>
+				
+				<div class="row">
+					<label for="textarea1"><%= codigoDane%></label>
+					<div class="input-field col s12">
+						<textarea id="codigoDane" ></textarea>
+					</div>
+					
+				</div>
+				<br>
+				
+				
+				<div class="row">
+					<label for="textarea1"><%= resenahist%> </label>
+					<div class="input-field col s12">
+						<textarea id="reseña" ></textarea>
+					</div>
+					
+				</div>
+				<br>
+				
+				<div class="row">
+					<label for="textarea1"><%= ubicacionGeo%></label>
+					<div class="input-field col s12">
+						<textarea id="ubicacion" ></textarea>
+					</div>        
+				</div>
+				<br>
+				
+				
+				<label for="textarea1"><%= distintivo%> </label>
+				<br>
+				<br>
+				<div class="file-field input-field">
+					<div class="btn botones" >
+						<span><%= buscar%></span>
+						<input type="file" id="bandera" accept="image/png, .jpeg, .jpg, image/gif">
+					</div>
+					<div class="file-path-wrapper">
+						<input class="file-path validate" type="text">
+					</div>
+				</div>
+				<br>
+				
+				
+				<div class="row">
+					<label for="textarea1"><%= himno%></label>
+					<div class="input-field col s12">
+						<textarea id="himno" ></textarea>
+					</div>        
+				</div>
+				<br>
+				
+				<div class="row">
+					<label for="textarea1" class ="tooltipped" data-tooltip="Perfil del rector, coordinador o directivos"><%= liderazgo%></label>
+					<div class="input-field col s12">
+						<textarea id="liderazgo" ></textarea>
+					</div>        
+				</div>
+				<br>
+				<br>
+				<br>
+				
+				
+				<div>
+					<div class= "align-center">
+						<center><a class="waves-effect #00695c teal darken-3 btn botonesModificar pulse modal-trigger" data-target="modal1" onclick="guardarIdentificacionModificacion()"><%guardar%><i class=" material-icons rigth">system_update_alt</i></a>
+						</div>
+						
+					</div>
+					
+				</div>
+				
+				<!-- Modal Structure -->
+				<div id="modal1" class="modal divModal">
+					<div class="modal-content ">
+						<div id="container" class = " align-center" >			
+							
+						</div>
 
-		</div>
-	  </div>
-	
+					</div>
+				</div>
+				
 
-	  
-        <footer class="page-footer teal lighten-2">
-          <div class="container">
-            <div class="row">
-              <div class="col l6 s12">
-                <h5 class="white-text"><%= idead%></h5>
-				<img class="imgUT" src="img/ut.png">
-                </div>
-              </div>
-          </div>
-        </footer>    
+				
+				<footer class="page-footer teal lighten-2">
+					<div class="container">
+						<div class="row">
+							<div class="col l6 s12">
+								<h5 class="white-text"><%= idead%></h5>
+								<img class="imgUT" src="img/ut.png">
+							</div>
+						</div>
+					</div>
+				</footer>    
 
 
-</body>
+			</body>
 
-</html>
+			</html>

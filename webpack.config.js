@@ -3,52 +3,52 @@ const webpack = require('webpack');
 const path = require('path');
 
 
-const indextInput = './htlm/index.html';
+const indextInput = './html/index.html';
 const indexOutput = 'index.html';
 
-const identificacionInput = './htlm/identificacion.html';
+const identificacionInput = './html/identificacion.html';
 const identificacionOutput = 'identificacion.html';
 
-const identificacionModificarInput = './htlm/identificacionModificar.html';
+const identificacionModificarInput = './html/identificacionModificar.html';
 const identificacionModificarOutput = 'identificacionModificar.html';
 
-const horizonteInstitucionalInput = './htlm/horizonteInstitucional.html';
+const horizonteInstitucionalInput = './html/horizonteInstitucional.html';
 const horizonteInstitucionalOutput = 'horizonteInstitucional.html';
 
-const horizonteInstitucionalModificarInput = './htlm/horizonteInstitucionalModificar.html';
+const horizonteInstitucionalModificarInput = './html/horizonteInstitucionalModificar.html';
 const horizonteInstitucionalModificarOutput = 'horizonteInstitucionalModificar.html';
 
-const gestionPedagogicaInput = './htlm/gestionPedagogica.html';
+const gestionPedagogicaInput = './html/gestionPedagogica.html';
 const gestionPedagogicaOutput = 'gestionPedagogica.html';
 
-const gestionPedagogicaModificarInput = './htlm/gestionPedagogicaModificar.html';
+const gestionPedagogicaModificarInput = './html/gestionPedagogicaModificar.html';
 const gestionPedagogicaModificarOutput = 'gestionPedagogicaModificar.html';
 
-const gestionDirectivaInput = './htlm/gestionDirectiva.html';
+const gestionDirectivaInput = './html/gestionDirectiva.html';
 const gestionDirectivaOutput = 'gestionDirectiva.html';
 
-const gestionDirectivaModificarInput = './htlm/gestionDirectivaModificar.html';
+const gestionDirectivaModificarInput = './html/gestionDirectivaModificar.html';
 const gestionDirectivaModificarOutput = 'gestionDirectivaModificar.html';
 
-const gestionComunidadInput = './htlm/gestionComunidad.html';
+const gestionComunidadInput = './html/gestionComunidad.html';
 const gestionComunidadOutput = 'gestionComunidad.html';
 
-const gestionComunidadModificarInput = './htlm/gestionComunidadModificar.html';
+const gestionComunidadModificarInput = './html/gestionComunidadModificar.html';
 const gestionComunidadModificarOutput = 'gestionComunidadModificar.html';
 
-const gestionAdministrativaTHInput = './htlm/gestionAdministrativaTH.html';
+const gestionAdministrativaTHInput = './html/gestionAdministrativaTH.html';
 const gestionAdministrativaTHOutput = 'gestionAdministrativaTH.html';
 
-const gestionAdministrativaTHModificarInput = './htlm/gestionAdministrativaTHModificar.html';
+const gestionAdministrativaTHModificarInput = './html/gestionAdministrativaTHModificar.html';
 const gestionAdministrativaTHModificarOutput = 'gestionAdministrativaTHModificar.html'
 
-const principalInput = './htlm/principal.html';
+const principalInput = './html/principal.html';
 const principalOutput = 'principal.html';
 
-const modificarInput = './htlm/modificar.html';
+const modificarInput = './html/modificar.html';
 const modificarOutput = 'modificar.html';
 
-const registroInput = './htlm/registro.html';
+const registroInput = './html/registro.html';
 const registroOutput = 'registro.html';
 
 
@@ -430,7 +430,45 @@ module.exports = {
 		inject: true,
 		hash: true,
 		templateParameters: {
-			titulo: 'Gestión Administrativa',
+			titulo: 'Gestión Administrativa y Talento Humano',
+			principal: 'Principal',
+			identificacion: 'Identificación',
+			horizonteInst: 'Horizonte Institucional',
+			gestionDir: 'Gestión Directiva',
+			gestionPed: 'Gestión Pedagógica',
+			gestionATH: 'Gestión Administrativa y Talento Humano',
+			gestionCom: 'Gestión de la Comunidad',
+			cerrarCesion: 'Cerrar Cesion',
+			procesoMatricula: 'Proceso de Matricula',
+			ayuda1: 'Ley 594 de 2000',
+			archivoAcademico : 'Archivo Académico ',
+			registroEvaluacion : 'Registro de Evaluación',
+			buscar : 'Buscar',
+			ayuda2: 'Decreto 4791 de 2008',
+			ayuda3: 'Ley 610 de 2000',
+			ayuda4: 'Normas Tecnicas Colombianas',
+			mantenimientoPlantaFisica : 'Proyecto de Mantenimiento de Planta Física',
+			seguimientoEspacios: 'Seguimiento al Uso de los Espacios',
+			suministroDotacion: 'Suministro y Dotación',
+			recursosAprendizaje: 'Recursos para el Aprendizaje',
+			ayuda5: 'Ley 1523 de 2012 ',
+			seguridadProteccion : 'Seguridad y Protección',
+			bienestarSocial : 'Bienestar Social',
+			talentoHumano: 'Talento Humano',
+			induccionDocentes: 'Inducción',
+			asignacionAcademica: 'Asignación Académica',
+			evaluacionDesempeño: 'Evaluación de Desempeño',
+			estimulos: 'Estímulos',
+			ayuda6: 'Decreto 1278 de Junio 19 de 2002',
+			apoyoInvestigacion: 'Apoyo a la Investigación',
+			bienestarTH: 'Bienestar del Talento Humano',
+			ayuda7: 'Resolución 355 de 2007',
+			ayuda8: 'Decreto 1170 de 2015 ',
+			contabilidad: 'Contabilidad',
+			guardar: 'Guardar',
+			continuar: 'Continuar',
+			idead: 'Instituto de Educación a Distancia'
+
 		}
 	}),
 	new HtmlWebpackPlugin({  
@@ -439,7 +477,28 @@ module.exports = {
 		inject: true,
 		hash: true,
 		templateParameters: {
-			titulo: 'Modificar Gestión Administrativa',
+			titulo: 'Modificar Gestión Administrativa y Talento Humano',
+			consultar : 'Consultar Gestion Administrativa y TH',
+			procesoMatricula: 'Proceso de Matricula',
+			archivoAcademico : 'Archivo Académico ',
+			registroEvaluacion : 'Registro de Evaluación',
+			buscar : 'Buscar',
+			mantenimientoPlantaFisica : 'Proyecto de Mantenimiento de Planta Física',
+			seguimientoEspacios: 'Seguimiento al Uso de los Espacios',
+			suministroDotacion: 'Suministro y Dotación',
+			recursosAprendizaje: 'Recursos para el Aprendizaje',
+			seguridadProteccion : 'Seguridad y Protección',
+			bienestarSocial : 'Bienestar Social',
+			talentoHumano: 'Talento Humano',
+			induccionDocentes: 'Inducción',
+			asignacionAcademica: 'Asignación Académica',
+			evaluacionDesempeño: 'Evaluación de Desempeño',
+			estimulos: 'Estímulos',
+			apoyoInvestigacion: 'Apoyo a la Investigación',
+			bienestarTH: 'Bienestar del Talento Humano',
+			contabilidad: 'Contabilidad',
+			guardar: 'Guardar Modificaciones',
+			idead: 'Instituto de Educación a Distancia'
 		}
 	}),
 

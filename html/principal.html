@@ -8,12 +8,7 @@
 
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-firestore.js"></script>
 
-    <!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#config-web-app -->
 
 
     <link href="https://fonts.googleapis.com/css?family=Laila" rel="stylesheet">
@@ -25,31 +20,7 @@
     <script type="text/javascript" src="js/usuarios.js"></script>
 	<script type="text/javascript" src="js/datospei.js"></script>
 	
-	<script>
-		
-	//Observador
 
-	firebase.auth().onAuthStateChanged(function(user) {
-			  if (user) {
-				console.log('existe usuario activo');
-				
-				// User is signed in.
-				var displayName = user.displayName;
-				var email = user.email;
-
-				// ...
-			  } else {
-
-				  
-				 location.href="index.html"; 
-				 console.log('NO TIENE PERMISOS');
-				  
-			  }
-	});   
-
-	
-	
-	</script>
     
 </head>
 

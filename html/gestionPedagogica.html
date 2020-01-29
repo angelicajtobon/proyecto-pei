@@ -3,306 +3,306 @@
 <html>
 <head>
 	<title> <%= titulo%> </title>
-    <meta charset="utf-8">
-    <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+	<meta charset="utf-8">
+	<!-- Compiled and minified CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+	<!-- Compiled and minified JavaScript -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
 
-    <link href="https://fonts.googleapis.com/css?family=Laila" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Fira+Sans|Noto+Sans|Stylish" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Laila" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Fira+Sans|Noto+Sans|Stylish" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Livvic&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/estilos.css">
-    
-    <script type="text/javascript" src="js/app.js"></script>
+	<link rel="stylesheet" href="css/estilos.css">
+	
+	<script type="text/javascript" src="js/app.js"></script>
 	<script type="text/javascript" src="js/usuarios.js"></script>
 	<script type="text/javascript" src="js/datospei.js"></script>
 	
-	    
+	
 </head>
 <body>
-<nav class= " teal lighten-2">
+	<nav class= " teal lighten-2">
 		<div class="nav-wrapper">
-		  <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-		  <ul class="right hide-on-med-and-down">
-		    <li><a href="html/principal.html" ><%= principal%></a></li>
-			<li><a href="html/identificacion.html" ><%= identificacion%></a></li>
-			<li><a href="html/horizonteInstitucional.html" ><%= horizonteInst%></a></li>
-			<li><a href="html/gestionDirectiva.html"><%= gestionDir%></a></li>
-			<li><a href="html/gestionPedagogica.html" class="actual"><%= gestionPed%></a></li>
-			<li><a href="html/gestionAdministrativaTH.html"><%= gestionATH%></a></li>
-			<li><a href="html/gestionComunidad.html"><%= gestionCom%></a></li>
-			<li><a onclick="cerrarCesion()"><%= cerrarCesion%></a></li>
-		  </ul>
+			<a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+			<ul class="right hide-on-med-and-down">
+				<li><a href="html/principal.html" ><%= principal%></a></li>
+				<li><a href="html/identificacion.html" ><%= identificacion%></a></li>
+				<li><a href="html/horizonteInstitucional.html" ><%= horizonteInst%></a></li>
+				<li><a href="html/gestionDirectiva.html"><%= gestionDir%></a></li>
+				<li><a href="html/gestionPedagogica.html" class="actual"><%= gestionPed%></a></li>
+				<li><a href="html/gestionAdministrativaTH.html"><%= gestionATH%></a></li>
+				<li><a href="html/gestionComunidad.html"><%= gestionCom%></a></li>
+				<li><a onclick="cerrarCesion()"><%= cerrarCesion%></a></li>
+			</ul>
 		</div>
-	  </nav>
+	</nav>
 
-	  <ul class="sidenav" id="mobile-demo">
-			<li><a href="html/principal.html" ><%= principal%></a></li>
-			<li><a href="html/identificacion.html" ><%= identificacion%></a></li>
-			<li><a href="html/horizonteInstitucional.html" ><%= horizonteInst%></a></li>
-			<li><a href="html/gestionDirectiva.html"><%= gestionDir%></a></li>
-			<li><a href="html/gestionPedagogica.html" class="actual"><%= gestionPed%></a></li>
-			<li><a href="html/gestionAdministrativaTH.html"><%= gestionATH%></a></li>
-			<li><a href="html/gestionComunidad.html"><%= gestionCom%></a></li>
-			<li><a onclick="cerrarCesion()"><%= cerrarCesion%></a></li>
-	  </ul>
-			   
-			   
+	<ul class="sidenav" id="mobile-demo">
+		<li><a href="html/principal.html" ><%= principal%></a></li>
+		<li><a href="html/identificacion.html" ><%= identificacion%></a></li>
+		<li><a href="html/horizonteInstitucional.html" ><%= horizonteInst%></a></li>
+		<li><a href="html/gestionDirectiva.html"><%= gestionDir%></a></li>
+		<li><a href="html/gestionPedagogica.html" class="actual"><%= gestionPed%></a></li>
+		<li><a href="html/gestionAdministrativaTH.html"><%= gestionATH%></a></li>
+		<li><a href="html/gestionComunidad.html"><%= gestionCom%></a></li>
+		<li><a onclick="cerrarCesion()"><%= cerrarCesion%></a></li>
+	</ul>
+	
+	
 
 	<h3 style="text-align:center" class="laila espacio-arriba"><%= titulo%></h3>
 	<br>
 	<br>
-    
-     
-  <div class="row espacios">
-  
-
-				
-      <label for="textarea1"  class ="tooltipped " data-position="right" data-tooltip="Cuál es la intensidad horaria de las asignaturas de la institucion educativa" ><%= planEstudio%></label>
-      <br>
-      <br>
-      <div class="file-field input-field">
-          <div class="btn botones" >
-            <span>Buscar</span>
-            <input type="file" id="planEstudio" accept="image/png, .jpeg, .jpg, image/gif">
-          </div>
-          <div class="file-path-wrapper">
-            <input class="file-path validate" type="text" placeholder = "Diseñalo y sube la propuesta en imagen de formato JPEG">
-          </div>
-      </div>
-      <br>
-	  
-    
-      <div class="row">
-		<div class="col s12  " style ="text-align:right">
-			<a class = "links "  href= "proyectopei/ayudas/modelo.pdf"   target="_blank"> <%= ayuda1%> <i class="material-icons small">info</i> </a>
-		</div>
-		<label for="textarea1" class ="tooltipped " data-position="right" data-tooltip="Cuál es el modelo pedagógico institucional"> <%= modeloPedagogico%> </label>
-		<div class="input-field col s12">
-		  <textarea id="modeloPedagogico" class="materialize-textarea " placeholder = "Escribe aquí cuál es el modelo pedagógico institucional"></textarea>
-		</div>
-        
-      </div>
-      <br>
-      
-      <div class="row">
-		<div class="col s12  " style ="text-align:right">
-			<a class = "links "  href= "proyectopei/ayudas/1850-202.pdf"   target="_blank"> <%= ayuda2%>  <i class="material-icons small">info</i> </a>
-		</div>
-		<label for="textarea1" class ="tooltipped " data-position="right" data-tooltip="Horas en las que los estudiantes y docentes realizan labores académicas"> <%= jornadaEscolar%>  </label>
-        <div class="input-field col s12">
-          <textarea id="jornadaEscolar" class="materialize-textarea " placeholder = "Escribe las horas en las que funciona la institucion"></textarea>
-        </div>
-        
-      </div>
-      <br>
-	  
-    <div class="row">
-		<div class="col s12  " style ="text-align:right">
-			<a class = "links "  href= "proyectopei/ayudas/1290.pdf"   target="_blank"> <%= ayuda3%>  <i class="material-icons small">info</i> </a>
-		</div>
-		<h5 class ="laila align-center tooltipped" data-position="left" data-tooltip="Cómo evalúa la institucion a sus estudiantes"> <%= siee%>  </h5>
-		<div class = "row subTemas">
-		
-			<br>
-			<h6><%= criteriosEvaluacion%> </h6>
-			<div class="input-field col s12">
-				 <textarea id="criteriosEvaluacion" class="materialize-textarea " placeholder = "Escriba aquí el contenido" ></textarea>
-			</div>
-			
-			<br>
-			<h6><%= escalaValoracion%> </h6>
-			<div class="input-field col s12">
-				 <textarea id="escalaValoracion" class="materialize-textarea " placeholder = "Escriba aquí el contenido" ></textarea>
-			</div>
-			
-			<br>
-			<h6><%= estrategiasValoracion%></h6>
-			<div class="input-field col s12">
-				 <textarea id="estrategiasValoracion" class="materialize-textarea " placeholder = "Escriba aquí el contenido" ></textarea>
-			</div>
-			
-			<br>
-			<h6><%= accionesSeguimiento%></h6>
-			<div class="input-field col s12">
-				 <textarea id="accionesSeguimiento" class="materialize-textarea " placeholder = "Escriba aquí el contenido" ></textarea>
-			</div>
-			
-			<br>
-			<h6><%= procesosAutoevaluacion%></h6>
-			<div class="input-field col s12">
-				 <textarea id="procesosAutoevaluacion" class="materialize-textarea " placeholder = "Escriba aquí el contenido" ></textarea>
-			</div>
-			
-			<br>
-			<h6><%= estategiasApoyo%></h6>
-			<div class="input-field col s12">
-				 <textarea id="estategiasApoyo" class="materialize-textarea " placeholder = "Escriba aquí el contenido" ></textarea>
-			</div>
-			
-			<br>
-			<h6><%= accionesCumplimientoEvaluacion%> </h6>
-			<div class="input-field col s12">
-				 <textarea id="accionesCumplimientoEvaluacion" class="materialize-textarea " placeholder = "Escriba aquí el contenido" ></textarea>
-			</div>
-			
-			<br>
-			<h6><%= periodicidadInformes%> </h6>
-			<div class="input-field col s12">
-				 <textarea id="periodicidadInformes" class="materialize-textarea " placeholder = "Escriba aquí el contenido" ></textarea>
-			</div>
-			
-			<br>
-			<h6> <%= estructuraInformes%> </h6>
-			<div class="input-field col s12">
-				 <textarea id="estructuraInformes" class="materialize-textarea " placeholder = "Escriba aquí el contenido" ></textarea>
-			</div>
-			
-			<br>
-			<h6> <%= resolucionReclamos%> </h6>
-			<div class="input-field col s12">
-				 <textarea id="resolucionReclamos" class="materialize-textarea " placeholder = "Escriba aquí el contenido" ></textarea>
-			</div>
-			
-			<br>
-			<h6> <%= participacionComunidadMecanismos%>  </h6>
-			<div class="input-field col s12">
-				 <textarea id="participacionComunidadMecanismos" class="materialize-textarea " placeholder = "Escriba aquí el contenido" ></textarea>
-			</div>
-			
-			
-			
-			
-		</div>
-		
-	</div>
-      
-      <div class="row">
-		<div class="col s12  " style ="text-align:right">
-			<a class = "links "  href= "proyectopei/ayudas/transversales.pdf"   target="_blank"> <%= ayuda4%>  <i class="material-icons small">info</i> </a>
-		</div>
-		<label for="textarea1" class ="tooltipped " data-position="right" data-tooltip="Proyectos transversales institucionales"> <%= proyectosTransversales%> </label>
-        <div class="input-field col s12">
-          <textarea id="proyectosTransversales" class="materialize-textarea " placeholder = "escribe aqui el titulo de cada proyecto y una breve descripcion del mismo"></textarea>
-        </div>
-        
-      </div>
-      <br>	
-	  
-	  <div class="row">
-  
-		<label for="textarea1" class="tooltipped"  data-position="right" data-tooltip="Qué asignaturas y que intensidad horaria se le asigna como institucion"><%= tiemposAprendizaje%> </label>
-        <div class="input-field col s12">
-          <textarea id="tiemposAprendizaje" class="materialize-textarea " placeholder = "escribe aqui la intensidad horaria de las asignaturas"></textarea>
-        </div>
-        
-      </div>
-      <br>
-	  
-	  <label for="textarea1" class="tooltipped" data-position="right" data-tooltip="Cómo programan clases los docente"><%= planeacionClase%></label>
-      <br>
-      <br>
-      <div class="file-field input-field">
-          <div class="btn botones" >
-            <span>Buscar</span>
-            <input type="file" id="planeacionClase" accept="image/png, .jpeg, .jpg, image/gif">
-          </div>
-          <div class="file-path-wrapper">
-            <input class="file-path validate" type="text" placeholder = "Diseña el formato de planeacion de clase institucional y súbelo en formato JPEG en la mejor calidad posible">
-          </div>
-      </div>
-      <br>
-	  
-	  <div class="row">
-		<div class="col s12  " style ="text-align:right">
-			<!--link caido-->
-			<a class = "links "  href= "proyectopei/ayudas/resultados.pdf"   target="_blank"> <%= ayuda5%><i class="material-icons small">info</i> </a>
-		</div>
-		<label for="textarea1" class="tooltipped" data-position="right" data-tooltip="Cómo evalúa la institucion a sus estudiantes"> <%= seguimientoResultados%> </label>
-        <div class="input-field col s12">
-          <textarea id="seguimientoResultados" class="materialize-textarea " placeholder = "Escribe aqui instrumentos para evaluar y como se prepara a los estudiantes en prueba externas"></textarea>
-        </div>
-        
-      </div>
-      <br>
-	  
-	  <label for="textarea1" class="tooltipped" data-position="right" data-tooltip="Cómo se lleva la asistencia en la institucion"><%= seguimientoAsistencia%> </label>
-      <br>
-      <br>
-      <div class="file-field input-field">
-          <div class="btn botones" >
-            <span><%= buscar%></span>
-            <input type="file" id="seguimientoAsistencia" accept="image/png, .jpeg, .jpg, image/gif">
-          </div>
-          <div class="file-path-wrapper">
-            <input class="file-path validate" type="text" placeholder = "Diseña el formato de asistencia institucional y súbelo en formato JPEG en la mejor calidad posible">
-          </div>
-      </div>
-      <br>
-	  
-	  
-	  <div class="col s12  " style ="text-align:right">
-			<a class = "links "  href= "https://www.mineducacion.gov.co/1621/article-82745.html"   target="_blank"> <%= ayuda6%> <i class="material-icons small">info</i> </a>
-	  </div>
-	  <label for="textarea1" class="tooltipped" data-position="right" data-tooltip="Como hace seguimiento la institucion a los estudiantes que se retiran"> <%= seguimientoDesercion%> </label>
-      <br>
-      <br>
-      <div class="file-field input-field">
-          <div class="btn botones" >
-            <span><%= buscar%></span>
-            <input type="file" id="seguimientoDesercion" accept="image/png, .jpeg, .jpg, image/gif">
-          </div>
-          <div class="file-path-wrapper">
-            <input class="file-path validate" type="text" placeholder = "Diseña el formato de seguimiento institucional y súbelo en formato JPEG en la mejor calidad posible">
-          </div>
-      </div>
-      <br>
-	  
-      <div >
-        <div class= "align-center">
-            <center><a class="waves-effect #00695c teal darken-3 btn botones pulse modal-trigger" data-target="modal1" onclick ="guardarGestionPedagogica()"><%= guardar%>  <i class="material-icons rigth">save</i></a>
-        </div>
-     </div>
-          
-	   
-	  
-		   <!-- Modal Structure -->
-	  <div id="modal1" class="modal divModal">
-		<div class="modal-content ">
-			<div id="container" class = " align-center" >			
-			
-			</div>
-			<div class= "align-center">
-				<center><a  id = "continuar" class="waves-effect waves-light btn botones esconder" href="gestionAdministrativaTH.html"><%= continuar%>  <i class="material-icons rigth">send</i></a></center>
-			</div>
-			
-		</div>
-	  </div>	   
-	   
-	   
-  
-  </div>
-
-        <footer class="page-footer teal lighten-2">
-          <div class="container">
-            <div class="row">
-              <div class="col l6 s12">
-                <h5 class="white-text"><%= idead%></h5>
-				<img class="imgUT" src="img/ut.png">
-               
-              </div>
-              </div>
-          </div>
-
-
-
-</body>
-
-
 	
-</html> 
+	
+	<div class="row espacios">
+		
+
+		
+		<label for="textarea1"  class ="tooltipped " data-position="right" data-tooltip="Cuál es la intensidad horaria de las asignaturas de la institucion educativa" ><%= planEstudio%></label>
+		<br>
+		<br>
+		<div class="file-field input-field">
+			<div class="btn botones" >
+				<span>Buscar</span>
+				<input type="file" id="planEstudio" accept="image/png, .jpeg, .jpg, image/gif">
+			</div>
+			<div class="file-path-wrapper">
+				<input class="file-path validate" type="text" placeholder = "Diseñalo y sube la propuesta en imagen de formato JPEG">
+			</div>
+		</div>
+		<br>
+		
+		
+		<div class="row">
+			<div class="col s12  " style ="text-align:right">
+				<a class = "links "  href= "proyectopei/ayudas/modelo.pdf"   target="_blank"> <%= ayuda1%> <i class="material-icons small">info</i> </a>
+			</div>
+			<label for="textarea1" class ="tooltipped " data-position="right" data-tooltip="Cuál es el modelo pedagógico institucional"> <%= modeloPedagogico%> </label>
+			<div class="input-field col s12">
+				<textarea id="modeloPedagogico" class="materialize-textarea " placeholder = "Escribe aquí cuál es el modelo pedagógico institucional"></textarea>
+			</div>
+			
+		</div>
+		<br>
+		
+		<div class="row">
+			<div class="col s12  " style ="text-align:right">
+				<a class = "links "  href= "proyectopei/ayudas/1850-202.pdf"   target="_blank"> <%= ayuda2%>  <i class="material-icons small">info</i> </a>
+			</div>
+			<label for="textarea1" class ="tooltipped " data-position="right" data-tooltip="Horas en las que los estudiantes y docentes realizan labores académicas"> <%= jornadaEscolar%>  </label>
+			<div class="input-field col s12">
+				<textarea id="jornadaEscolar" class="materialize-textarea " placeholder = "Escribe las horas en las que funciona la institucion"></textarea>
+			</div>
+			
+		</div>
+		<br>
+		
+		<div class="row">
+			<div class="col s12  " style ="text-align:right">
+				<a class = "links "  href= "proyectopei/ayudas/1290.pdf"   target="_blank"> <%= ayuda3%>  <i class="material-icons small">info</i> </a>
+			</div>
+			<h5 class ="laila align-center tooltipped" data-position="left" data-tooltip="Cómo evalúa la institucion a sus estudiantes"> <%= siee%>  </h5>
+			<div class = "row subTemas">
+				
+				<br>
+				<h6><%= criteriosEvaluacion%> </h6>
+				<div class="input-field col s12">
+					<textarea id="criteriosEvaluacion" class="materialize-textarea " placeholder = "Escriba aquí el contenido" ></textarea>
+				</div>
+				
+				<br>
+				<h6><%= escalaValoracion%> </h6>
+				<div class="input-field col s12">
+					<textarea id="escalaValoracion" class="materialize-textarea " placeholder = "Escriba aquí el contenido" ></textarea>
+				</div>
+				
+				<br>
+				<h6><%= estrategiasValoracion%></h6>
+				<div class="input-field col s12">
+					<textarea id="estrategiasValoracion" class="materialize-textarea " placeholder = "Escriba aquí el contenido" ></textarea>
+				</div>
+				
+				<br>
+				<h6><%= accionesSeguimiento%></h6>
+				<div class="input-field col s12">
+					<textarea id="accionesSeguimiento" class="materialize-textarea " placeholder = "Escriba aquí el contenido" ></textarea>
+				</div>
+				
+				<br>
+				<h6><%= procesosAutoevaluacion%></h6>
+				<div class="input-field col s12">
+					<textarea id="procesosAutoevaluacion" class="materialize-textarea " placeholder = "Escriba aquí el contenido" ></textarea>
+				</div>
+				
+				<br>
+				<h6><%= estategiasApoyo%></h6>
+				<div class="input-field col s12">
+					<textarea id="estategiasApoyo" class="materialize-textarea " placeholder = "Escriba aquí el contenido" ></textarea>
+				</div>
+				
+				<br>
+				<h6><%= accionesCumplimientoEvaluacion%> </h6>
+				<div class="input-field col s12">
+					<textarea id="accionesCumplimientoEvaluacion" class="materialize-textarea " placeholder = "Escriba aquí el contenido" ></textarea>
+				</div>
+				
+				<br>
+				<h6><%= periodicidadInformes%> </h6>
+				<div class="input-field col s12">
+					<textarea id="periodicidadInformes" class="materialize-textarea " placeholder = "Escriba aquí el contenido" ></textarea>
+				</div>
+				
+				<br>
+				<h6> <%= estructuraInformes%> </h6>
+				<div class="input-field col s12">
+					<textarea id="estructuraInformes" class="materialize-textarea " placeholder = "Escriba aquí el contenido" ></textarea>
+				</div>
+				
+				<br>
+				<h6> <%= resolucionReclamos%> </h6>
+				<div class="input-field col s12">
+					<textarea id="resolucionReclamos" class="materialize-textarea " placeholder = "Escriba aquí el contenido" ></textarea>
+				</div>
+				
+				<br>
+				<h6> <%= participacionComunidadMecanismos%>  </h6>
+				<div class="input-field col s12">
+					<textarea id="participacionComunidadMecanismos" class="materialize-textarea " placeholder = "Escriba aquí el contenido" ></textarea>
+				</div>
+				
+				
+				
+				
+			</div>
+			
+		</div>
+		
+		<div class="row">
+			<div class="col s12  " style ="text-align:right">
+				<a class = "links "  href= "proyectopei/ayudas/transversales.pdf"   target="_blank"> <%= ayuda4%>  <i class="material-icons small">info</i> </a>
+			</div>
+			<label for="textarea1" class ="tooltipped " data-position="right" data-tooltip="Proyectos transversales institucionales"> <%= proyectosTransversales%> </label>
+			<div class="input-field col s12">
+				<textarea id="proyectosTransversales" class="materialize-textarea " placeholder = "escribe aqui el titulo de cada proyecto y una breve descripcion del mismo"></textarea>
+			</div>
+			
+		</div>
+		<br>	
+		
+		<div class="row">
+			
+			<label for="textarea1" class="tooltipped"  data-position="right" data-tooltip="Qué asignaturas y que intensidad horaria se le asigna como institucion"><%= tiemposAprendizaje%> </label>
+			<div class="input-field col s12">
+				<textarea id="tiemposAprendizaje" class="materialize-textarea " placeholder = "escribe aqui la intensidad horaria de las asignaturas"></textarea>
+			</div>
+			
+		</div>
+		<br>
+		
+		<label for="textarea1" class="tooltipped" data-position="right" data-tooltip="Cómo programan clases los docente"><%= planeacionClase%></label>
+		<br>
+		<br>
+		<div class="file-field input-field">
+			<div class="btn botones" >
+				<span>Buscar</span>
+				<input type="file" id="planeacionClase" accept="image/png, .jpeg, .jpg, image/gif">
+			</div>
+			<div class="file-path-wrapper">
+				<input class="file-path validate" type="text" placeholder = "Diseña el formato de planeacion de clase institucional y súbelo en formato JPEG en la mejor calidad posible">
+			</div>
+		</div>
+		<br>
+		
+		<div class="row">
+			<div class="col s12  " style ="text-align:right">
+				<!--link caido-->
+				<a class = "links "  href= "proyectopei/ayudas/resultados.pdf"   target="_blank"> <%= ayuda5%><i class="material-icons small">info</i> </a>
+			</div>
+			<label for="textarea1" class="tooltipped" data-position="right" data-tooltip="Cómo evalúa la institucion a sus estudiantes"> <%= seguimientoResultados%> </label>
+			<div class="input-field col s12">
+				<textarea id="seguimientoResultados" class="materialize-textarea " placeholder = "Escribe aqui instrumentos para evaluar y como se prepara a los estudiantes en prueba externas"></textarea>
+			</div>
+			
+		</div>
+		<br>
+		
+		<label for="textarea1" class="tooltipped" data-position="right" data-tooltip="Cómo se lleva la asistencia en la institucion"><%= seguimientoAsistencia%> </label>
+		<br>
+		<br>
+		<div class="file-field input-field">
+			<div class="btn botones" >
+				<span><%= buscar%></span>
+				<input type="file" id="seguimientoAsistencia" accept="image/png, .jpeg, .jpg, image/gif">
+			</div>
+			<div class="file-path-wrapper">
+				<input class="file-path validate" type="text" placeholder = "Diseña el formato de asistencia institucional y súbelo en formato JPEG en la mejor calidad posible">
+			</div>
+		</div>
+		<br>
+		
+		
+		<div class="col s12  " style ="text-align:right">
+			<a class = "links "  href= "https://www.mineducacion.gov.co/1621/article-82745.html"   target="_blank"> <%= ayuda6%> <i class="material-icons small">info</i> </a>
+		</div>
+		<label for="textarea1" class="tooltipped" data-position="right" data-tooltip="Como hace seguimiento la institucion a los estudiantes que se retiran"> <%= seguimientoDesercion%> </label>
+		<br>
+		<br>
+		<div class="file-field input-field">
+			<div class="btn botones" >
+				<span><%= buscar%></span>
+				<input type="file" id="seguimientoDesercion" accept="image/png, .jpeg, .jpg, image/gif">
+			</div>
+			<div class="file-path-wrapper">
+				<input class="file-path validate" type="text" placeholder = "Diseña el formato de seguimiento institucional y súbelo en formato JPEG en la mejor calidad posible">
+			</div>
+		</div>
+		<br>
+		
+		<div >
+			<div class= "align-center">
+				<center><a class="waves-effect #00695c teal darken-3 btn botones pulse modal-trigger" data-target="modal1" onclick ="guardarGestionPedagogica()"><%= guardar%>  <i class="material-icons rigth">save</i></a>
+				</div>
+			</div>
+			
+			
+			
+			<!-- Modal Structure -->
+			<div id="modal1" class="modal divModal">
+				<div class="modal-content ">
+					<div id="container" class = " align-center" >			
+						
+					</div>
+					<div class= "align-center">
+						<center><a  id = "continuar" class="waves-effect waves-light btn botones esconder" href="gestionAdministrativaTH.html"><%= continuar%>  <i class="material-icons rigth">send</i></a></center>
+					</div>
+					
+				</div>
+			</div>	   
+			
+			
+			
+		</div>
+
+		<footer class="page-footer teal lighten-2">
+			<div class="container">
+				<div class="row">
+					<div class="col l6 s12">
+						<h5 class="white-text"><%= idead%></h5>
+						<img class="imgUT" src="img/ut.png">
+						
+					</div>
+				</div>
+			</div>
+
+
+
+		</body>
+
+
+		
+		</html> 
 
