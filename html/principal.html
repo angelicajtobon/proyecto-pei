@@ -1,36 +1,37 @@
 <!DOCTYPE html>
 <html class="html1">
+
 <head>
 	<title><%= titulo%></title>
-    <meta charset="utf-8">
-    <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+	<meta charset="utf-8">
+	<!-- Compiled and minified CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+	<!-- Compiled and minified JavaScript -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
 
 
-    <link href="https://fonts.googleapis.com/css?family=Laila" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Fira+Sans|Noto+Sans|Stylish" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Laila" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Fira+Sans|Noto+Sans|Stylish" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Livvic&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/estilos.css">
-    <script type="text/javascript" src="js/app.js"></script>
-    <script type="text/javascript" src="js/usuarios.js"></script>
+	<link rel="stylesheet" href="css/estilos.css">
+	<script type="text/javascript" src="js/app.js"></script>
+	<script type="text/javascript" src="js/usuarios.js"></script>
 	<script type="text/javascript" src="js/datospei.js"></script>
-	
 
-    
+
+
 </head>
 
-	<body class="body1">
-	<nav class= " teal lighten-2">
+<body class="body1">
+	<nav class=" teal lighten-2">
 		<div class="nav-wrapper">
 			<a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 			<ul class="right hide-on-med-and-down">
 				<li><a href="html/principal.html" class="actual"><%= principal%></a></li>
-				<li><a href="html/identificacion.html" ><%= identificacion%></a></li>
+				<li><a href="html/identificacion.html"><%= identificacion%></a></li>
 				<li><a href="html/horizonteInstitucional.html"><%= horizonteInst%></a></li>
 				<li><a href="html/gestionDirectiva.html"><%= gestionDir%></a></li>
 				<li><a href="html/gestionPedagogica.html"><%= gestionPed%></a></li>
@@ -43,7 +44,7 @@
 
 	<ul class="sidenav" id="mobile-demo">
 		<li><a href="html/principal.html" class="actual"><%= principal%></a></li>
-		<li><a href="html/identificacion.html" ><%= identificacion%></a></li>
+		<li><a href="html/identificacion.html"><%= identificacion%></a></li>
 		<li><a href="html/horizonteInstitucional.html"><%= horizonteInst%></a></li>
 		<li><a href="html/gestionDirectiva.html"><%= gestionDir%></a></li>
 		<li><a href="html/gestionPedagogica.html"><%= gestionPed%></a></li>
@@ -51,55 +52,56 @@
 		<li><a href="html/gestionComunidad.html"><%= gestionCom%></a></li>
 		<li><a onclick="cerrarCesion()"><%= cerrarCesion%></a></li>
 	</ul>
-	
-				   
-		  
-		<h2 class="laila espacio-arriba" style="text-align:center" ><%= titulo%></h2>
-		<br>
-		<center><img class="materialboxed"  width="200" src="img/logo.png"></center>
-		
 
-		<div class="row principal">
 
-		  <div class="col s6" style="text-align:center"> 
-			<label> <%= crear%</label>
+
+	<h2 class="laila espacio-arriba" style="text-align:center"><%= titulo%></h2>
+	<br>
+	<center><img class="materialboxed" width="200" src="img/logo.png"></center>
+
+
+	<div class="row principal">
+
+		<div class="col s6" style="text-align:center">
+			<label> <%= crear%></label>
 			<br>
 			<a href="#modal1" class="#00695c teal darken-3 btn-large pulse btn-floating btn tooltipped modal-trigger large" data-position="bottom" data-tooltip="Aqui podras iniciar un nuevo P.E.I para su Institución"><i class="material-icons left">add_box</i></a>
 		  </div>
 		  <div class="col s6" style="text-align:center"> 
 			<label><%= consultar%></label>
 			<br>
-			<a href="modificar.html" onclick="traerNombreInstitucion()" class="#00695c teal darken-3 btn-large pulse btn-floating btn tooltipped large" data-position="bottom" data-tooltip="Con esta opcion podras modificar un P.E.I ya existente o imprimirlo"><i class="material-icons left"> track_changes </i></a>
-		  </div>
+			<a href="modificar.html" onclick="traerNombreInstitucion()"
+				class="#00695c teal darken-3 btn-large pulse btn-floating btn tooltipped large" data-position="bottom"
+				data-tooltip="Con esta opcion podras modificar un P.E.I ya existente o imprimirlo"><i
+					class="material-icons left"> track_changes </i></a>
 		</div>
-		
-		  <!-- Modal Structure -->
-		 <div id="modal1" class="modal">
-			<div class="modal-content">
-			  <h4><%= motalTit%></h4>
-			  <p><%= modalParraf%></p>
-			</div>
-			<div class="modal-footer">
-			  <a href="identificacion.html" class="modal-action modal-close ">Aceptar</a>
-			</div>
+	</div>
+
+	<!-- Modal Structure -->
+	<div id="modal1" class="modal">
+		<div class="modal-content">
+			<h4><%= modalTit%></h4>
+			<p><%= modalParraf%></p>
 		</div>
-	 
-	 
-        <footer class="page-footer teal lighten-2">
-			<div class="container">
-				<div class="row">
-					<div class="col l6 s12">
-						<h5 class="white-text"><%= idead%></h5>
-						<img class="imgUT" src="img/ut.png">
-					</div>
+		<div class="modal-footer">
+			<a href="identificacion.html" class="modal-action modal-close ">Aceptar</a>
+		</div>
+	</div>
+
+
+	<footer class="page-footer teal lighten-2">
+		<div class="container">
+			<div class="row">
+				<div class="col l6 s12">
+					<h5 class="white-text"><%= idead%></h5>
+					<img class="imgUT" src="img/ut.png">
 				</div>
 			</div>
-		</footer>    
+		</div>
+	</footer>
 
-   
 
-	</body>
+
+</body>
 
 </html>
-
-
