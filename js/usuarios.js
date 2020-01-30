@@ -1,3 +1,7 @@
+const axios = require("axios");
+
+axios.get("https://jsonplaceholder.typicode.com/todos/1")
+.then((res) => console.log(res));
 
 firebase.initializeApp({
 	apiKey: "AIzaSyBi39sOdFNIKDZGk_li1kaPaA7NmqoM58o",

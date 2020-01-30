@@ -3,9 +3,6 @@ var db = firebase.firestore();
 var codigoDaneGlobal
 var comprobacion = false 
 
-
-
-
 //Mostrar mensaje guardado
 
 function mostrarGuardar(container, continuar){

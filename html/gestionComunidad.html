@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title><%= titulo%></title>
 	<meta charset="utf-8">
@@ -17,20 +18,21 @@
 
 	<script type="text/javascript" src="js/app.js"></script>
 	<script type="text/javascript" src="js/usuarios.js"></script>
-	
+
 
 </head>
+
 <body>
-	<nav class= " teal lighten-2">
+	<nav class=" teal lighten-2">
 		<div class="nav-wrapper">
 			<a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 			<ul class="right hide-on-med-and-down">
-				<li><a href="html/principal.html" ><%= principal%></a></li>
+				<li><a href="html/principal.html"><%= principal%></a></li>
 				<li><a href="html/identificacion.html"><%= identificacion%></a></li>
-				<li><a href="html/horizonteInstitucional.html" ><%= horizonteInst%></a></li>
-				<li><a href="html/gestionDirectiva.html" ><%= gestionDir%></a></li>
+				<li><a href="html/horizonteInstitucional.html"><%= horizonteInst%></a></li>
+				<li><a href="html/gestionDirectiva.html"><%= gestionDir%></a></li>
 				<li><a href="html/gestionPedagogica.html"><%= gestionPed%></a></li>
-				<li><a href="html/gestionAdministrativaTH.html" ><%= gestionATH%></a></li>
+				<li><a href="html/gestionAdministrativaTH.html"><%= gestionATH%></a></li>
 				<li><a href="html/gestionComunidad.html" class="actual"><%= gestionCom%></a></li>
 				<li><a onclick="cerrarCesion()"><%= cerrarCesion%></a></li>
 			</ul>
@@ -38,140 +40,157 @@
 	</nav>
 
 	<ul class="sidenav" id="mobile-demo">
-		<li><a href="html/principal.html" ><%= principal%></a></li>
+		<li><a href="html/principal.html"><%= principal%></a></li>
 		<li><a href="html/identificacion.html"><%= identificacion%></a></li>
-		<li><a href="html/horizonteInstitucional.html" ><%= horizonteInst%></a></li>
-		<li><a href="html/gestionDirectiva.html" ><%= gestionDir%>/a></li>
-			<li><a href="html/gestionPedagogica.html"><%= gestionPed%></a></li>
-			<li><a href="html/gestionAdministrativaTH.html" ><%= gestionATH%> </a></li>
-			<li><a href="html/gestionComunidad.html" class="actual"><%= gestionCom%></a></li>
-			<li><a onclick="cerrarCesion()"><%= cerrarCesion%></a></li>
-		</ul>   
+		<li><a href="html/horizonteInstitucional.html"><%= horizonteInst%></a></li>
+		<li><a href="html/gestionDirectiva.html"><%= gestionDir%>/a></li>
+		<li><a href="html/gestionPedagogica.html"><%= gestionPed%></a></li>
+		<li><a href="html/gestionAdministrativaTH.html"><%= gestionATH%> </a></li>
+		<li><a href="html/gestionComunidad.html" class="actual"><%= gestionCom%></a></li>
+		<li><a onclick="cerrarCesion()"><%= cerrarCesion%></a></li>
+	</ul>
 
 
 
 
-		<h3 style="text-align:center" class="laila espacio-arriba"><%= titulo%></h3>
+	<h3 style="text-align:center" class="laila espacio-arriba"><%= titulo%></h3>
+	<br>
+	<br>
+
+
+	<div class="row espacios">
+
+		<div class="row">
+			<label for="textarea1" class="tooltipped" data-position="right"
+				data-tooltip=" La institucion como continua en contacto con sus egresados "><%= egresados%> </label>
+			<div class="input-field col s12">
+				<textarea id="egresados" class="materialize-textarea "
+					placeholder="Escribe aqui qué estrategia usa la institucion y copia los links de las redes sociales para para este fin"></textarea>
+			</div>
+
+		</div>
+		<br>
+
+		<div class="row">
+			<label for="textarea1" class="tooltipped" data-position="right"
+				data-tooltip="Plan institucional para casos especiales"><%= atencionVulnerabilidad%></label>
+			<div class="input-field col s12">
+				<textarea id="atencionVulnerabilidad" class="materialize-textarea "
+					placeholder="Escribe aquí la estrategia institucional para tal fin"></textarea>
+			</div>
+
+		</div>
+		<br>
+
+
+		<div class="row">
+			<label for="textarea1" class="tooltipped" data-position="right"
+				data-tooltip="Plan institucional para casos especiales"><%= atencionEtnias%></label>
+			<div class="input-field col s12">
+				<textarea id="atencionEtnias" class="materialize-textarea "
+					placeholder="Escribe aquí la estrategia institucional para tal fin"></textarea>
+			</div>
+
+		</div>
+		<br>
+
+		<div class="row">
+			<label for="textarea1" class="tooltipped" data-position="right"
+				data-tooltip="Plan institucional incluir a padres de familia"><%= escuelaPadres%></label>
+			<div class="input-field col s12">
+				<textarea id="escuelaPadres" class="materialize-textarea "
+					placeholder="Escribe aquí la estrategia institucional para tal fin"></textarea>
+			</div>
+
+		</div>
+		<br>
+
+
+		<div class="row">
+			<div class="col s12  " style="text-align:right">
+				<a class="links " href="proyectopei/ayudas/4210-1996.pdf" target="_blank"> <%= ayuda1%> <i
+						class="material-icons small">info</i> </a></br>
+			</div>
+			<label for="textarea1" class="tooltipped" data-position="right"
+				data-tooltip="Cómo desarrollan los estudiantes el servicio social obligatorio en la institucion"><%= servicioSocial%></label>
+			<div class="input-field col s12">
+				<textarea id="servicioSocial" class="materialize-textarea "
+					placeholder="Escribe aquí de manera general como la institución cumple con el servicio social"></textarea>
+			</div>
+
+		</div>
+		<br>
+
+		<div class="row">
+			<label for="textarea1" class="tooltipped" data-position="right"
+				data-tooltip="como la institucion incluye a los padres de familia a las diferentes actividades que esta realiza"><%= participacionComunidad%></label>
+			<div class="input-field col s12">
+				<textarea id="participacionComunidad" class="materialize-textarea"
+					placeholder="Escribe aquí las diferentes estrategias que usa la institucion, responsables y tiempos de ejecución"></textarea>
+			</div>
+
+		</div>
+		<br>
+
+
+
+		<div class="row">
+			<div class="col s12  " style="text-align:right">
+				<a class="links " href="proyectopei/ayudas/2646-2008.pdf" target="_blank"> <%= ayuda2%><i
+						class="material-icons small">info</i> </a></br>
+			</div>
+			<label for="textarea1" class="tooltipped" data-position="right"
+				data-tooltip="Como previene los riesgos psicosociales la institucion"><%= prevencionRiesgosSociales%></label>
+			<div class="input-field col s12">
+				<textarea id="prevencionRiesgosSociales" class="materialize-textarea "
+					placeholder="Escribe aquí la estrategia institucional para tal fin"></textarea>
+			</div>
+
+		</div>
+		<br>
+
+
+
+		<div>
+			<div class="align-center">
+				<center><a class="waves-effect #00695c teal darken-3 btn botones pulse modal-trigger" data-target="modal1"
+						onclick="guardarGestionComunidad()"><%= finalizar%><i class="material-icons rigth">save</i></a>
+			</div>
+		</div>
 		<br>
 		<br>
+		<br>
 
 
-		<div class="row espacios">
 
-			<div class="row">
-				<label for="textarea1" class="tooltipped" data-position ="right" data-tooltip =" La institucion como continua en contacto con sus egresados "><%= egresados%> </label>
-				<div class="input-field col s12">
-					<textarea id="egresados" class="materialize-textarea " placeholder= "Escribe aqui qué estrategia usa la institucion y copia los links de las redes sociales para para este fin"></textarea>
+		<!-- Modal Structure -->
+		<div id="modal1" class="modal divModal">
+			<div class="modal-content ">
+				<div id="container" class=" align-center">
+
+				</div>
+				<div class="align-center">
+					<center><a id="continuar" class="waves-effect waves-light btn botones esconder"
+							href="modificar.html"><%= consultarPEI%> <i class="material-icons rigth">send</i></a></center>
 				</div>
 
 			</div>
-			<br>
-
-			<div class="row">
-				<label for="textarea1" class="tooltipped" data-position ="right" data-tooltip = "Plan institucional para casos especiales" ><%= atencionVulnerabilidad%></label>
-				<div class="input-field col s12">
-					<textarea id="atencionVulnerabilidad" class="materialize-textarea " placeholder="Escribe aquí la estrategia institucional para tal fin"></textarea>
-				</div>
-
-			</div>
-			<br>
-
-
-			<div class="row">
-				<label for="textarea1" class="tooltipped" data-position ="right" data-tooltip = "Plan institucional para casos especiales"><%= atencionEtnias%></label>
-				<div class="input-field col s12">
-					<textarea id="atencionEtnias" class="materialize-textarea " placeholder = "Escribe aquí la estrategia institucional para tal fin"></textarea>
-				</div>
-
-			</div>
-			<br>
-
-			<div class="row">
-				<label for="textarea1" class="tooltipped" data-position ="right" data-tooltip = "Plan institucional incluir a padres de familia"><%= escuelaPadres%></label>
-				<div class="input-field col s12">
-					<textarea id="escuelaPadres" class="materialize-textarea " placeholder ="Escribe aquí la estrategia institucional para tal fin"></textarea>
-				</div>
-
-			</div>
-			<br>
-
-
-			<div class="row">
-				<div class="col s12  " style ="text-align:right">
-					<a class = "links "  href= "proyectopei/ayudas/4210-1996.pdf"   target="_blank"> <%= ayuda1%> <i class="material-icons small">info</i> </a></br>
-				</div>
-				<label for="textarea1" class="tooltipped" data-position ="right" data-tooltip ="Cómo desarrollan los estudiantes el servicio social obligatorio en la institucion"><%= servicioSocial%></label>
-				<div class="input-field col s12">
-					<textarea id="servicioSocial" class="materialize-textarea " placeholder = "Escribe aquí de manera general como la institución cumple con el servicio social"></textarea>
-				</div>
-
-			</div>
-			<br>
-
-			<div class="row"> 
-				<label for="textarea1" class="tooltipped" data-position ="right" data-tooltip ="como la institucion incluye a los padres de familia a las diferentes actividades que esta realiza"><%= participacionComunidad%></label>
-				<div class="input-field col s12">
-					<textarea id="participacionComunidad" class="materialize-textarea" placeholder="Escribe aquí las diferentes estrategias que usa la institucion, responsables y tiempos de ejecución" ></textarea>
-				</div>
-
-			</div>
-			<br>
+		</div>
 
 
 
-			<div class="row">
-				<div class="col s12  " style ="text-align:right">
-					<a class = "links "  href= "proyectopei/ayudas/2646-2008.pdf"   target="_blank"> <%= ayuda2%><i class="material-icons small">info</i> </a></br>
-				</div>
-				<label for="textarea1" class="tooltipped" data-position ="right" data-tooltip ="Como previene los riesgos psicosociales la institucion"><%= prevencionRiesgosSociales%></label>
-				<div class="input-field col s12">
-					<textarea id="prevencionRiesgosSociales" class="materialize-textarea " placeholder ="Escribe aquí la estrategia institucional para tal fin"></textarea>
-				</div>
-
-			</div>
-			<br>
-
-
-
-			<div >
-				<div class= "align-center">
-					<center><a class="waves-effect #00695c teal darken-3 btn botones pulse modal-trigger" data-target="modal1" onclick ="guardarGestionComunidad()"><%= finalizar%><i class="material-icons rigth">save</i></a>
+		<footer class="page-footer teal lighten-2">
+			<div class="container">
+				<div class="row">
+					<div class="col l6 s12">
+						<h5 class="white-text"><%= idead%></h5>
+						<img class="imgUT" src="img/ut.png">
 					</div>
 				</div>
-				<br>
-				<br>
-				<br>
+			</div>
+		</footer>
 
 
+</body>
 
-				<!-- Modal Structure -->
-				<div id="modal1" class="modal divModal">
-					<div class="modal-content ">
-						<div id="container" class = " align-center" >			
-
-						</div>
-						<div class= "align-center">
-							<center><a  id = "continuar" class="waves-effect waves-light btn botones esconder" href="modificar.html"><%= consultarPEI%> <i class="material-icons rigth">send</i></a></center>
-						</div>
-
-					</div>
-				</div>    
-
-
-
-				<footer class="page-footer teal lighten-2">
-					<div class="container">
-						<div class="row">
-							<div class="col l6 s12">
-								<h5 class="white-text"><%= idead%></h5>
-								<img class="imgUT" src="img/ut.png">
-							</div>
-						</div>
-					</div>
-				</footer>    
-
-
-			</body>
-
-			</html> 
-
+</html>

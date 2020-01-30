@@ -1,94 +1,71 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title><%= nombre %></title>
-    <meta charset="utf-8">
-    <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-   
-        
-    <link href="https://fonts.googleapis.com/css?family=Laila" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Fira+Sans|Noto+Sans|Stylish" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Amatic+SC:700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Livvic&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/estilos.css">
-	
-    <script type="text/javascript" src="proyectopei/js/app.js"></script>
-    <script type="text/javascript" src="proyectopei/js/usuarios.js"></script>
-	<script type="text/javascript" src="proyectopei/js/datospei.js"></script>
-	<script type="text/javascript" src="proyectopei/js/appService.js"></script>
-
-    
-       
+  <title><%= nombre %></title>
+  <meta charset="utf-8">
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Laila" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Fira+Sans|Noto+Sans|Stylish" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Amatic+SC:700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Livvic&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilos.css">
+  <script type="text/javascript" src="proyectopei/js/app.js"></script>
+  <script type="text/javascript" src="proyectopei/js/usuarios.js"></script>
+  <script type="text/javascript" src="proyectopei/js/datospei.js"></script>
+  <script type="text/javascript" src="proyectopei/js/appService.js"></script>
 </head>
-
-
-<body background= "">
-
-     
-      <div class="bienvenido ">
-         <h3 class= "laila center-align"><%= titulo%></h3> <br>
-			<center><img class="materialboxed"  width="200" src="img/logo.png"></center><br>
-            <h5 class ="animatic center-align"><%= descripcion%> </h5>
-      </div>
-    
-     <div class="row">
-	 
-		 <div class ="col s7 push-s5 espacio-arriba video-containe">
-			<video src="video/video.mp4" width="600" height="480" controls autoplay  loop></video>
-			
-		 </div>
-		 
-          <div class=" col s5 pull-s7 center-align" >
-            <form class ="firasans text-color login #ffffff white >
-                <label class="laila text-color" ><h4><center><b><%= iniciarSesion%></b></center></h4></label>
-				
-                <div class ="container">
-                    <label class="text-color" for="email"><h5><%= email%></h5></label>
-                    <input placeholder="email" id="email" type="email" class="validate">
-                    
-                </div>
-
-                <div class ="container">
-                    <label class="text-color" for="contraseña"><h5><%= contraseña%></h5></label>
-                    <input placeholder="contraseña" id="contraseña" type="password" class="validate">
-                    
-                </div>
-                
-                <center><a class="waves-effect waves-light btn" onclick = "ingresar()" ><%= ingresar%></a></center>  
-                <br>
-                <h6><%= olvidoUsuario%></h6>
-                <a href="html/recuperar.html" ><%= recuperar%></a>
-                 <br>
-                <h6><%= solicitarRegistro%></h6>
-                <center><a class="waves-effect waves-light btn " href= "html/registro.html"><%= registro%></a></center>
-                <br>      
-                
-                
-            </form>
-            
-          </div>
-
-            
+<body background="">
+  <div class="bienvenido ">
+    <h3 class="laila center-align"><%= titulo%></h3> <br>
+    <center><img class="materialboxed" width="200" src="img/logo.png"></center><br>
+    <h5 class="animatic center-align"><%= descripcion%> </h5>
+  </div>
+  <div class="row">
+    <div class="col s7 push-s5 espacio-arriba video-containe">
+      <video src="video/video.mp4" width="600" height="480" controls autoplay loop></video>
     </div>
-    
-        <footer class="page-footer teal lighten-2">
-          <div class="container">
-            <div class="row">
-              <div class="col l6 s12">
-                <h5 class="white-text"><%idead%></h5>
-				<img class="imgUT" src="img/ut.png">
-                </div>
-              </div>
-          </div>
-        </footer>    
-
-   
-
-
+    <div class=" col s5 pull-s7 center-align">
+      <form class="firasans text-color login #ffffff white >
+                <label class=" laila text-color">
+        <h4>
+          <center><b><%= iniciarSesion%></b></center>
+        </h4></label>
+        <div class="container">
+          <label class="text-color" for="email">
+            <h5><%= email%></h5>
+          </label>
+          <input placeholder="email" id="email" type="email" class="validate">
+        </div>
+        <div class="container">
+          <label class="text-color" for="contraseña">
+            <h5><%= contraseña%></h5>
+          </label>
+          <input placeholder="contraseña" id="contraseña" type="password" class="validate">
+        </div>
+        <center><a class="waves-effect waves-light btn" onclick="ingresar()"><%= ingresar%></a></center>
+        <br>
+        <h6><%= olvidoUsuario%></h6>
+        <a href="html/recuperar.html"><%= recuperar%></a>
+        <br>
+        <h6><%= solicitarRegistro%></h6>
+        <center><a class="waves-effect waves-light btn " href="html/registro.html"><%= registro%></a></center>
+        <br>
+      </form>
+    </div>
+  </div>
+  <footer class="page-footer teal lighten-2">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text"><%idead%></h5>
+          <img class="imgUT" src="img/ut.png">
+        </div>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
