@@ -1,81 +1,183 @@
-Html Webpack Plugin:
-<pre>
-  Error: Child compilation failed:
-  Entry module not found: Error: Can't resolve 'C:\proyectopei\htlm\identificaci  on.html' in 'C:\proyectopei':
-  Error: Can't resolve 'C:\proyectopei\htlm\identificacion.html' in 'C:\proyecto  pei'
-  
-  - compiler.js:79 childCompiler.runAsChild
-    [C:]/[html-webpack-plugin]/lib/compiler.js:79:16
-  
-  - Compiler.js:343 compile
-    [proyectopei]/[webpack]/lib/Compiler.js:343:11
-  
-  - Compiler.js:681 hooks.afterCompile.callAsync.err
-    [proyectopei]/[webpack]/lib/Compiler.js:681:15
-  
-  
-  - Hook.js:154 AsyncSeriesHook.lazyCompileHook
-    [proyectopei]/[tapable]/lib/Hook.js:154:20
-  
-  - Compiler.js:678 compilation.seal.err
-    [proyectopei]/[webpack]/lib/Compiler.js:678:31
-  
-  
-  - Hook.js:154 AsyncSeriesHook.lazyCompileHook
-    [proyectopei]/[tapable]/lib/Hook.js:154:20
-  
-  - Compilation.js:1423 hooks.optimizeAssets.callAsync.err
-    [proyectopei]/[webpack]/lib/Compilation.js:1423:35
-  
-  
-  - Hook.js:154 AsyncSeriesHook.lazyCompileHook
-    [proyectopei]/[tapable]/lib/Hook.js:154:20
-  
-  - Compilation.js:1414 hooks.optimizeChunkAssets.callAsync.err
-    [proyectopei]/[webpack]/lib/Compilation.js:1414:32
-  
-  
-  - Hook.js:154 AsyncSeriesHook.lazyCompileHook
-    [proyectopei]/[tapable]/lib/Hook.js:154:20
-  
-  - Compilation.js:1409 hooks.additionalAssets.callAsync.err
-    [proyectopei]/[webpack]/lib/Compilation.js:1409:36
-  
-  
-  - Hook.js:154 AsyncSeriesHook.lazyCompileHook
-    [proyectopei]/[tapable]/lib/Hook.js:154:20
-  
-  - Compilation.js:1405 hooks.optimizeTree.callAsync.err
-    [proyectopei]/[webpack]/lib/Compilation.js:1405:32
-  
-  
-  - Hook.js:154 AsyncSeriesHook.lazyCompileHook
-    [proyectopei]/[tapable]/lib/Hook.js:154:20
-  
-  - Compilation.js:1342 Compilation.seal
-    [proyectopei]/[webpack]/lib/Compilation.js:1342:27
-  
-  - Compiler.js:675 compilation.finish.err
-    [proyectopei]/[webpack]/lib/Compiler.js:675:18
-  
-  - Compilation.js:1261 hooks.finishModules.callAsync.err
-    [proyectopei]/[webpack]/lib/Compilation.js:1261:4
-  
-  
-  - Hook.js:154 AsyncSeriesHook.lazyCompileHook
-    [proyectopei]/[tapable]/lib/Hook.js:154:20
-  
-  - Compilation.js:1253 Compilation.finish
-    [proyectopei]/[webpack]/lib/Compilation.js:1253:28
-  
-  - Compiler.js:672 hooks.make.callAsync.err
-    [proyectopei]/[webpack]/lib/Compiler.js:672:17
-  
-  
-  - Compilation.js:1185 _addModuleChain
-    [proyectopei]/[webpack]/lib/Compilation.js:1185:12
-  
-  - Compilation.js:1044 errorAndCallback.bail.err
-    [proyectopei]/[webpack]/lib/Compilation.js:1044:6
-  
-</pre>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Identificación</title>
+	<meta charset="utf-8">
+	<!-- Compiled and minified CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+	<!-- Compiled and minified JavaScript -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+
+	<link href="https://fonts.googleapis.com/css?family=Laila" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Fira+Sans|Noto+Sans|Stylish" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Livvic&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="css/estilos.css">
+	
+	<script type="text/javascript" src="proyectopei/js/app.js"></script>
+	<script type="text/javascript" src="proyectopei/js/usuarios.js"></script>
+	<script type="text/javascript" src="proyectopei/js/datospei.js"></script>
+	<script type="text/javascript" src="proyectopei/js/appService.js"></script>	
+
+	
+</head>
+<body>
+
+	<nav class= " teal lighten-2">
+		<div class="nav-wrapper">
+			<a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+			<ul class="right hide-on-med-and-down">
+				<li><a href="html/principal.html" >Principal</a></li>
+				<li><a href="html/identificacion.html" class="actual">Identificación</a></li>
+				<li><a href="html/horizonteInstitucional.html">Horizonte Institucional</a></li>
+				<li><a href="html/gestionDirectiva.html">Gestión Directiva</a></li>
+				<li><a href="html/gestionPedagogica.html">Gestión Pedagógica</a></li>
+				<li><a href="html/gestionAdministrativaTH.html">Gestión Administrativa y Talento Humano</a></li>
+				<li><a href="html/gestionComunidad.html">Gestión de la Comunidad</a></li>
+				<li><a onclick="cerrarCesion()">Cerrar Cesion</a></li>
+			</ul>
+		</div>
+	</nav>
+
+	<ul class="sidenav" id="mobile-demo">
+		<li><a href="html/principal.html" >Principal</a></li>
+		<li><a href="html/identificacion.html" class="actual">Identificación</a></li>
+		<li><a href="html/horizonteInstitucional.html">Horizonte Institucional</a></li>
+		<li><a href="html/gestionDirectiva.html">Gestión Directiva</a></li>
+		<li><a href="html/gestionPedagogica.html">Gestión Pedagógica</a></li>
+		<li><a href="html/gestionAdministrativaTH.html">Gestión Administrativa y Talento Humano</a></li>
+		<li><a href="html/gestionComunidad.html">Gestión de la Comunidad</a></li>
+		<li><a onclick="cerrarCesion()">Cerrar Cesion</a></li>
+	</ul>
+	
+
+
+	<h3 style="text-align:center" class="laila espacio-arriba">Identificación</h3>
+	<br>
+	<br>
+	
+	
+	<div class="row espacios">
+		
+		
+		<div class="row">
+			<label for="textarea1">Nombre de la Institución Educativa</label>
+			<div class="input-field col s12">
+				<textarea id="institucionNombre" class="materialize-textarea " placeholder="Ingresa el nombre de la institución"></textarea>
+			</div>
+			
+		</div>
+		<br>
+		
+		<div class="row">
+			<label for="textarea1">Código DANE</label>
+			<div class="input-field col s12">
+				<textarea id="codigoDane" class="materialize-textarea " placeholder = "Identificación de la institución"></textarea>
+			</div>
+			
+		</div>
+		<br>
+		
+		
+		<div class="row">		 
+			<div class="col s12  " style ="text-align:right">
+				<a class = "links "  href= "proyectopei/ayudas/resena.pdf"   target="_blank">  Cómo hacer una reseña<i class="material-icons small">info</i> </a>
+			</div>	
+			
+			<div class="col s12  ">
+				<label for="textarea1" class ="tooltipped " data-position="right" data-tooltip="Escribe la historia de tu institución">Reseña Histórica </label>
+				<textarea id="reseña" class="materialize-textarea " placeholder = "Escribe aquí la historia de tu institucion" ></textarea>
+			</div>
+			
+		</div>
+		
+		
+		
+		<br>
+		<br>
+		<div class="row">
+			<label for="textarea1" class ="tooltipped " data-position="right" data-tooltip="Dinos donde queda tu institución">Ubicación Geográfica</label>
+			<div class="input-field col s12">
+				<textarea id="ubicacion" class="materialize-textarea " placeholder ="Escribe el nombre de la ciudad, vereda, corregimiento y/o Dirección de tu institucion educativa"></textarea>
+			</div>        
+		</div>
+		<br>
+		
+		
+		<label for="textarea1" class ="tooltipped " data-position="right" data-tooltip="sube el distintivo de tu institucion educativa">Ingresar Escudo o Bandera</label>
+		<br>
+		<br>
+		<div class="file-field input-field">
+			<div class="btn botones" >
+				<span>Buscar</span>
+				<input type="file" id="bandera" accept="image/png, .jpeg, .jpg, image/gif">
+			</div>
+			<div class="file-path-wrapper">
+				<input class="file-path validate" type="text" placeholder = "Sube aquí la imagen en formato JPEG con la mejor calidad posible">
+			</div>
+		</div>
+		<br>
+		
+		
+		<div class="row">
+			<label for="textarea1" class ="tooltipped " data-position="right" data-tooltip="Dinos las estrofas de tu institución educativa" >Himno</label>
+			<div class="input-field col s12">
+				<textarea id="himno" class="materialize-textarea " placeholder ="Escribe aquí las estrofas y el autor del himno de tu institución educativa"></textarea>
+			</div>        
+		</div>
+		<br>
+		
+		<div class="row">
+			<label for="textarea1" class ="tooltipped"  data-position="right" data-tooltip="Perfil del rector, coordinador o directivos">Liderazgo</label>
+			<div class="input-field col s12">
+				<textarea id="liderazgo" class="materialize-textarea " placeholder = "Escribe Aqui los perfiles uno a uno"></textarea>
+			</div>        
+		</div>
+		<br>
+		<br>
+		<br>
+		
+		
+		<div>
+			<div class= "align-center">
+				<center><a class="waves-effect #00695c teal darken-3 btn botones pulse modal-trigger" data-target="modal1" onclick="guardarIdentificacion()">Guardar <i class="material-icons rigth">save</i></a>
+				</div>
+				
+			</div>
+			
+			
+			
+		</div>
+		
+		<!-- Modal Structure -->
+		<div id="modal1" class="modal divModal">
+			<div class="modal-content ">
+				<div id="container" class = " align-center" >			
+					
+				</div>
+				<div class= "align-center">
+					<center><a  id = "continuar" class="waves-effect waves-light btn botones esconder" href="horizonteInstitucional.html">Continuar <i class="material-icons rigth">send</i></a></center>
+				</div>
+				
+			</div>
+		</div>
+		
+		
+		<footer class="page-footer teal lighten-2">
+			<div class="container">
+				<div class="row">
+					<div class="col l6 s12">
+						<h5 class="white-text">Instituto de Educación a Distancia</h5>
+						<img class="imgUT" src="img/ut.png">
+					</div>
+				</div>
+			</div>
+		</footer>    
+
+
+	</body>
+
+
+	</html>

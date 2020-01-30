@@ -534,7 +534,7 @@ module.exports = {
 		hash: true,
 		templateParameters: {
 			titulo: 'Administrar Proyecto Educativo Institucional',
-			pei: 'P.E.I:';
+			pei: 'P.E.I:',
 			gestiones : 'Gestiones',
 			modificar : 'Modificar',
 			identificacion: 'Identificación',

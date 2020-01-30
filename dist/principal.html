@@ -1,8 +1,31 @@
 Html Webpack Plugin:
 <pre>
   Error: Child compilation failed:
-  Entry module not found: Error: Can't resolve 'C:\proyectopei\htlm\principal.ht  ml' in 'C:\proyectopei':
-  Error: Can't resolve 'C:\proyectopei\htlm\principal.html' in 'C:\proyectopei'
+  Module build failed (from ../node_modules/html-webpack-plugin/lib/loader.js):
+  SyntaxError: Unexpected token <
+  
+  - Function
+  
+  - lodash.js:14870 
+    [C:]/[lodash]/lodash.js:14870:16
+  
+  - lodash.js:473 apply
+    [C:]/[lodash]/lodash.js:473:27
+  
+  - lodash.js:15254 
+    [C:]/[lodash]/lodash.js:15254:16
+  
+  - lodash.js:475 apply
+    [C:]/[lodash]/lodash.js:475:27
+  
+  - lodash.js:6563 
+    [C:]/[lodash]/lodash.js:6563:16
+  
+  - lodash.js:14869 Function.template
+    [C:]/[lodash]/lodash.js:14869:20
+  
+  
+  - SyntaxError: Unexpected token <
   
   - compiler.js:79 childCompiler.runAsChild
     [C:]/[html-webpack-plugin]/lib/compiler.js:79:16
@@ -75,7 +98,7 @@ Html Webpack Plugin:
   - Compilation.js:1185 _addModuleChain
     [proyectopei]/[webpack]/lib/Compilation.js:1185:12
   
-  - Compilation.js:1044 errorAndCallback.bail.err
-    [proyectopei]/[webpack]/lib/Compilation.js:1044:6
+  - Compilation.js:1097 processModuleDependencies.err
+    [proyectopei]/[webpack]/lib/Compilation.js:1097:9
   
 </pre>

@@ -1,81 +1,163 @@
-Html Webpack Plugin:
-<pre>
-  Error: Child compilation failed:
-  Entry module not found: Error: Can't resolve 'C:\proyectopei\htlm\horizonteIns  titucional.html' in 'C:\proyectopei':
-  Error: Can't resolve 'C:\proyectopei\htlm\horizonteInstitucional.html' in 'C:\  proyectopei'
-  
-  - compiler.js:79 childCompiler.runAsChild
-    [C:]/[html-webpack-plugin]/lib/compiler.js:79:16
-  
-  - Compiler.js:343 compile
-    [proyectopei]/[webpack]/lib/Compiler.js:343:11
-  
-  - Compiler.js:681 hooks.afterCompile.callAsync.err
-    [proyectopei]/[webpack]/lib/Compiler.js:681:15
-  
-  
-  - Hook.js:154 AsyncSeriesHook.lazyCompileHook
-    [proyectopei]/[tapable]/lib/Hook.js:154:20
-  
-  - Compiler.js:678 compilation.seal.err
-    [proyectopei]/[webpack]/lib/Compiler.js:678:31
-  
-  
-  - Hook.js:154 AsyncSeriesHook.lazyCompileHook
-    [proyectopei]/[tapable]/lib/Hook.js:154:20
-  
-  - Compilation.js:1423 hooks.optimizeAssets.callAsync.err
-    [proyectopei]/[webpack]/lib/Compilation.js:1423:35
-  
-  
-  - Hook.js:154 AsyncSeriesHook.lazyCompileHook
-    [proyectopei]/[tapable]/lib/Hook.js:154:20
-  
-  - Compilation.js:1414 hooks.optimizeChunkAssets.callAsync.err
-    [proyectopei]/[webpack]/lib/Compilation.js:1414:32
-  
-  
-  - Hook.js:154 AsyncSeriesHook.lazyCompileHook
-    [proyectopei]/[tapable]/lib/Hook.js:154:20
-  
-  - Compilation.js:1409 hooks.additionalAssets.callAsync.err
-    [proyectopei]/[webpack]/lib/Compilation.js:1409:36
-  
-  
-  - Hook.js:154 AsyncSeriesHook.lazyCompileHook
-    [proyectopei]/[tapable]/lib/Hook.js:154:20
-  
-  - Compilation.js:1405 hooks.optimizeTree.callAsync.err
-    [proyectopei]/[webpack]/lib/Compilation.js:1405:32
-  
-  
-  - Hook.js:154 AsyncSeriesHook.lazyCompileHook
-    [proyectopei]/[tapable]/lib/Hook.js:154:20
-  
-  - Compilation.js:1342 Compilation.seal
-    [proyectopei]/[webpack]/lib/Compilation.js:1342:27
-  
-  - Compiler.js:675 compilation.finish.err
-    [proyectopei]/[webpack]/lib/Compiler.js:675:18
-  
-  - Compilation.js:1261 hooks.finishModules.callAsync.err
-    [proyectopei]/[webpack]/lib/Compilation.js:1261:4
-  
-  
-  - Hook.js:154 AsyncSeriesHook.lazyCompileHook
-    [proyectopei]/[tapable]/lib/Hook.js:154:20
-  
-  - Compilation.js:1253 Compilation.finish
-    [proyectopei]/[webpack]/lib/Compilation.js:1253:28
-  
-  - Compiler.js:672 hooks.make.callAsync.err
-    [proyectopei]/[webpack]/lib/Compiler.js:672:17
-  
-  
-  - Compilation.js:1185 _addModuleChain
-    [proyectopei]/[webpack]/lib/Compilation.js:1185:12
-  
-  - Compilation.js:1044 errorAndCallback.bail.err
-    [proyectopei]/[webpack]/lib/Compilation.js:1044:6
-  
-</pre>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Horizonte Institucional</title>
+	<meta charset="utf-8">
+	<!-- Compiled and minified CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+	<!-- Compiled and minified JavaScript -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+
+	<link href="https://fonts.googleapis.com/css?family=Laila" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Fira+Sans|Noto+Sans|Stylish" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Livvic&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="css/estilos.css">
+	
+	<script type="text/javascript" src="js/app.js"></script>
+	<script type="text/javascript" src="js/usuarios.js"></script>
+	<script type="text/javascript" src="js/datospei.js"></script>
+	
+
+	
+</head>
+<body>
+	<nav class= " teal lighten-2">
+		<div class="nav-wrapper">
+			<a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+			<ul class="right hide-on-med-and-down">
+				<li><a href="html/principal.html" >Principal</a></li>
+				<li><a href="html/identificacion.html" >Identificación</a></li>
+				<li><a href="html/horizonteInstitucional.html" class="actual">Horizonte Institucional</a></li>
+				<li><a href="html/gestionDirectiva.html">Gestión Directiva</a></li>
+				<li><a href="html/gestionPedagogica.html">Gestión Pedagógica</a></li>
+				<li><a href="html/gestionAdministrativaTH.html">Gestión Administrativa y Talento Humano</a></li>
+				<li><a href="html/gestionComunidad.html">Gestión de la Comunidad</a></li>
+				<li><a onclick="cerrarCesion()">Cerrar Cesion</a></li>
+			</ul>
+		</div>
+	</nav>
+
+	<ul class="sidenav" id="mobile-demo">
+		<li><a href="html/principal.html" >Principal</a></li>
+		<li><a href="html/identificacion.html" >Identificación</a></li>
+		<li><a href="html/horizonteInstitucional.html" class="actual">Horizonte Institucional</a></li>
+		<li><a href="html/gestionDirectiva.html">Gestión Directiva</a></li>
+		<li><a href="html/gestionPedagogica.html">Gestión Pedagógica</a></li>
+		<li><a href="html/gestionAdministrativaTH.html">Gestión Administrativa y Talento Humano</a></li>
+		<li><a href="html/gestionComunidad.html">Gestión de la Comunidad</a></li>
+		<li><a onclick="cerrarCesion()">Cerrar Cesion</a></li>
+	</ul>
+	
+
+	
+	<h3 style="text-align:center" class="laila espacio-arriba">Horizonte Institucional</h3>
+	<br>
+	<br>
+	
+	
+	<div class="row espacios">
+		
+		<div class="row">
+			<div class="col s12  " style ="text-align:right">
+				<a class = "links "  href= "proyectopei/ayudas/mision.pdf"   target="_blank">  Preguntas basicas para hacer una misión <i class="material-icons small">info</i> </a>
+			</div>	
+			<label for="textarea1" class ="tooltipped " data-position="right" data-tooltip="Que mision tienes como institución educativa" >Misión </label>
+			<div class="input-field col s12">
+				<textarea id="mision" class="materialize-textarea " placeholder = "Escribe aqui la mision de tu institucion educativa"></textarea>
+			</div>
+			
+		</div>
+		<br>
+		
+		<div class="row">
+			<div class="col s12  " style ="text-align:right">
+				<a class = "links "  href= "proyectopei/ayudas/vision.pdf"   target="_blank"> Elementos de una Visión <i class="material-icons small">info</i> </a>
+			</div>
+			<label for="textarea1" class ="tooltipped " data-position="right" data-tooltip="como Visionas tu Institucion educativa en 3,6 o 10 años" >Visión</label>
+			<div class="input-field col s12">
+				<textarea id="vision" class="materialize-textarea " placeholder = "escribe aquí la visión de tu institución educativa"></textarea>
+			</div>        
+		</div>
+		<br>
+		
+		
+		<div class="row">
+			<div class="col s12  " style ="text-align:right">
+				<a class = "links "  href= "proyectopei/ayudas/principios.pdf"   target="_blank"> Ejemplos principios institucionales  <i class="material-icons small">info</i> </a>
+			</div>
+
+			<label for="textarea1" class ="tooltipped " data-position="right" data-tooltip="Que guia a tu institucion educativa">Principios </label>
+			<div class="input-field col s12">
+				<textarea id="principios" class="materialize-textarea " placeholder= "Escribe aquí los principios institucionales"></textarea>
+			</div>        
+		</div>
+		<br>
+		
+		<div class="row">
+			<div class="col s12  " style ="text-align:right">
+				<a class = "links "  href= "proyectopei/ayudas/filosofia.pdf"   target="_blank">  Que es?<i class="material-icons small">info</i> </a>
+			</div>
+			
+			<label for="textarea1" class ="tooltipped " data-position="right" data-tooltip="Como es la forma de pensar institucional">Filosofía</label>
+			<div class="input-field col s12">
+				<textarea id="filosofia" class="materialize-textarea " placeholder = "Escribe aqui la filosofia de tu institucion Educativa"></textarea>
+			</div>        
+		</div>
+		<br>
+		
+		<div class="row">
+			<div class="col s12  " style ="text-align:right">
+				<a class = "links "  href= "proyectopei/ayudas/cultura.pdf"   target="_blank"> Concepto   <i class="material-icons small">info</i> </a>
+			</div>
+			<label for="textarea1" class ="tooltipped " data-position="right" data-tooltip="Como es el proceder cultural de tu institucion">Cultura Institucional</label>
+			<div class="input-field col s12">
+				<textarea id="culturaInstitucional" class="materialize-textarea " placeholder = "Escribe aqui todo lo relacionado con la cultura institucionalde tu institucion educativa"></textarea>
+			</div>        
+		</div>
+		<br>
+		
+		
+		<div >
+			<div class= "align-center">
+				<center><a class="waves-effect #00695c teal darken-3 btn botones pulse  modal-trigger" data-target="modal1" onclick ="guardarHorizonteInstitucional()">Guardar  <i class="material-icons rigth">save</i></a>
+				</div>
+				
+				
+				
+			</div>
+			
+			<!-- Modal Structure -->
+			<div id="modal1" class="modal divModal">
+				<div class="modal-content ">
+					<div id="container" class = " align-center" >			
+						
+					</div>
+					<div class= "align-center">
+						<center><a id="continuar" class="waves-effect waves-light btn botones " href="gestionDirectiva.html">Continuar <i class="material-icons rigth">send</i></a></center>
+					</div>
+					
+				</div>
+			</div>
+			
+		</div>
+
+		<footer class="page-footer teal lighten-2">
+			<div class="container">
+				<div class="row">
+					<div class="col l6 s12">
+						<h5 class="white-text">Instituto de Educación a Distancia</h5>
+						<img class="imgUT" src="img/ut.png">
+					</div>
+				</div>
+			</div>
+		</footer>    
+
+
+
+	</body>
+
+
+	</html>

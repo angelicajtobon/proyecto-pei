@@ -1,81 +1,308 @@
-Html Webpack Plugin:
-<pre>
-  Error: Child compilation failed:
-  Entry module not found: Error: Can't resolve 'C:\proyectopei\htlm\gestionPedag  ogica.html' in 'C:\proyectopei':
-  Error: Can't resolve 'C:\proyectopei\htlm\gestionPedagogica.html' in 'C:\proye  ctopei'
-  
-  - compiler.js:79 childCompiler.runAsChild
-    [C:]/[html-webpack-plugin]/lib/compiler.js:79:16
-  
-  - Compiler.js:343 compile
-    [proyectopei]/[webpack]/lib/Compiler.js:343:11
-  
-  - Compiler.js:681 hooks.afterCompile.callAsync.err
-    [proyectopei]/[webpack]/lib/Compiler.js:681:15
-  
-  
-  - Hook.js:154 AsyncSeriesHook.lazyCompileHook
-    [proyectopei]/[tapable]/lib/Hook.js:154:20
-  
-  - Compiler.js:678 compilation.seal.err
-    [proyectopei]/[webpack]/lib/Compiler.js:678:31
-  
-  
-  - Hook.js:154 AsyncSeriesHook.lazyCompileHook
-    [proyectopei]/[tapable]/lib/Hook.js:154:20
-  
-  - Compilation.js:1423 hooks.optimizeAssets.callAsync.err
-    [proyectopei]/[webpack]/lib/Compilation.js:1423:35
-  
-  
-  - Hook.js:154 AsyncSeriesHook.lazyCompileHook
-    [proyectopei]/[tapable]/lib/Hook.js:154:20
-  
-  - Compilation.js:1414 hooks.optimizeChunkAssets.callAsync.err
-    [proyectopei]/[webpack]/lib/Compilation.js:1414:32
-  
-  
-  - Hook.js:154 AsyncSeriesHook.lazyCompileHook
-    [proyectopei]/[tapable]/lib/Hook.js:154:20
-  
-  - Compilation.js:1409 hooks.additionalAssets.callAsync.err
-    [proyectopei]/[webpack]/lib/Compilation.js:1409:36
-  
-  
-  - Hook.js:154 AsyncSeriesHook.lazyCompileHook
-    [proyectopei]/[tapable]/lib/Hook.js:154:20
-  
-  - Compilation.js:1405 hooks.optimizeTree.callAsync.err
-    [proyectopei]/[webpack]/lib/Compilation.js:1405:32
-  
-  
-  - Hook.js:154 AsyncSeriesHook.lazyCompileHook
-    [proyectopei]/[tapable]/lib/Hook.js:154:20
-  
-  - Compilation.js:1342 Compilation.seal
-    [proyectopei]/[webpack]/lib/Compilation.js:1342:27
-  
-  - Compiler.js:675 compilation.finish.err
-    [proyectopei]/[webpack]/lib/Compiler.js:675:18
-  
-  - Compilation.js:1261 hooks.finishModules.callAsync.err
-    [proyectopei]/[webpack]/lib/Compilation.js:1261:4
-  
-  
-  - Hook.js:154 AsyncSeriesHook.lazyCompileHook
-    [proyectopei]/[tapable]/lib/Hook.js:154:20
-  
-  - Compilation.js:1253 Compilation.finish
-    [proyectopei]/[webpack]/lib/Compilation.js:1253:28
-  
-  - Compiler.js:672 hooks.make.callAsync.err
-    [proyectopei]/[webpack]/lib/Compiler.js:672:17
-  
-  
-  - Compilation.js:1185 _addModuleChain
-    [proyectopei]/[webpack]/lib/Compilation.js:1185:12
-  
-  - Compilation.js:1044 errorAndCallback.bail.err
-    [proyectopei]/[webpack]/lib/Compilation.js:1044:6
-  
-</pre>
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Gestión Pedagógica </title>
+	<meta charset="utf-8">
+	<!-- Compiled and minified CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+	<!-- Compiled and minified JavaScript -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+
+	<link href="https://fonts.googleapis.com/css?family=Laila" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Fira+Sans|Noto+Sans|Stylish" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Livvic&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="css/estilos.css">
+	
+	<script type="text/javascript" src="js/app.js"></script>
+	<script type="text/javascript" src="js/usuarios.js"></script>
+	<script type="text/javascript" src="js/datospei.js"></script>
+	
+	
+</head>
+<body>
+	<nav class= " teal lighten-2">
+		<div class="nav-wrapper">
+			<a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+			<ul class="right hide-on-med-and-down">
+				<li><a href="html/principal.html" >Principal</a></li>
+				<li><a href="html/identificacion.html" >Identificación</a></li>
+				<li><a href="html/horizonteInstitucional.html" >Horizonte Institucional</a></li>
+				<li><a href="html/gestionDirectiva.html">Gestión Directiva</a></li>
+				<li><a href="html/gestionPedagogica.html" class="actual">Gestión Pedagógica</a></li>
+				<li><a href="html/gestionAdministrativaTH.html">Gestión Administrativa y Talento Humano</a></li>
+				<li><a href="html/gestionComunidad.html">Gestión de la Comunidad</a></li>
+				<li><a onclick="cerrarCesion()">Cerrar Cesion</a></li>
+			</ul>
+		</div>
+	</nav>
+
+	<ul class="sidenav" id="mobile-demo">
+		<li><a href="html/principal.html" >Principal</a></li>
+		<li><a href="html/identificacion.html" >Identificación</a></li>
+		<li><a href="html/horizonteInstitucional.html" >Horizonte Institucional</a></li>
+		<li><a href="html/gestionDirectiva.html">Gestión Directiva</a></li>
+		<li><a href="html/gestionPedagogica.html" class="actual">Gestión Pedagógica</a></li>
+		<li><a href="html/gestionAdministrativaTH.html">Gestión Administrativa y Talento Humano</a></li>
+		<li><a href="html/gestionComunidad.html">Gestión de la Comunidad</a></li>
+		<li><a onclick="cerrarCesion()">Cerrar Cesion</a></li>
+	</ul>
+	
+	
+
+	<h3 style="text-align:center" class="laila espacio-arriba">Gestión Pedagógica</h3>
+	<br>
+	<br>
+	
+	
+	<div class="row espacios">
+		
+
+		
+		<label for="textarea1"  class ="tooltipped " data-position="right" data-tooltip="Cuál es la intensidad horaria de las asignaturas de la institucion educativa" >Plan de Estudio</label>
+		<br>
+		<br>
+		<div class="file-field input-field">
+			<div class="btn botones" >
+				<span>Buscar</span>
+				<input type="file" id="planEstudio" accept="image/png, .jpeg, .jpg, image/gif">
+			</div>
+			<div class="file-path-wrapper">
+				<input class="file-path validate" type="text" placeholder = "Diseñalo y sube la propuesta en imagen de formato JPEG">
+			</div>
+		</div>
+		<br>
+		
+		
+		<div class="row">
+			<div class="col s12  " style ="text-align:right">
+				<a class = "links "  href= "proyectopei/ayudas/modelo.pdf"   target="_blank"> Modelos pedagógicos fundamentales <i class="material-icons small">info</i> </a>
+			</div>
+			<label for="textarea1" class ="tooltipped " data-position="right" data-tooltip="Cuál es el modelo pedagógico institucional"> Modelo Pedagógico </label>
+			<div class="input-field col s12">
+				<textarea id="modeloPedagogico" class="materialize-textarea " placeholder = "Escribe aquí cuál es el modelo pedagógico institucional"></textarea>
+			</div>
+			
+		</div>
+		<br>
+		
+		<div class="row">
+			<div class="col s12  " style ="text-align:right">
+				<a class = "links "  href= "proyectopei/ayudas/1850-202.pdf"   target="_blank"> DECRETO NUMERO 1850 DE 2002   <i class="material-icons small">info</i> </a>
+			</div>
+			<label for="textarea1" class ="tooltipped " data-position="right" data-tooltip="Horas en las que los estudiantes y docentes realizan labores académicas"> Jornada Escolar  </label>
+			<div class="input-field col s12">
+				<textarea id="jornadaEscolar" class="materialize-textarea " placeholder = "Escribe las horas en las que funciona la institucion"></textarea>
+			</div>
+			
+		</div>
+		<br>
+		
+		<div class="row">
+			<div class="col s12  " style ="text-align:right">
+				<a class = "links "  href= "proyectopei/ayudas/1290.pdf"   target="_blank"> Decreto 1290   <i class="material-icons small">info</i> </a>
+			</div>
+			<h5 class ="laila align-center tooltipped" data-position="left" data-tooltip="Cómo evalúa la institucion a sus estudiantes"> Sistema Institucional de Evaluación (SIEE)  </h5>
+			<div class = "row subTemas">
+				
+				<br>
+				<h6>1. Los criterios de evaluación y promoción. </h6>
+				<div class="input-field col s12">
+					<textarea id="criteriosEvaluacion" class="materialize-textarea " placeholder = "Escriba aquí el contenido" ></textarea>
+				</div>
+				
+				<br>
+				<h6>2. La escala de valoración institucional y su respectiva equivalencia con la escala nacional. </h6>
+				<div class="input-field col s12">
+					<textarea id="escalaValoracion" class="materialize-textarea " placeholder = "Escriba aquí el contenido" ></textarea>
+				</div>
+				
+				<br>
+				<h6>3. Las estrategias de valoración integral de los desempeños de los estudiantes.</h6>
+				<div class="input-field col s12">
+					<textarea id="estrategiasValoracion" class="materialize-textarea " placeholder = "Escriba aquí el contenido" ></textarea>
+				</div>
+				
+				<br>
+				<h6>4. Las acciones de seguimiento para el mejoramiento de los desempeños de los estudiantes durante el año escolar.</h6>
+				<div class="input-field col s12">
+					<textarea id="accionesSeguimiento" class="materialize-textarea " placeholder = "Escriba aquí el contenido" ></textarea>
+				</div>
+				
+				<br>
+				<h6>5. Los procesos de autoevaluación de los planes de apoyo y estrategias de inclusión. </h6>
+				<div class="input-field col s12">
+					<textarea id="procesosAutoevaluacion" class="materialize-textarea " placeholder = "Escriba aquí el contenido" ></textarea>
+				</div>
+				
+				<br>
+				<h6>6. Las estrategias de apoyo necesarias para resolver situaciones pedagógicas pendientes de los estudiantes.</h6>
+				<div class="input-field col s12">
+					<textarea id="estategiasApoyo" class="materialize-textarea " placeholder = "Escriba aquí el contenido" ></textarea>
+				</div>
+				
+				<br>
+				<h6>7. Las acciones para garantizar que los directivos docentes y docentes del establecimiento educativo cumplan con los procesos evaluativos estipulados en el sistema institucional de evaluación. </h6>
+				<div class="input-field col s12">
+					<textarea id="accionesCumplimientoEvaluacion" class="materialize-textarea " placeholder = "Escriba aquí el contenido" ></textarea>
+				</div>
+				
+				<br>
+				<h6>8. La periodicidad de entrega de informes a los padres de familia. </h6>
+				<div class="input-field col s12">
+					<textarea id="periodicidadInformes" class="materialize-textarea " placeholder = "Escriba aquí el contenido" ></textarea>
+				</div>
+				
+				<br>
+				<h6> 9. La estructura de los informes de los estudiantes, para que sean claros, comprensibles y den información integral del avance en la formación. </h6>
+				<div class="input-field col s12">
+					<textarea id="estructuraInformes" class="materialize-textarea " placeholder = "Escriba aquí el contenido" ></textarea>
+				</div>
+				
+				<br>
+				<h6> 10. Las instancias, procedimientos y mecanismos de atención y resolución de reclamaciones de padres de familia y estudiantes sobre la evaluación y promoción. </h6>
+				<div class="input-field col s12">
+					<textarea id="resolucionReclamos" class="materialize-textarea " placeholder = "Escriba aquí el contenido" ></textarea>
+				</div>
+				
+				<br>
+				<h6> 11. Los mecanismos de participación de la comunidad educativa en la construcción del sistema institucional de evaluación de los estudiantes.  </h6>
+				<div class="input-field col s12">
+					<textarea id="participacionComunidadMecanismos" class="materialize-textarea " placeholder = "Escriba aquí el contenido" ></textarea>
+				</div>
+				
+				
+				
+				
+			</div>
+			
+		</div>
+		
+		<div class="row">
+			<div class="col s12  " style ="text-align:right">
+				<a class = "links "  href= "proyectopei/ayudas/transversales.pdf"   target="_blank"> Proyectos Pedagógicos Transversales  <i class="material-icons small">info</i> </a>
+			</div>
+			<label for="textarea1" class ="tooltipped " data-position="right" data-tooltip="Proyectos transversales institucionales"> Proyectos Transversales </label>
+			<div class="input-field col s12">
+				<textarea id="proyectosTransversales" class="materialize-textarea " placeholder = "escribe aqui el titulo de cada proyecto y una breve descripcion del mismo"></textarea>
+			</div>
+			
+		</div>
+		<br>	
+		
+		<div class="row">
+			
+			<label for="textarea1" class="tooltipped"  data-position="right" data-tooltip="Qué asignaturas y que intensidad horaria se le asigna como institucion">Uso de los Tiempos de Aprendizaje </label>
+			<div class="input-field col s12">
+				<textarea id="tiemposAprendizaje" class="materialize-textarea " placeholder = "escribe aqui la intensidad horaria de las asignaturas"></textarea>
+			</div>
+			
+		</div>
+		<br>
+		
+		<label for="textarea1" class="tooltipped" data-position="right" data-tooltip="Cómo programan clases los docente">Planeación de Clase </label>
+		<br>
+		<br>
+		<div class="file-field input-field">
+			<div class="btn botones" >
+				<span>Buscar</span>
+				<input type="file" id="planeacionClase" accept="image/png, .jpeg, .jpg, image/gif">
+			</div>
+			<div class="file-path-wrapper">
+				<input class="file-path validate" type="text" placeholder = "Diseña el formato de planeacion de clase institucional y súbelo en formato JPEG en la mejor calidad posible">
+			</div>
+		</div>
+		<br>
+		
+		<div class="row">
+			<div class="col s12  " style ="text-align:right">
+				<!--link caido-->
+				<a class = "links "  href= "proyectopei/ayudas/resultados.pdf"   target="_blank"> Instrumentos de evaluación en el proceso enseñanza <i class="material-icons small">info</i> </a>
+			</div>
+			<label for="textarea1" class="tooltipped" data-position="right" data-tooltip="Cómo evalúa la institucion a sus estudiantes"> Seguimiento a los Resultados </label>
+			<div class="input-field col s12">
+				<textarea id="seguimientoResultados" class="materialize-textarea " placeholder = "Escribe aqui instrumentos para evaluar y como se prepara a los estudiantes en prueba externas"></textarea>
+			</div>
+			
+		</div>
+		<br>
+		
+		<label for="textarea1" class="tooltipped" data-position="right" data-tooltip="Cómo se lleva la asistencia en la institucion">Seguimiento a la Asistencia  </label>
+		<br>
+		<br>
+		<div class="file-field input-field">
+			<div class="btn botones" >
+				<span>Buscar</span>
+				<input type="file" id="seguimientoAsistencia" accept="image/png, .jpeg, .jpg, image/gif">
+			</div>
+			<div class="file-path-wrapper">
+				<input class="file-path validate" type="text" placeholder = "Diseña el formato de asistencia institucional y súbelo en formato JPEG en la mejor calidad posible">
+			</div>
+		</div>
+		<br>
+		
+		
+		<div class="col s12  " style ="text-align:right">
+			<a class = "links "  href= "https://www.mineducacion.gov.co/1621/article-82745.html"   target="_blank"> Que es? <i class="material-icons small">info</i> </a>
+		</div>
+		<label for="textarea1" class="tooltipped" data-position="right" data-tooltip="Como hace seguimiento la institucion a los estudiantes que se retiran"> Seguimiento a la Deserción </label>
+		<br>
+		<br>
+		<div class="file-field input-field">
+			<div class="btn botones" >
+				<span>Buscar</span>
+				<input type="file" id="seguimientoDesercion" accept="image/png, .jpeg, .jpg, image/gif">
+			</div>
+			<div class="file-path-wrapper">
+				<input class="file-path validate" type="text" placeholder = "Diseña el formato de seguimiento institucional y súbelo en formato JPEG en la mejor calidad posible">
+			</div>
+		</div>
+		<br>
+		
+		<div >
+			<div class= "align-center">
+				<center><a class="waves-effect #00695c teal darken-3 btn botones pulse modal-trigger" data-target="modal1" onclick ="guardarGestionPedagogica()">Guardar  <i class="material-icons rigth">save</i></a>
+				</div>
+			</div>
+			
+			
+			
+			<!-- Modal Structure -->
+			<div id="modal1" class="modal divModal">
+				<div class="modal-content ">
+					<div id="container" class = " align-center" >			
+						
+					</div>
+					<div class= "align-center">
+						<center><a  id = "continuar" class="waves-effect waves-light btn botones esconder" href="gestionAdministrativaTH.html">Continuar  <i class="material-icons rigth">send</i></a></center>
+					</div>
+					
+				</div>
+			</div>	   
+			
+			
+			
+		</div>
+
+		<footer class="page-footer teal lighten-2">
+			<div class="container">
+				<div class="row">
+					<div class="col l6 s12">
+						<h5 class="white-text">Instituto de Educación a Distancia</h5>
+						<img class="imgUT" src="img/ut.png">
+						
+					</div>
+				</div>
+			</div>
+
+
+
+		</body>
+
+
+		
+		</html> 
+

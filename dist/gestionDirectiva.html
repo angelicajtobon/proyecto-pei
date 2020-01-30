@@ -1,81 +1,357 @@
-Html Webpack Plugin:
-<pre>
-  Error: Child compilation failed:
-  Entry module not found: Error: Can't resolve 'C:\proyectopei\htlm\gestionDirec  tiva.html' in 'C:\proyectopei':
-  Error: Can't resolve 'C:\proyectopei\htlm\gestionDirectiva.html' in 'C:\proyec  topei'
-  
-  - compiler.js:79 childCompiler.runAsChild
-    [C:]/[html-webpack-plugin]/lib/compiler.js:79:16
-  
-  - Compiler.js:343 compile
-    [proyectopei]/[webpack]/lib/Compiler.js:343:11
-  
-  - Compiler.js:681 hooks.afterCompile.callAsync.err
-    [proyectopei]/[webpack]/lib/Compiler.js:681:15
-  
-  
-  - Hook.js:154 AsyncSeriesHook.lazyCompileHook
-    [proyectopei]/[tapable]/lib/Hook.js:154:20
-  
-  - Compiler.js:678 compilation.seal.err
-    [proyectopei]/[webpack]/lib/Compiler.js:678:31
-  
-  
-  - Hook.js:154 AsyncSeriesHook.lazyCompileHook
-    [proyectopei]/[tapable]/lib/Hook.js:154:20
-  
-  - Compilation.js:1423 hooks.optimizeAssets.callAsync.err
-    [proyectopei]/[webpack]/lib/Compilation.js:1423:35
-  
-  
-  - Hook.js:154 AsyncSeriesHook.lazyCompileHook
-    [proyectopei]/[tapable]/lib/Hook.js:154:20
-  
-  - Compilation.js:1414 hooks.optimizeChunkAssets.callAsync.err
-    [proyectopei]/[webpack]/lib/Compilation.js:1414:32
-  
-  
-  - Hook.js:154 AsyncSeriesHook.lazyCompileHook
-    [proyectopei]/[tapable]/lib/Hook.js:154:20
-  
-  - Compilation.js:1409 hooks.additionalAssets.callAsync.err
-    [proyectopei]/[webpack]/lib/Compilation.js:1409:36
-  
-  
-  - Hook.js:154 AsyncSeriesHook.lazyCompileHook
-    [proyectopei]/[tapable]/lib/Hook.js:154:20
-  
-  - Compilation.js:1405 hooks.optimizeTree.callAsync.err
-    [proyectopei]/[webpack]/lib/Compilation.js:1405:32
-  
-  
-  - Hook.js:154 AsyncSeriesHook.lazyCompileHook
-    [proyectopei]/[tapable]/lib/Hook.js:154:20
-  
-  - Compilation.js:1342 Compilation.seal
-    [proyectopei]/[webpack]/lib/Compilation.js:1342:27
-  
-  - Compiler.js:675 compilation.finish.err
-    [proyectopei]/[webpack]/lib/Compiler.js:675:18
-  
-  - Compilation.js:1261 hooks.finishModules.callAsync.err
-    [proyectopei]/[webpack]/lib/Compilation.js:1261:4
-  
-  
-  - Hook.js:154 AsyncSeriesHook.lazyCompileHook
-    [proyectopei]/[tapable]/lib/Hook.js:154:20
-  
-  - Compilation.js:1253 Compilation.finish
-    [proyectopei]/[webpack]/lib/Compilation.js:1253:28
-  
-  - Compiler.js:672 hooks.make.callAsync.err
-    [proyectopei]/[webpack]/lib/Compiler.js:672:17
-  
-  
-  - Compilation.js:1185 _addModuleChain
-    [proyectopei]/[webpack]/lib/Compilation.js:1185:12
-  
-  - Compilation.js:1044 errorAndCallback.bail.err
-    [proyectopei]/[webpack]/lib/Compilation.js:1044:6
-  
-</pre>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Gestión Directiva</title>
+	<meta charset="utf-8">
+	<!-- Compiled and minified CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+	<!-- Compiled and minified JavaScript -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+
+	<link href="https://fonts.googleapis.com/css?family=Laila" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Fira+Sans|Noto+Sans|Stylish" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Livvic&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="css/estilos.css">
+	
+	<script type="text/javascript" src="js/app.js"></script>
+	<script type="text/javascript" src="js/usuarios.js"></script>
+	<script type="text/javascript" src="js/datospei.js"></script>
+	
+	
+</head>
+<body>
+	<nav class= " teal lighten-2">
+		<div class="nav-wrapper">
+			<a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+			<ul class="right hide-on-med-and-down">
+				<li><a href="html/principal.html" >Principal</a></li>
+				<li><a href="html/identificacion.html" >Identificación</a></li>
+				<li><a href="html/horizonteInstitucional.html" >Horizonte Institucional</a></li>
+				<li><a href="html/gestionDirectiva.html" class="actual">Gestión Directiva</a></li>
+				<li><a href="html/gestionPedagogica.html" >Gestión Pedagógica</a></li>
+				<li><a href="html/gestionAdministrativaTH.html">Gestión Administrativa y Talento Humano</a></li>
+				<li><a href="html/gestionComunidad.html">Gestión de la Comunidad</a></li>
+				<li><a onclick="cerrarCesion()">Cerrar Cesion</a></li>
+			</ul>
+		</div>
+	</nav>
+
+	<ul class="sidenav" id="mobile-demo">
+		<li><a href="html/principal.html" >Principal</a></li>
+		<li><a href="html/identificacion.html" >Identificación</a></li>
+		<li><a href="html/horizonteInstitucional.html" >Horizonte Institucional</a></li>
+		<li><a href="html/gestionDirectiva.html" class="actual">Gestión Directiva</a></li>
+		<li><a href="html/gestionPedagogica.html" >Gestión Pedagógica</a></li>
+		<li><a href="html/gestionAdministrativaTH.html">Gestión Administrativa y Talento Humano</a></li>
+		<li><a href="html/gestionComunidad.html">Gestión de la Comunidad</a></li>
+		<li><a onclick="cerrarCesion()">Cerrar Cesion</a></li>
+	</ul>
+	
+
+	<h3 style="text-align:center" class="laila espacio-arriba">Gestión Directiva</h3>
+	<br>
+	<br>
+	
+	
+	<div class="row espacios">
+		
+		<div class="row">
+			<div class="col s12  " style ="text-align:right">
+				<a class = "links "  href= "proyectopei/ayudas/metas.pdf"   target="_blank">   Planeamiento de metas <i class="material-icons small">info</i> </a>
+			</div>
+			<label for="textarea1" class = "tooltipped" data-position= "right" data-tooltip="Que metas tienen como institucion"> Metas Institucionales </label>
+			<div class="input-field col s12">
+				<textarea id="metasInstitucionales" class="materialize-textarea " placeholder = "Escribe aqui las metas institucionales"></textarea>
+			</div>
+			
+		</div>
+		<br>
+		
+		<div class="row">
+			<div class="col s12  " style ="text-align:right">
+				<a class = "links "  href= "proyectopei/ayudas/inclusion1.pdf"   target="_blank">  Inclusion Educativa<i class="material-icons small">info</i> </a> <br>
+				<a class = "links "  href= "proyectopei/ayudas/inclusion2.pdf"   target="_blank">  Ley Estatutaria 1618 de 2013<i class="material-icons small">info</i> </a>
+			</div>
+			<label for="textarea1" class = "tooltipped" data-position= "right" data-tooltip="Que propone la institucion para la inclusión">Políticas de Inclusión - Propuesta de la IE</label>
+			<div class="input-field col s12">
+				<textarea id="politicasInclusion" class="materialize-textarea " placeholder = "Escribe aquí las Políticas de inclusión institucional"></textarea>
+			</div>        
+		</div>
+		<br>
+		
+		
+		<div class="row">
+			<div class="col s12  " style ="text-align:right">
+				<a class = "links "  href= "ayudas/articulacion.pdf"   target="_blank"> Que es? <i class="material-icons small">info</i> </a> 
+				
+			</div>
+			
+			<label for="textarea1"  class = "tooltipped" data-position= "right" data-tooltip="Que convenios o articulaciones posee la institucion educativa" >Políticas de Articulación</label>
+			<div class="input-field col s12">
+				<textarea id="politicasArticulacion" class="materialize-textarea " placeholder = "Escribe aqui los convenios o articulaciones existentes"></textarea>
+			</div>        
+		</div>
+		<br>
+		
+		
+		<div class="row">
+			<div class="col s12  " style ="text-align:right">
+				<!--Link caido-->
+				<a class = "links "  href= "https://i.ytimg.com/vi/gFHdfBJRoVo/maxresdefault.jpg."   target="_blank"> Etapas del diseño curricular <i class="material-icons small">info</i> </a> 
+				
+			</div>
+			<label for="textarea1" class ="tooltipped"  data-position= "right" data-tooltip="Describe que ciudadano egresa de tu institucion">Estrategia Pedagógica</label>
+			<div class="input-field col s12">
+				<textarea id="estrategiaPedagogica" class="materialize-textarea " placeholder = "Qué estrategia pedagógica se desarrolla acorde al modelo educativo y pedagógico"></textarea>
+			</div>        
+		</div>
+		<br>
+		
+		<div class="row">
+			<div class="col s12  " style ="text-align:right">
+				<a class = "links "  href= "https://www.mineducacion.gov.co/1621/propertyvalue-32772.html"   target="_blank"> Normatividad <i class="material-icons small">info</i> </a> 
+				
+			</div>
+			<h5 class ="laila align-center tooltipped"  data-position= "left" data-tooltip="Quienes integran el gobierno escolar">Gobierno Escolar </h5>
+			<br>
+			<div class="row subTemas">
+				<br>
+				<h6 > Consejo Directivo</h6>
+				<div class="input-field col s12">
+					<textarea id="consejoDirectivo" class="materialize-textarea " placeholder = "integrantes , cronograma"></textarea>
+				</div> 
+				<br>
+				<h6 > Consejo Académico</h6>
+				<div class="input-field col s12">
+					<textarea id="consejoAcademico" class="materialize-textarea " placeholder = "integrantes , cronograma"></textarea>
+				</div>	
+				<br>
+				<h6 > Consejo de Evaluación y Promoción</h6>
+				<div class="input-field col s12">
+					<textarea id="consejoEvaluacion" class="materialize-textarea " placeholder = "integrantes , cronograma"></textarea>
+				</div>	
+				<br>
+				<h6 > Comité de Convivencia Escolar</h6>
+				<div class="input-field col s12">
+					<textarea id="comiteConvivencia" class="materialize-textarea " placeholder = "integrantes , cronograma"></textarea>
+				</div>	
+				<br>
+				<h6 > Consejo Estudiantil</h6>
+				<div class="input-field col s12">
+					<textarea id="consejoEstudiantil" class="materialize-textarea " placeholder = "integrantes , cronograma"></textarea>
+				</div>
+				<br>
+				<h6 > Consejo de Padres de Familia</h6>
+				<div class="input-field col s12">
+					<textarea id="consejoPadres" class="materialize-textarea " placeholder = "integrantes , cronograma"></textarea>
+				</div>
+			</div>
+			
+		</div>
+		<br>
+
+		<div class="row">
+			<div class="col s12  " style ="text-align:right">
+				<a class = "links "  href= "proyectopei/ayudas/comunicacionExt.pdf"   target="_blank"> Comunicacion externa  <i class="material-icons small">info</i> </a> 
+			</div>
+			<label for="textarea1" class ="tooltipped" data-position = "right" data-tooltip="Canales de comunicación institucional">Mecanismos de Comunicación </label>
+			<div class="input-field col s12">
+				<textarea id="mecanismosComunicacion" class="materialize-textarea " placeholder = "Escribe aqui - teléfonos, correo electrónico, redes sociales"></textarea>
+			</div>        
+		</div>
+		<br>
+		
+		<div class="row">
+			<div class="col s12  " style ="text-align:right">
+				<a class = "links "  href= "proyectopei/ayudas/motivacion.pdf"   target="_blank"> Motivación y estímulo  <i class="material-icons small">info</i> </a> 
+			</div>
+			<label for="textarea1" class ="tooltipped" data-position = "right" data-tooltip="como condecoras los alcances positivos en tu institucion">Políticas para el Reconocimiento de Logros</label>
+			<div class="input-field col s12">
+				<textarea id="reconocimientoLogros" class="materialize-textarea " placeholder = "Escribe aqui como se reconocen los logros en la institucion educativa"></textarea>
+			</div>        
+		</div>
+		<br>
+		
+		<div class="row">
+			
+			<label for="textarea1" class ="tooltipped" data-position = "right" data-tooltip="Actividades a realizar para la bienvenida de los nuevos integrantes de la institucion" >Inducción de Nuevos Estudiantes y Docentes</label>
+			<div class="input-field col s12">
+				<textarea id="induccion" class="materialize-textarea " placeholder = "Escribe aqui la institucion da la bienvenida"></textarea>
+			</div>        
+		</div>
+		<br>
+
+		<div class="row">
+			<div class="col s12  " style ="text-align:right">
+				<a class = "links "  href= "proyectopei/ayudas/clima.pdf"  target="_blank"> Recomendaciones para mejorar el clima laboral <i class="material-icons small">info</i> </a> 
+			</div>
+			<label for="textarea1" class ="tooltipped" data-position = "right" data-tooltip="Que estimulos tiene la institucion educativa para los integrantes">Plan de Estímulos Educativos</label>
+			<div class="input-field col s12">
+				<textarea id="planEstimulos" class="materialize-textarea " placeholder=" Escribe el plan de estímulos para docentes y estudiantes "></textarea>
+			</div>        
+		</div>
+
+		
+		
+		<div class="row">
+			<div class="col s12  " style ="text-align:right">
+				<a class = "links "  href= "proyectopei/ayudas/1620-2013.pdf"  target="_blank"> Ley 1620 de 2013 <i class="material-icons small">info</i> </a> <br>
+				<a class = "links "  href= "proyectopei/ayudas/1695-2013.pdf"  target="_blank"> Decreto 1965 de 2013 <i class="material-icons small">info</i> </a> <br>
+				<a class = "links "  href= "proyectopei/ayudas/115-1994.pdf"  target="_blank"> Ley 115 de 1994 - art 73 y 87 <i class="material-icons small">info</i> </a> 
+			</div>
+			<h5 class ="laila align-center tooltipped"  data-position = "left"  data-tooltip="Cuál es el pacto de convivencia que tiene la institucion educativa">Pacto de Convivencia</h5>
+			<div class = "row subTemas">
+				
+				<br>
+				<h6>1.- Las reglas de higiene personal y de salud pública que preserven el bienestar de la comunidad educativa, la conservación individual de la salud y la prevención frente al consumo de sustancias psicotrópicas.</h6>
+				<div class="input-field col s12">
+					<textarea id="reglasHigienePersonal" class="materialize-textarea " placeholder = "Escriba el contenido aquí"></textarea>
+				</div>
+				
+				<br>
+				<h6>2.- Criterios de respeto, valoración y compromiso frente a la utilización y conservación de los bienes personales y de uso colectivo, tales como equipos, instalaciones e implementos.</h6>
+				<div class="input-field col s12">
+					<textarea id="criteriosRespeto" class="materialize-textarea "></textarea>
+				</div>
+				
+				<br>
+				<h6>3.- Pautas de comportamiento en relación con el cuidado del medio ambiente escolar.</h6>
+				<div class="input-field col s12">
+					<textarea id="pautasComportamiento" class="materialize-textarea " placeholder = "Escriba el contenido aquí"></textarea>
+				</div>			
+				
+				<br>
+				<h6>4.- Normas de conducta de alumnos y profesores que garanticen el mutuo respeto. Deben incluir la definición de claros procedimientos para formular las quejas o reclamos al respecto.</h6>
+				<div class="input-field col s12">
+					<textarea id="normasConducta" class="materialize-textarea "></textarea>
+				</div>	
+				
+				<br>
+				<h6>5.- Procedimientos para resolver con oportunidad y justicia los conflictos individuales o colectivos que se presenten entre miembros de la comunidad. Deben incluir instancias de diálogo y de conciliación.</h6>
+				<div class="input-field col s12">
+					<textarea id="procedimientosConflictos" class="materialize-textarea " placeholder = "Escriba el contenido aquí"></textarea>
+				</div>	
+				
+				<br>
+				<h6>6.- Pautas de presentación personal que preserven a los alumnos de la discriminación por razones de apariencia.</h6>
+				<div class="input-field col s12">
+					<textarea id="pautasPresentacionPersonal" class="materialize-textarea " placeholder = "Escriba el contenido aquí"></textarea>
+				</div>	
+				
+				<br>
+				<h6>7.- Definición de sanciones disciplinarias aplicables a los alumnos, incluyendo el derecho a la defensa.</h6>
+				<div class="input-field col s12">
+					<textarea id="definicionSanciones" class="materialize-textarea " placeholder = "Escriba el contenido aquí"></textarea>
+				</div>	
+				
+				<br>
+				<h6>8.- Reglas para la elección de representantes al Consejo Directivo y para la escogencia de voceros en los demás consejos previstos en el presente Decreto. Debe incluir el proceso de elección del personero de
+			los estudiantes.</h6>
+				<div class="input-field col s12">
+					<textarea id="eleccionRepresentantes" class="materialize-textarea " placeholder = "Escriba el contenido aquí"></textarea>
+				</div>	
+				
+				<br>
+				<h6>9.- Calidades y condiciones de los servicios de alimentación, transporte, recreación dirigida y demás conexos con el servicio de educación que ofrezca la institución a los alumnos.</h6>
+				<div class="input-field col s12">
+					<textarea id="calidadAlimentacion" class="materialize-textarea " placeholder = "Escriba el contenido aquí"></textarea>
+				</div>	
+				
+				<br>
+				<h6>10.- Funcionamiento y operación de los medios de comunicación interna del establecimiento, tales como periódicos, revistas o emisiones radiales que sirvan de instrumentos efectivos al libre pensamiento y a la libre expresión.</h6>
+				<div class="input-field col s12">
+					<textarea id="funcionamientoComunicacion" class="materialize-textarea " placeholder = "Escriba el contenido aquí"></textarea>
+				</div>
+				
+				<br>
+				<h6>11.- Encargos hechos al establecimiento para aprovisionar a los alumnos de material didáctico de uso general, libros, uniformes, seguros de vida y de salud.</h6>
+				<div class="input-field col s12">
+					<textarea id="provisionMaterialDidactico" class="materialize-textarea " placeholder = "Escriba el contenido aquí"></textarea>
+				</div>
+				
+				<br>
+				<h6>12.- Reglas para uso del bibliobanco y la biblioteca escolar.</h6>
+				<div class="input-field col s12">
+					<textarea id="usoBibliobanco" class="materialize-textarea " placeholder = "Escriba el contenido aquí"></textarea>
+				</div>			
+				
+			</div>		
+		</div>
+		
+		<div class="row">
+			<label for="textarea1" class ="tooltipped" data-position = "right" data-tooltip="Qué actividades realiza la institución diferentes a las clases regulares">Actividades Extracurriculareslabel>
+				<div class="input-field col s12">
+					<textarea id="actividadesExtracurriculares" class="materialize-textarea " placeholder = "Escriba las actividades que realiza en el año a nivel institucional"></textarea>
+				</div>        
+			</div>
+			<br>
+			
+			
+			<div class="row">
+				<div class="col s12  " style ="text-align:right">
+					<a class = "links "  href= "proyectopei/ayudas/estrategia.pdf"  target="_blank"> Gestión Estratégica<i class="material-icons small">info</i> </a> 
+				</div>
+				<label for="textarea1" class ="tooltipped" data-position = "right" data-tooltip="Que instrumento usa la institución para evaluarse" >Autoevaluacion Institucional</label>
+				<br>
+				<br>
+				<div class="file-field input-field">
+					<div class="btn botones" >
+						<span>Buscar</span>
+						<input type="file" id="autoevaluacionInstitucional" accept="image/png, .jpeg, .jpg, image/gif">
+					</div>
+					<div class="file-path-wrapper">
+						<input class="file-path validate" type="text" placeholder = "Diseñalo y sube la propuesta en imagen de formato JPEG">
+					</div>
+				</div>
+				<br>
+				
+			</div>
+			<br>
+			
+			
+			
+			
+			<div >
+				<div class= "align-center">
+					<center><a class="waves-effect #00695c teal darken-3 btn botones pulse  modal-trigger" data-target="modal1" onclick ="guardarGestionDirectiva()">Guardar <i class="material-icons rigth">save</i></a>
+					</div>
+					
+					
+					
+				</div>
+				
+				<!-- Modal Structure -->
+				<div id="modal1" class="modal divModal">
+					<div class="modal-content ">
+						<div id="container" class = " align-center" >			
+							
+						</div>
+						<div class= "align-center">
+							<center><a id="continuar" class="waves-effect waves-light btn botones " href="gestionPedagogica.html">Continuar <i class="material-icons rigth">send</i></a></center>
+						</div>
+						
+					</div>
+				</div>
+				
+				
+			</div>
+			
+			<footer class="page-footer teal lighten-2">
+				<div class="container">
+					<div class="row">
+						<div class="col l6 s12">
+							<h5 class="white-text">Instituto de Educación a Distancia</h5>
+							<img class="imgUT" src="img/ut.png">
+						</div>
+					</div>
+				</div>
+
+			</footer>    
+
+		</body>
+
+
+		</html>
