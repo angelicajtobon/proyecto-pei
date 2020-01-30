@@ -51,6 +51,9 @@ const modificarOutput = 'modificar.html';
 const registroInput = './html/registro.html';
 const registroOutput = 'registro.html';
 
+const recuperarInput = './html/recuperar.html';
+const recuperarOutput = 'recuperar.html';
+
 
 
 module.exports = {
@@ -508,7 +511,20 @@ module.exports = {
 		inject: true,
 		hash: true,
 		templateParameters: {
-			titulo: ' ',
+			titulo: 'Plataforma de Administracion de Proyectos Educativos',
+			principal: 'Principal',
+			identificacion: 'Identificación',
+			horizonteInst: 'Horizonte Institucional',
+			gestionDir: 'Gestión Directiva',
+			gestionPed: 'Gestión Pedagógica',
+			gestionATH: 'Gestión Administrativa y Talento Humano',
+			gestionCom: 'Gestión de la Comunidad',
+			cerrarCesion: 'Cerrar Cesion',
+			crear: 'Crear nuevo',
+			consultar: 'Consultar',
+			modalTit: 'Comencemos',
+			modalParraf: 'En cada item podras digitar o pegar la información si esta ya existe. Las imágenes solicitadas dentro de los formularios se deberan adjuntar en formato .JPG',
+			idead: 'Instituto de Educación a Distancia'
 		}
 	}),
 	new HtmlWebpackPlugin({  
@@ -517,7 +533,20 @@ module.exports = {
 		inject: true,
 		hash: true,
 		templateParameters: {
-			titulo: ' ',
+			titulo: 'Administrar Proyecto Educativo Institucional',
+			pei: 'P.E.I:';
+			gestiones : 'Gestiones',
+			modificar : 'Modificar',
+			identificacion: 'Identificación',
+			horizonteInst: 'Horizonte Institucional',
+			gestionDir: 'Gestión Directiva',
+			gestionPed: 'Gestión Pedagógica',
+			gestionATH: 'Gestión Administrativa y Talento Humano',
+			gestionCom: 'Gestión de la Comunidad',
+			principal: 'Ir a Principal',
+			ver: 'Ver P.E.I',
+			idead: 'Instituto de Educación a Distancia'
+			
 		}
 	}),
 	new HtmlWebpackPlugin({  
@@ -526,7 +555,31 @@ module.exports = {
 		inject: true,
 		hash: true,
 		templateParameters: {
-			titulo: ' ',
+			titulo: 'Formulario de registro ',
+			tipoID: 'Tipo de identificacion',
+			cc: 'Cedula de ciudadania',
+			ce: 'Cedula de Extranjeria',
+			nit: 'NIT',
+			departamento: 'Departamento',
+			seleccione: 'Seleccione',
+			ciudad: 'Ciudad',
+			registrar: 'Registrar',
+			cancelar: 'Cancelar',
+			iniciar: 'Iniciar Sesión',
+			idead: 'Instituto de Educación a Distancia'
+			
+		}
+	}),
+	new HtmlWebpackPlugin({  
+		filename: recuperarOutput, 
+		template: recuperarInput,
+		inject: true,
+		hash: true,
+		templateParameters: {
+			titulo: 'Formulario de registro ',
+			idead: 'Instituto de Educación a Distancia'
+			
+			
 		}
 	})
 

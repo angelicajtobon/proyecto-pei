@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="html1">
 <head>
-	<title>Principal</title>
+	<title><%= titulo%></title>
     <meta charset="utf-8">
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
@@ -25,35 +25,36 @@
 </head>
 
 	<body class="body1">
-		  <nav class= " teal lighten-2">
-			<div class="nav-wrapper">
-			  <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-			  <ul class="right hide-on-med-and-down">
-				<li><a href="principal.html" class = "actual">Principal</a></li>
-				<li><a href="identificacion.html">Identificación</a></li>
-				<li><a href="horizonteInstitucional.html">Horizonte Institucional</a></li>
-				<li><a href="gestionDirectiva.html">Gestión Directiva</a></li>
-				<li><a href="gestionPedagogica.html">Gestión Pedagógica</a></li>
-				<li><a href="gestionAdministrativaTH.html">Gestión Administrativa y Talento Humano</a></li>
-				<li><a href="gestionComunidad.html">Gestión de la Comunidad</a></li>
-				<li><a onclick="cerrarCesion()">Cerrar Cesion</a></li>
-			  </ul>
-			</div>
-		  </nav>
+	<nav class= " teal lighten-2">
+		<div class="nav-wrapper">
+			<a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+			<ul class="right hide-on-med-and-down">
+				<li><a href="html/principal.html" class="actual"><%= principal%></a></li>
+				<li><a href="html/identificacion.html" ><%= identificacion%></a></li>
+				<li><a href="html/horizonteInstitucional.html"><%= horizonteInst%></a></li>
+				<li><a href="html/gestionDirectiva.html"><%= gestionDir%></a></li>
+				<li><a href="html/gestionPedagogica.html"><%= gestionPed%></a></li>
+				<li><a href="html/gestionAdministrativaTH.html"><%= gestionATH%></a></li>
+				<li><a href="html/gestionComunidad.html"><%= gestionCom%></a></li>
+				<li><a onclick="cerrarCesion()"><%= cerrarCesion%></a></li>
+			</ul>
+		</div>
+	</nav>
 
-		  <ul class="sidenav" id="mobile-demo">
-				<li><a href="principal.html" class = "actual">Principal</a></li>
-				<li><a href="identificacion.html">Identificación</a></li>
-				<li><a href="horizonteInstitucional.html">Horizonte Institucional</a></li>
-				<li><a href="gestionDirectiva.html">Gestión Directiva</a></li>
-				<li><a href="gestionPedagogica.html">Gestión Pedagógica</a></li>
-				<li><a href="gestionAdministrativaTH.html">Gestión Administrativa y TH</a></li>
-				<li><a href="gestionComunidad.html">Gestión de la Comunidad</a></li>
-				<li><a onclick="cerrarCesion()">Cerrar Cesion</a></li>
-		  </ul>
+	<ul class="sidenav" id="mobile-demo">
+		<li><a href="html/principal.html" class="actual"><%= principal%></a></li>
+		<li><a href="html/identificacion.html" ><%= identificacion%></a></li>
+		<li><a href="html/horizonteInstitucional.html"><%= horizonteInst%></a></li>
+		<li><a href="html/gestionDirectiva.html"><%= gestionDir%></a></li>
+		<li><a href="html/gestionPedagogica.html"><%= gestionPed%></a></li>
+		<li><a href="html/gestionAdministrativaTH.html"><%= gestionATH%></a></li>
+		<li><a href="html/gestionComunidad.html"><%= gestionCom%></a></li>
+		<li><a onclick="cerrarCesion()"><%= cerrarCesion%></a></li>
+	</ul>
+	
 				   
 		  
-		<h2 class="laila espacio-arriba" style="text-align:center" >Plataforma de Administracion de Proyectos Educativos</h2>
+		<h2 class="laila espacio-arriba" style="text-align:center" ><%= titulo%></h2>
 		<br>
 		<center><img class="materialboxed"  width="200" src="img/logo.png"></center>
 		
@@ -61,12 +62,12 @@
 		<div class="row principal">
 
 		  <div class="col s6" style="text-align:center"> 
-			<label>Crear nuevo</label>
+			<label> <%= crear%</label>
 			<br>
 			<a href="#modal1" class="#00695c teal darken-3 btn-large pulse btn-floating btn tooltipped modal-trigger large" data-position="bottom" data-tooltip="Aqui podras iniciar un nuevo P.E.I para su Institución"><i class="material-icons left">add_box</i></a>
 		  </div>
 		  <div class="col s6" style="text-align:center"> 
-			<label>Consultar</label>
+			<label><%= consultar%></label>
 			<br>
 			<a href="modificar.html" onclick="traerNombreInstitucion()" class="#00695c teal darken-3 btn-large pulse btn-floating btn tooltipped large" data-position="bottom" data-tooltip="Con esta opcion podras modificar un P.E.I ya existente o imprimirlo"><i class="material-icons left"> track_changes </i></a>
 		  </div>
@@ -75,9 +76,8 @@
 		  <!-- Modal Structure -->
 		 <div id="modal1" class="modal">
 			<div class="modal-content">
-			  <h4>Comencemos</h4>
-			  <p>En cada item podras digitar o pegar la información si esta ya existe.
-				 Las imágenes solicitadas dentro de los formularios se deberan adjuntar en formato .JPG</p>
+			  <h4><%= motalTit%></h4>
+			  <p><%= modalParraf%></p>
 			</div>
 			<div class="modal-footer">
 			  <a href="identificacion.html" class="modal-action modal-close ">Aceptar</a>
@@ -86,21 +86,17 @@
 	 
 	 
         <footer class="page-footer teal lighten-2">
-          <div class="container">
-            <div class="row">
-              <div class="col l6 s12">
-                <h5 class="white-text">Instituto de Educación a Distancia</h5>
-				<img class="imgUT" src="img/ut.png">
-                <p class="grey-text text-lighten-4">Especialización en Gerencia de Instituciones Educativas</p>
-              </div>
-              </div>
-          </div>
-          <div class="footer-copyright">
-            <div class="container">
-            © 2019 Copyright Text
-            </div>
-          </div>
-        </footer>    
+			<div class="container">
+				<div class="row">
+					<div class="col l6 s12">
+						<h5 class="white-text"><%= idead%></h5>
+						<img class="imgUT" src="img/ut.png">
+					</div>
+				</div>
+			</div>
+		</footer>    
+
+   
 
 	</body>
 
