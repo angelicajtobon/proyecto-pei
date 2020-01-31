@@ -1,5 +1,4 @@
-var db = firebase.firestore();
-
+var db,
 
 window.onload = function generarPei()
 {

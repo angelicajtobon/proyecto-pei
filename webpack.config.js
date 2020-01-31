@@ -62,7 +62,6 @@ module.exports = {
 		main: './js/datospei.js',
 		app: './js/app.js',
 		appService: './js/appService.js',
-		generar: './js/generar.js',
 		usuarios: './js/usuarios.js'
 	},
 	output: {

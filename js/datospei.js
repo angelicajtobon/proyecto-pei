@@ -1,5 +1,6 @@
+/* css */
+import './css/estilos.css';
 
-var db = firebase.firestore();
 var codigoDaneGlobal
 var comprobacion = false 
 

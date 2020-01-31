@@ -3,22 +3,8 @@ const axios = require("axios");
 axios.get("https://jsonplaceholder.typicode.com/todos/1")
 .then((res) => console.log(res));
 
-firebase.initializeApp({
-	apiKey: "AIzaSyBi39sOdFNIKDZGk_li1kaPaA7NmqoM58o",
-    authDomain: "proyecto-pei-dd5d7.firebaseapp.com",
-    databaseURL: "https://proyecto-pei-dd5d7.firebaseio.com",
-    projectId: "proyecto-pei-dd5d7",
-    storageBucket: "proyecto-pei-dd5d7.appspot.com",
-    messagingSenderId: "487977469290",
-    appId: "1:487977469290:web:0ffd26659394c61b"
 
-  
-});
 
-// Initialize Cloud Firestore through Firebase
-var db = firebase.firestore();
-
-//console.log(db)
 
 
 function registrar(){
