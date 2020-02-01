@@ -15,11 +15,11 @@
 	<link href="https://fonts.googleapis.com/css?family=Fira+Sans|Noto+Sans|Stylish" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Livvic&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="css/estilos.css">
-	
-	<script type="text/javascript" src="js/app.js"></script>
-	<script type="text/javascript" src="js/usuarios.js"></script>
-	<script type="text/javascript" src="js/datospei.js"></script>
+
+	<link rel="stylesheet" href="./../css/estilos.css">
+	<script type="text/javascript" src="./../js/app.js"></script>
+	<script type="text/javascript" src="./../js/datospei.js"></script>
+	<script type="text/javascript" src="./../js/appService.js"></script>
 	
 	
 </head>
@@ -28,26 +28,26 @@
 		<div class="nav-wrapper">
 			<a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 			<ul class="right hide-on-med-and-down">
-				<li><a href="html/principal.html" ><%= principal%></a></li>
-				<li><a href="html/identificacion.html" ><%= identificacion%></a></li>
-				<li><a href="html/horizonteInstitucional.html" ><%= horizonteInst%></a></li>
-				<li><a href="html/gestionDirectiva.html"><%= gestionDir%></a></li>
-				<li><a href="html/gestionPedagogica.html" class="actual"><%= gestionPed%></a></li>
-				<li><a href="html/gestionAdministrativaTH.html"><%= gestionATH%></a></li>
-				<li><a href="html/gestionComunidad.html"><%= gestionCom%></a></li>
+				<li><a href="./principal.html" ><%= principal%></a></li>
+				<li><a href="./identificacion.html" ><%= identificacion%></a></li>
+				<li><a href="./horizonteInstitucional.html" ><%= horizonteInst%></a></li>
+				<li><a href="./gestionDirectiva.html"><%= gestionDir%></a></li>
+				<li><a href="./gestionPedagogica.html" class="actual"><%= gestionPed%></a></li>
+				<li><a href="./gestionAdministrativaTH.html"><%= gestionATH%></a></li>
+				<li><a href="./gestionComunidad.html"><%= gestionCom%></a></li>
 				<li><a onclick="cerrarCesion()"><%= cerrarCesion%></a></li>
 			</ul>
 		</div>
 	</nav>
 
 	<ul class="sidenav" id="mobile-demo">
-		<li><a href="html/principal.html" ><%= principal%></a></li>
-		<li><a href="html/identificacion.html" ><%= identificacion%></a></li>
-		<li><a href="html/horizonteInstitucional.html" ><%= horizonteInst%></a></li>
-		<li><a href="html/gestionDirectiva.html"><%= gestionDir%></a></li>
-		<li><a href="html/gestionPedagogica.html" class="actual"><%= gestionPed%></a></li>
-		<li><a href="html/gestionAdministrativaTH.html"><%= gestionATH%></a></li>
-		<li><a href="html/gestionComunidad.html"><%= gestionCom%></a></li>
+		<li><a href="./principal.html" ><%= principal%></a></li>
+		<li><a href="./identificacion.html" ><%= identificacion%></a></li>
+		<li><a href="./horizonteInstitucional.html" ><%= horizonteInst%></a></li>
+		<li><a href="./gestionDirectiva.html"><%= gestionDir%></a></li>
+		<li><a href="./gestionPedagogica.html" class="actual"><%= gestionPed%></a></li>
+		<li><a href="./gestionAdministrativaTH.html"><%= gestionATH%></a></li>
+		<li><a href="./gestionComunidad.html"><%= gestionCom%></a></li>
 		<li><a onclick="cerrarCesion()"><%= cerrarCesion%></a></li>
 	</ul>
 	
@@ -79,7 +79,7 @@
 		
 		<div class="row">
 			<div class="col s12  " style ="text-align:right">
-				<a class = "links "  href= "proyectopei/ayudas/modelo.pdf"   target="_blank"> <%= ayuda1%> <i class="material-icons small">info</i> </a>
+				<a class = "links "  href= "./../ayudas/modelo.pdf"   target="_blank"> <%= ayuda1%> <i class="material-icons small">info</i> </a>
 			</div>
 			<label for="textarea1" class ="tooltipped " data-position="right" data-tooltip="Cuál es el modelo pedagógico institucional"> <%= modeloPedagogico%> </label>
 			<div class="input-field col s12">
@@ -91,7 +91,7 @@
 		
 		<div class="row">
 			<div class="col s12  " style ="text-align:right">
-				<a class = "links "  href= "proyectopei/ayudas/1850-202.pdf"   target="_blank"> <%= ayuda2%>  <i class="material-icons small">info</i> </a>
+				<a class = "links "  href= "./../ayudas/1850-202.pdf"   target="_blank"> <%= ayuda2%>  <i class="material-icons small">info</i> </a>
 			</div>
 			<label for="textarea1" class ="tooltipped " data-position="right" data-tooltip="Horas en las que los estudiantes y docentes realizan labores académicas"> <%= jornadaEscolar%>  </label>
 			<div class="input-field col s12">
@@ -103,7 +103,7 @@
 		
 		<div class="row">
 			<div class="col s12  " style ="text-align:right">
-				<a class = "links "  href= "proyectopei/ayudas/1290.pdf"   target="_blank"> <%= ayuda3%>  <i class="material-icons small">info</i> </a>
+				<a class = "links "  href= "./../ayudas/1290.pdf"   target="_blank"> <%= ayuda3%>  <i class="material-icons small">info</i> </a>
 			</div>
 			<h5 class ="laila align-center tooltipped" data-position="left" data-tooltip="Cómo evalúa la institucion a sus estudiantes"> <%= siee%>  </h5>
 			<div class = "row subTemas">
@@ -183,7 +183,7 @@
 		
 		<div class="row">
 			<div class="col s12  " style ="text-align:right">
-				<a class = "links "  href= "proyectopei/ayudas/transversales.pdf"   target="_blank"> <%= ayuda4%>  <i class="material-icons small">info</i> </a>
+				<a class = "links "  href= "./../ayudas/transversales.pdf"   target="_blank"> <%= ayuda4%>  <i class="material-icons small">info</i> </a>
 			</div>
 			<label for="textarea1" class ="tooltipped " data-position="right" data-tooltip="Proyectos transversales institucionales"> <%= proyectosTransversales%> </label>
 			<div class="input-field col s12">
@@ -220,7 +220,7 @@
 		<div class="row">
 			<div class="col s12  " style ="text-align:right">
 				<!--link caido-->
-				<a class = "links "  href= "proyectopei/ayudas/resultados.pdf"   target="_blank"> <%= ayuda5%><i class="material-icons small">info</i> </a>
+				<a class = "links "  href= "./../ayudas/resultados.pdf"   target="_blank"> <%= ayuda5%><i class="material-icons small">info</i> </a>
 			</div>
 			<label for="textarea1" class="tooltipped" data-position="right" data-tooltip="Cómo evalúa la institucion a sus estudiantes"> <%= seguimientoResultados%> </label>
 			<div class="input-field col s12">
@@ -277,7 +277,7 @@
 						
 					</div>
 					<div class= "align-center">
-						<center><a  id = "continuar" class="waves-effect waves-light btn botones esconder" href="gestionAdministrativaTH.html"><%= continuar%>  <i class="material-icons rigth">send</i></a></center>
+						<center><a  id = "continuar" class="waves-effect waves-light btn botones esconder" href="./gestionAdministrativaTH.html"><%= continuar%>  <i class="material-icons rigth">send</i></a></center>
 					</div>
 					
 				</div>
@@ -292,7 +292,7 @@
 				<div class="row">
 					<div class="col l6 s12">
 						<h5 class="white-text"><%= idead%></h5>
-						<img class="imgUT" src="img/ut.png">
+						<img class="imgUT" src="./../img/ut.png">
 						
 					</div>
 				</div>

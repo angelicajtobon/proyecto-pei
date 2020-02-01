@@ -14,12 +14,11 @@
 	<link href="https://fonts.googleapis.com/css?family=Fira+Sans|Noto+Sans|Stylish" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Livvic&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="css/estilos.css">
-	
-	<script type="text/javascript" src="proyectopei/js/app.js"></script>
-	<script type="text/javascript" src="proyectopei/js/usuarios.js"></script>
-	<script type="text/javascript" src="proyectopei/js/datospei.js"></script>
-	<script type="text/javascript" src="proyectopei/js/appService.js"></script>	
+
+	<link rel="stylesheet" href="./../css/estilos.css">
+	<script type="text/javascript" src="./../js/app.js"></script>
+	<script type="text/javascript" src="./../js/datospei.js"></script>
+	<script type="text/javascript" src="./../js/appService.js"></script>
 
 	
 </head>
@@ -29,26 +28,26 @@
 		<div class="nav-wrapper">
 			<a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 			<ul class="right hide-on-med-and-down">
-				<li><a href="html/principal.html" ><%= principal%></a></li>
-				<li><a href="html/identificacion.html" class="actual"><%= identificacion%></a></li>
-				<li><a href="html/horizonteInstitucional.html"><%= horizonteInst%></a></li>
-				<li><a href="html/gestionDirectiva.html"><%= gestionDir%></a></li>
-				<li><a href="html/gestionPedagogica.html"><%= gestionPed%></a></li>
-				<li><a href="html/gestionAdministrativaTH.html"><%= gestionATH%></a></li>
-				<li><a href="html/gestionComunidad.html"><%= gestionCom%></a></li>
+				<li><a href="./principal.html" ><%= principal%></a></li>
+				<li><a href="./identificacion.html" class="actual"><%= identificacion%></a></li>
+				<li><a href="./horizonteInstitucional.html"><%= horizonteInst%></a></li>
+				<li><a href="./gestionDirectiva.html"><%= gestionDir%></a></li>
+				<li><a href="./gestionPedagogica.html"><%= gestionPed%></a></li>
+				<li><a href="./gestionAdministrativaTH.html"><%= gestionATH%></a></li>
+				<li><a href="./gestionComunidad.html"><%= gestionCom%></a></li>
 				<li><a onclick="cerrarCesion()"><%= cerrarCesion%></a></li>
 			</ul>
 		</div>
 	</nav>
 
 	<ul class="sidenav" id="mobile-demo">
-		<li><a href="html/principal.html" ><%= principal%></a></li>
-		<li><a href="html/identificacion.html" class="actual"><%= identificacion%></a></li>
-		<li><a href="html/horizonteInstitucional.html"><%= horizonteInst%></a></li>
-		<li><a href="html/gestionDirectiva.html"><%= gestionDir%></a></li>
-		<li><a href="html/gestionPedagogica.html"><%= gestionPed%></a></li>
-		<li><a href="html/gestionAdministrativaTH.html"><%= gestionATH%></a></li>
-		<li><a href="html/gestionComunidad.html"><%= gestionCom%></a></li>
+		<li><a href="./principal.html" ><%= principal%></a></li>
+		<li><a href="./identificacion.html" class="actual"><%= identificacion%></a></li>
+		<li><a href="./horizonteInstitucional.html"><%= horizonteInst%></a></li>
+		<li><a href="./gestionDirectiva.html"><%= gestionDir%></a></li>
+		<li><a href="./gestionPedagogica.html"><%= gestionPed%></a></li>
+		<li><a href="./gestionAdministrativaTH.html"><%= gestionATH%></a></li>
+		<li><a href="./gestionComunidad.html"><%= gestionCom%></a></li>
 		<li><a onclick="cerrarCesion()"><%= cerrarCesion%></a></li>
 	</ul>
 	
@@ -83,7 +82,7 @@
 		
 		<div class="row">		 
 			<div class="col s12  " style ="text-align:right">
-				<a class = "links "  href= "proyectopei/ayudas/resena.pdf"   target="_blank"> <%= ayudaResena%><i class="material-icons small">info</i> </a>
+				<a class = "links "  href= "./../ayudas/resena.pdf"   target="_blank"> <%= ayudaResena%><i class="material-icons small">info</i> </a>
 			</div>	
 			
 			<div class="col s12  ">
@@ -158,7 +157,7 @@
 					
 				</div>
 				<div class= "align-center">
-					<center><a  id = "continuar" class="waves-effect waves-light btn botones esconder" href="horizonteInstitucional.html"><%= continuar%> <i class="material-icons rigth">send</i></a></center>
+					<center><a  id = "continuar" class="waves-effect waves-light btn botones esconder" href="./horizonteInstitucional.html"><%= continuar%> <i class="material-icons rigth">send</i></a></center>
 				</div>
 				
 			</div>
@@ -170,7 +169,7 @@
 				<div class="row">
 					<div class="col l6 s12">
 						<h5 class="white-text"><%= idead%></h5>
-						<img class="imgUT" src="img/ut.png">
+						<img class="imgUT" src="./../img/ut.png">
 					</div>
 				</div>
 			</div>

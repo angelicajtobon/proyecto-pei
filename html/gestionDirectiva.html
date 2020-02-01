@@ -14,12 +14,11 @@
 	<link href="https://fonts.googleapis.com/css?family=Fira+Sans|Noto+Sans|Stylish" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Livvic&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="css/estilos.css">
-	
-	<script type="text/javascript" src="js/app.js"></script>
-	<script type="text/javascript" src="js/usuarios.js"></script>
-	<script type="text/javascript" src="js/datospei.js"></script>
-	
+
+	<link rel="stylesheet" href="./../css/estilos.css">
+	<script type="text/javascript" src="./../js/app.js"></script>
+	<script type="text/javascript" src="./../js/datospei.js"></script>
+	<script type="text/javascript" src="./../js/appService.js"></script>
 	
 </head>
 <body>
@@ -27,26 +26,26 @@
 		<div class="nav-wrapper">
 			<a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 			<ul class="right hide-on-med-and-down">
-				<li><a href="html/principal.html" ><%= principal%></a></li>
-				<li><a href="html/identificacion.html" ><%= identificacion%></a></li>
-				<li><a href="html/horizonteInstitucional.html" ><%= horizonteInst%></a></li>
-				<li><a href="html/gestionDirectiva.html" class="actual"><%= gestionDir%></a></li>
-				<li><a href="html/gestionPedagogica.html" ><%= gestionPed%></a></li>
-				<li><a href="html/gestionAdministrativaTH.html"><%= gestionATH%></a></li>
-				<li><a href="html/gestionComunidad.html"><%= gestionCom%></a></li>
+				<li><a href="./principal.html" ><%= principal%></a></li>
+				<li><a href="./identificacion.html" ><%= identificacion%></a></li>
+				<li><a href="./horizonteInstitucional.html" ><%= horizonteInst%></a></li>
+				<li><a href="./gestionDirectiva.html" class="actual"><%= gestionDir%></a></li>
+				<li><a href="./gestionPedagogica.html" ><%= gestionPed%></a></li>
+				<li><a href="./gestionAdministrativaTH.html"><%= gestionATH%></a></li>
+				<li><a href="./gestionComunidad.html"><%= gestionCom%></a></li>
 				<li><a onclick="cerrarCesion()"><%= cerrarCesion%></a></li>
 			</ul>
 		</div>
 	</nav>
 
 	<ul class="sidenav" id="mobile-demo">
-		<li><a href="html/principal.html" ><%= principal%></a></li>
-		<li><a href="html/identificacion.html" ><%= identificacion%></a></li>
-		<li><a href="html/horizonteInstitucional.html" ><%= horizonteInst%></a></li>
-		<li><a href="html/gestionDirectiva.html" class="actual"><%= gestionDir%></a></li>
-		<li><a href="html/gestionPedagogica.html" ><%= gestionPed%></a></li>
-		<li><a href="html/gestionAdministrativaTH.html"><%= gestionATH%></a></li>
-		<li><a href="html/gestionComunidad.html"><%= gestionCom%></a></li>
+		<li><a href="./principal.html" ><%= principal%></a></li>
+		<li><a href="./identificacion.html" ><%= identificacion%></a></li>
+		<li><a href="./horizonteInstitucional.html" ><%= horizonteInst%></a></li>
+		<li><a href="./gestionDirectiva.html" class="actual"><%= gestionDir%></a></li>
+		<li><a href="./gestionPedagogica.html" ><%= gestionPed%></a></li>
+		<li><a href="./gestionAdministrativaTH.html"><%= gestionATH%></a></li>
+		<li><a href="./gestionComunidad.html"><%= gestionCom%></a></li>
 		<li><a onclick="cerrarCesion()"><%= cerrarCesion%></a></li>
 	</ul>
 	
@@ -60,7 +59,7 @@
 		
 		<div class="row">
 			<div class="col s12  " style ="text-align:right">
-				<a class = "links "  href= "proyectopei/ayudas/metas.pdf"   target="_blank">  <%= ayuda1%> <i class="material-icons small">info</i> </a>
+				<a class = "links "  href= "./../ayudas/metas.pdf"   target="_blank">  <%= ayuda1%> <i class="material-icons small">info</i> </a>
 			</div>
 			<label for="textarea1" class = "tooltipped" data-position= "right" data-tooltip="Que metas tienen como institucion"> <%= metasInstitucionales%> </label>
 			<div class="input-field col s12">
@@ -72,8 +71,8 @@
 		
 		<div class="row">
 			<div class="col s12  " style ="text-align:right">
-				<a class = "links "  href= "proyectopei/ayudas/inclusion1.pdf"   target="_blank">  <%= ayuda2%><i class="material-icons small">info</i> </a> <br>
-				<a class = "links "  href= "proyectopei/ayudas/inclusion2.pdf"   target="_blank">  <%= ayuda3%><i class="material-icons small">info</i> </a>
+				<a class = "links "  href= "./../ayudas/inclusion1.pdf"   target="_blank">  <%= ayuda2%><i class="material-icons small">info</i> </a> <br>
+				<a class = "links "  href= "./../ayudas/inclusion2.pdf"   target="_blank">  <%= ayuda3%><i class="material-icons small">info</i> </a>
 			</div>
 			<label for="textarea1" class = "tooltipped" data-position= "right" data-tooltip="Que propone la institucion para la inclusión"><%= politicasInclusion%></label>
 			<div class="input-field col s12">
@@ -85,7 +84,7 @@
 		
 		<div class="row">
 			<div class="col s12  " style ="text-align:right">
-				<a class = "links "  href= "ayudas/articulacion.pdf"   target="_blank"> Que es? <i class="material-icons small">info</i> </a> 
+				<a class = "links "  href= "./..ayudas/articulacion.pdf"   target="_blank"> Que es? <i class="material-icons small">info</i> </a> 
 				
 			</div>
 			
@@ -155,7 +154,7 @@
 
 		<div class="row">
 			<div class="col s12  " style ="text-align:right">
-				<a class = "links "  href= "proyectopei/ayudas/comunicacionExt.pdf"   target="_blank"> <%= ayuda6%>  <i class="material-icons small">info</i> </a> 
+				<a class = "links "  href= "./../ayudas/comunicacionExt.pdf"   target="_blank"> <%= ayuda6%>  <i class="material-icons small">info</i> </a> 
 			</div>
 			<label for="textarea1" class ="tooltipped" data-position = "right" data-tooltip="Canales de comunicación institucional"><%= mecanismosComunicacion%> </label>
 			<div class="input-field col s12">
@@ -166,7 +165,7 @@
 		
 		<div class="row">
 			<div class="col s12  " style ="text-align:right">
-				<a class = "links "  href= "proyectopei/ayudas/motivacion.pdf"   target="_blank"> <%= ayuda7%>  <i class="material-icons small">info</i> </a> 
+				<a class = "links "  href= "./../ayudas/motivacion.pdf"   target="_blank"> <%= ayuda7%>  <i class="material-icons small">info</i> </a> 
 			</div>
 			<label for="textarea1" class ="tooltipped" data-position = "right" data-tooltip="como condecoras los alcances positivos en tu institucion"><%= reconocimientoLogros%></label>
 			<div class="input-field col s12">
@@ -186,7 +185,7 @@
 
 		<div class="row">
 			<div class="col s12  " style ="text-align:right">
-				<a class = "links "  href= "proyectopei/ayudas/clima.pdf"  target="_blank"> <%= ayuda8%><i class="material-icons small">info</i> </a> 
+				<a class = "links "  href= "./../ayudas/clima.pdf"  target="_blank"> <%= ayuda8%><i class="material-icons small">info</i> </a> 
 			</div>
 			<label for="textarea1" class ="tooltipped" data-position = "right" data-tooltip="Que estimulos tiene la institucion educativa para los integrantes"><%= planEstimulos%></label>
 			<div class="input-field col s12">
@@ -198,9 +197,9 @@
 		
 		<div class="row">
 			<div class="col s12  " style ="text-align:right">
-				<a class = "links "  href= "proyectopei/ayudas/1620-2013.pdf"  target="_blank"> <%= ayuda9%><i class="material-icons small">info</i> </a> <br>
-				<a class = "links "  href= "proyectopei/ayudas/1695-2013.pdf"  target="_blank"> <%= ayuda10%><i class="material-icons small">info</i> </a> <br>
-				<a class = "links "  href= "proyectopei/ayudas/115-1994.pdf"  target="_blank"> <%= ayuda11%><i class="material-icons small">info</i> </a> 
+				<a class = "links "  href= "./../ayudas/1620-2013.pdf"  target="_blank"> <%= ayuda9%><i class="material-icons small">info</i> </a> <br>
+				<a class = "links "  href= "./../ayudas/1695-2013.pdf"  target="_blank"> <%= ayuda10%><i class="material-icons small">info</i> </a> <br>
+				<a class = "links "  href= "./../ayudas/115-1994.pdf"  target="_blank"> <%= ayuda11%><i class="material-icons small">info</i> </a> 
 			</div>
 			<h5 class ="laila align-center tooltipped"  data-position = "left"  data-tooltip="Cuál es el pacto de convivencia que tiene la institucion educativa"><%= pactoConv%></h5>
 			<div class = "row subTemas">
@@ -291,7 +290,7 @@
 			
 			<div class="row">
 				<div class="col s12  " style ="text-align:right">
-					<a class = "links "  href= "proyectopei/ayudas/estrategia.pdf"  target="_blank"> <%= ayuda12%><i class="material-icons small">info</i> </a> 
+					<a class = "links "  href= "./../ayudas/estrategia.pdf"  target="_blank"> <%= ayuda12%><i class="material-icons small">info</i> </a> 
 				</div>
 				<label for="textarea1" class ="tooltipped" data-position = "right" data-tooltip="Que instrumento usa la institución para evaluarse" ><%= autoevaluacionInstitucional%></label>
 				<br>
@@ -329,7 +328,7 @@
 							
 						</div>
 						<div class= "align-center">
-							<center><a id="continuar" class="waves-effect waves-light btn botones " href="gestionPedagogica.html"><%= continuar%> <i class="material-icons rigth">send</i></a></center>
+							<center><a id="continuar" class="waves-effect waves-light btn botones " href="./gestionPedagogica.html"><%= continuar%> <i class="material-icons rigth">send</i></a></center>
 						</div>
 						
 					</div>
@@ -343,7 +342,7 @@
 					<div class="row">
 						<div class="col l6 s12">
 							<h5 class="white-text"><%= idead%></h5>
-							<img class="imgUT" src="img/ut.png">
+							<img class="imgUT" src="./../img/ut.png">
 						</div>
 					</div>
 				</div>

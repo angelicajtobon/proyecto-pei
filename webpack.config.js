@@ -60,13 +60,43 @@ const recuperarOutput = 'recuperar.html';
 module.exports = {
 	mode: "development",
 	entry: {
-		main: './js/datospei.js',
-		app: './js/app.js',
-		appService: './js/appService.js',
-		usuarios: './js/usuarios.js'
+
+		main: path.resolve(__dirname, './js/datospei.js'),
+		app: path.resolve(__dirname, './js/app.js'),
+		appService: path.resolve(__dirname, './js/appService.js'),
+		usuarios: path.resolve(__dirname, './js/usuarios.js')
+	},
+	module: {
+		rules: [
+		{ 
+			test:/\.css$/,
+			use:['style-loader','css-loader']
+
+		},
+		{
+			test: /\.(js)$/,
+			exclude: /node_modules/,
+			use: ['babel-loader']
+		},
+
+		{
+			test: /\.(png|svg|jpg|gif|mp4)$/,
+			use: [
+			'file-loader'
+			]
+		}
+
+		]
+	},
+	resolve: {
+		extensions: ['*', '.js', '.ts']
 	},
 	output: {
-		path: path.resolve(__dirname, "dist")
+		path: path.resolve(__dirname, 'dist')
+				
+	},
+	devServer: {
+		contentBase: './dist'
 	},
 
 	plugins: [
@@ -336,265 +366,258 @@ module.exports = {
 			idead: 'Instituto de Educación a Distancia'
 		}
 	}),
-new HtmlWebpackPlugin({
-	filename: gestionDirectivaModificarOutput,
-	template: gestionDirectivaModificarInput,
-	inject: true,
-	hash: true,
-	templateParameters: {
-		titulo: 'Modificar Gestión Directiva',
-		consultar: 'Consultar Gestion Directiva',
-		metasInstitucionales: 'Metas Institucionales',
-		politicasInclusion: 'Políticas de Inclusión - Propuesta de la IE',
-		politicasArticulacion: 'Políticas de Articulación',
-		estrategiaPedagogica: 'Estrategia Pedagógica',
-		gobiernoEscolar: 'Gobierno Escolar',
-		consejoDirectivo: 'Consejo Directivo',
-		consejoAcademico: 'Consejo Académico',
-		consejoEvaluacion: 'Consejo de Evaluación y Promoción',
-		comiteConvivencia: 'Comité de Convivencia Escolar',
-		consejoEstudiantil: 'Consejo Estudiantil',
-		consejoPadres: 'Consejo de Padres de Familia',
-		mecanismosComunicacion: 'Mecanismos de Comunicación',
-		reconocimientoLogros: 'Políticas para el Reconocimiento de Logros',
-		induccion: 'Inducción de Nuevos Estudiantes y Docentes',
-		planEstimulos: 'Plan de Estímulos Educativos',
-		pactoConv: 'Pacto de Convivencia',
-		reglasHigienePersonal: '1.- Las reglas de higiene personal y de salud pública que preserven el bienestar de la comunidad educativa, la conservación individual de la salud y la prevención frente al consumo de sustancias psicotrópicas.',
-		criteriosRespeto: '2.- Criterios de respeto, valoración y compromiso frente a la utilización y conservación de los bienes personales y de uso colectivo, tales como equipos, instalaciones e implementos.',
-		pautasComportamiento: '3.- Pautas de comportamiento en relación con el cuidado del medio ambiente escolar.',
-		normasConducta: '4.- Normas de conducta de alumnos y profesores que garanticen el mutuo respeto. Deben incluir la definición de claros procedimientos para formular las quejas o reclamos al respecto.',
-		procedimientosConflictos: '5.- Procedimientos para resolver con oportunidad y justicia los conflictos individuales o colectivos que se presenten entre miembros de la comunidad. Deben incluir instancias de diálogo y de conciliación.',
-		pautasPresentacionPersonal: '6.- Pautas de presentación personal que preserven a los alumnos de la discriminación por razones de apariencia.',
-		definicionSanciones: '7.- Definición de sanciones disciplinarias aplicables a los alumnos, incluyendo el derecho a la defensa.',
-		eleccionRepresentantes: `8.- Reglas para la elección de representantes al Consejo Directivo y para la escogencia de voceros en los demás consejos previstos en el presente Decreto. Debe incluir el proceso de elección del personero de
-		los estudiantes.`,
-		calidadAlimentacion: '9.- Calidades y condiciones de los servicios de alimentación, transporte, recreación dirigida y demás conexos con el servicio de educación que ofrezca la institución a los alumnos.',
-		funcionamientoComunicacion: '10.- Funcionamiento y operación de los medios de comunicación interna del establecimiento, tales como periódicos, revistas o emisiones radiales que sirvan de instrumentos efectivos al libre pensamiento y a la libre expresión.',
-		provisionMaterialDidactico: '11.- Encargos hechos al establecimiento para aprovisionar a los alumnos de material didáctico de uso general, libros, uniformes, seguros de vida y de salud.',
-		usoBibliobanco: '12.- Reglas para uso del bibliobanco y la biblioteca escolar.',
-		actividadesExtracurriculares: 'Actividades Extracurriculares',
-		autoevaluacionInstitucional: 'Autoevaluacion Institucional',
-		buscar: 'Buscar',
-		guardar: 'Guardar Modificaciones',
-		idead: 'Instituto de Educación a Distancia'
-	}
-}),
-new HtmlWebpackPlugin({
-	filename: gestionComunidadOutput,
-	template: gestionComunidadInput,
-	inject: true,
-	hash: true,
-	templateParameters: {
-		titulo: 'Gestión de la Comunidad',
-		principal: 'Principal',
-		identificacion: 'Identificación',
-		horizonteInst: 'Horizonte Institucional',
-		gestionDir: 'Gestión Directiva',
-		gestionPed: 'Gestión Pedagógica',
-		gestionATH: 'Gestión Administrativa y Talento Humano',
-		gestionCom: 'Gestión de la Comunidad',
-		cerrarCesion: 'Cerrar Cesion',
-		egresados: 'Asociación y Seguimiento de Egresados',
-		atencionVulnerabilidad: 'Atención educativa a grupos poblacionales o en situación de vulnerabilidad que experimentan barreras al aprendizaje y la participación',
-		atencionEtnias: 'Atención a la diversidad educativa a estudiantes pertenecientes a grupos étnicos y estudiantes con necesidades especiales',
-		escuelaPadres: 'Escuela de Padres',
-		ayuda1: 'Resolución 4210 de 1996',
-		ayuda2: 'Resolución 002646 de 2008',
-		servicioSocial: 'Servicio Social',
-		participacionComunidad: 'Participación de la comunidad, estudiantes y padres de familia',
-		prevencionRiesgosSociales: 'Prevención de Riesgos Sociales',
-		finalizar: 'Finalizar',
-		consultarPEI: 'Consultar P.E.I',
-		idead: 'Instituto de Educación a Distancia'
+	new HtmlWebpackPlugin({
+		filename: gestionDirectivaModificarOutput,
+		template: gestionDirectivaModificarInput,
+		inject: true,
+		hash: true,
+		templateParameters: {
+			titulo: 'Modificar Gestión Directiva',
+			consultar: 'Consultar Gestion Directiva',
+			metasInstitucionales: 'Metas Institucionales',
+			politicasInclusion: 'Políticas de Inclusión - Propuesta de la IE',
+			politicasArticulacion: 'Políticas de Articulación',
+			estrategiaPedagogica: 'Estrategia Pedagógica',
+			gobiernoEscolar: 'Gobierno Escolar',
+			consejoDirectivo: 'Consejo Directivo',
+			consejoAcademico: 'Consejo Académico',
+			consejoEvaluacion: 'Consejo de Evaluación y Promoción',
+			comiteConvivencia: 'Comité de Convivencia Escolar',
+			consejoEstudiantil: 'Consejo Estudiantil',
+			consejoPadres: 'Consejo de Padres de Familia',
+			mecanismosComunicacion: 'Mecanismos de Comunicación',
+			reconocimientoLogros: 'Políticas para el Reconocimiento de Logros',
+			induccion: 'Inducción de Nuevos Estudiantes y Docentes',
+			planEstimulos: 'Plan de Estímulos Educativos',
+			pactoConv: 'Pacto de Convivencia',
+			reglasHigienePersonal: '1.- Las reglas de higiene personal y de salud pública que preserven el bienestar de la comunidad educativa, la conservación individual de la salud y la prevención frente al consumo de sustancias psicotrópicas.',
+			criteriosRespeto: '2.- Criterios de respeto, valoración y compromiso frente a la utilización y conservación de los bienes personales y de uso colectivo, tales como equipos, instalaciones e implementos.',
+			pautasComportamiento: '3.- Pautas de comportamiento en relación con el cuidado del medio ambiente escolar.',
+			normasConducta: '4.- Normas de conducta de alumnos y profesores que garanticen el mutuo respeto. Deben incluir la definición de claros procedimientos para formular las quejas o reclamos al respecto.',
+			procedimientosConflictos: '5.- Procedimientos para resolver con oportunidad y justicia los conflictos individuales o colectivos que se presenten entre miembros de la comunidad. Deben incluir instancias de diálogo y de conciliación.',
+			pautasPresentacionPersonal: '6.- Pautas de presentación personal que preserven a los alumnos de la discriminación por razones de apariencia.',
+			definicionSanciones: '7.- Definición de sanciones disciplinarias aplicables a los alumnos, incluyendo el derecho a la defensa.',
+			eleccionRepresentantes: `8.- Reglas para la elección de representantes al Consejo Directivo y para la escogencia de voceros en los demás consejos previstos en el presente Decreto. Debe incluir el proceso de elección del personero de
+			los estudiantes.`,
+			calidadAlimentacion: '9.- Calidades y condiciones de los servicios de alimentación, transporte, recreación dirigida y demás conexos con el servicio de educación que ofrezca la institución a los alumnos.',
+			funcionamientoComunicacion: '10.- Funcionamiento y operación de los medios de comunicación interna del establecimiento, tales como periódicos, revistas o emisiones radiales que sirvan de instrumentos efectivos al libre pensamiento y a la libre expresión.',
+			provisionMaterialDidactico: '11.- Encargos hechos al establecimiento para aprovisionar a los alumnos de material didáctico de uso general, libros, uniformes, seguros de vida y de salud.',
+			usoBibliobanco: '12.- Reglas para uso del bibliobanco y la biblioteca escolar.',
+			actividadesExtracurriculares: 'Actividades Extracurriculares',
+			autoevaluacionInstitucional: 'Autoevaluacion Institucional',
+			buscar: 'Buscar',
+			guardar: 'Guardar Modificaciones',
+			idead: 'Instituto de Educación a Distancia'
+		}
+	}),
+	new HtmlWebpackPlugin({
+		filename: gestionComunidadOutput,
+		template: gestionComunidadInput,
+		inject: true,
+		hash: true,
+		templateParameters: {
+			titulo: 'Gestión de la Comunidad',
+			principal: 'Principal',
+			identificacion: 'Identificación',
+			horizonteInst: 'Horizonte Institucional',
+			gestionDir: 'Gestión Directiva',
+			gestionPed: 'Gestión Pedagógica',
+			gestionATH: 'Gestión Administrativa y Talento Humano',
+			gestionCom: 'Gestión de la Comunidad',
+			cerrarCesion: 'Cerrar Cesion',
+			egresados: 'Asociación y Seguimiento de Egresados',
+			atencionVulnerabilidad: 'Atención educativa a grupos poblacionales o en situación de vulnerabilidad que experimentan barreras al aprendizaje y la participación',
+			atencionEtnias: 'Atención a la diversidad educativa a estudiantes pertenecientes a grupos étnicos y estudiantes con necesidades especiales',
+			escuelaPadres: 'Escuela de Padres',
+			ayuda1: 'Resolución 4210 de 1996',
+			ayuda2: 'Resolución 002646 de 2008',
+			servicioSocial: 'Servicio Social',
+			participacionComunidad: 'Participación de la comunidad, estudiantes y padres de familia',
+			prevencionRiesgosSociales: 'Prevención de Riesgos Sociales',
+			finalizar: 'Finalizar',
+			consultarPEI: 'Consultar P.E.I',
+			idead: 'Instituto de Educación a Distancia'
 
-	}
-}),
-new HtmlWebpackPlugin({
-	filename: gestionComunidadModificarOutput,
-	template: gestionComunidadModificarInput,
-	inject: true,
-	hash: true,
-	templateParameters: {
-		titulo: 'Modificar Gestión de la Comunidad',
-		consultar: 'Consultar Gestion Comunidad',
-		egresados: 'Asociación y Seguimiento de Egresados',
-		atencionVulnerabilidad: 'Atención educativa a grupos poblacionales o en situación de vulnerabilidad que experimentan barreras al aprendizaje y la participación',
-		atencionEtnias: 'Atención a la diversidad educativa a estudiantes pertenecientes a grupos étnicos y estudiantes con necesidades especiales',
-		escuelaPadres: 'Escuela de Padres',
-		servicioSocial: 'Servicio Social',
-		participacionComunidad: 'Participación de la comunidad, estudiantes y padres de familia',
-		prevencionRiesgosSociales: 'Prevención de Riesgos Sociales',
-		guardar: 'Guardar Modificaciones',
-		consultarPEI: 'Consultar P.E.I',
-		idead: 'Instituto de Educación a Distancia'
-	}
-}),
-new HtmlWebpackPlugin({
-	filename: gestionAdministrativaTHOutput,
-	template: gestionAdministrativaTHInput,
-	inject: true,
-	hash: true,
-	templateParameters: {
-		titulo: 'Gestión Administrativa y Talento Humano',
-		principal: 'Principal',
-		identificacion: 'Identificación',
-		horizonteInst: 'Horizonte Institucional',
-		gestionDir: 'Gestión Directiva',
-		gestionPed: 'Gestión Pedagógica',
-		gestionATH: 'Gestión Administrativa y Talento Humano',
-		gestionCom: 'Gestión de la Comunidad',
-		cerrarCesion: 'Cerrar Cesion',
-		procesoMatricula: 'Proceso de Matricula',
-		ayuda1: 'Ley 594 de 2000',
-		archivoAcademico: 'Archivo Académico ',
-		registroEvaluacion: 'Registro de Evaluación',
-		buscar: 'Buscar',
-		ayuda2: 'Decreto 4791 de 2008',
-		ayuda3: 'Ley 610 de 2000',
-		ayuda4: 'Normas Tecnicas Colombianas',
-		mantenimientoPlantaFisica: 'Proyecto de Mantenimiento de Planta Física',
-		seguimientoEspacios: 'Seguimiento al Uso de los Espacios',
-		suministroDotacion: 'Suministro y Dotación',
-		recursosAprendizaje: 'Recursos para el Aprendizaje',
-		ayuda5: 'Ley 1523 de 2012 ',
-		seguridadProteccion: 'Seguridad y Protección',
-		bienestarSocial: 'Bienestar Social',
-		talentoHumano: 'Talento Humano',
-		induccionDocentes: 'Inducción',
-		asignacionAcademica: 'Asignación Académica',
-		evaluacionDesempeño: 'Evaluación de Desempeño',
-		estimulos: 'Estímulos',
-		ayuda6: 'Decreto 1278 de Junio 19 de 2002',
-		apoyoInvestigacion: 'Apoyo a la Investigación',
-		bienestarTH: 'Bienestar del Talento Humano',
-		ayuda7: 'Resolución 355 de 2007',
-		ayuda8: 'Decreto 1170 de 2015 ',
-		contabilidad: 'Contabilidad',
-		guardar: 'Guardar',
-		continuar: 'Continuar',
-		idead: 'Instituto de Educación a Distancia'
+		}
+	}),
+	new HtmlWebpackPlugin({
+		filename: gestionComunidadModificarOutput,
+		template: gestionComunidadModificarInput,
+		inject: true,
+		hash: true,
+		templateParameters: {
+			titulo: 'Modificar Gestión de la Comunidad',
+			consultar: 'Consultar Gestion Comunidad',
+			egresados: 'Asociación y Seguimiento de Egresados',
+			atencionVulnerabilidad: 'Atención educativa a grupos poblacionales o en situación de vulnerabilidad que experimentan barreras al aprendizaje y la participación',
+			atencionEtnias: 'Atención a la diversidad educativa a estudiantes pertenecientes a grupos étnicos y estudiantes con necesidades especiales',
+			escuelaPadres: 'Escuela de Padres',
+			servicioSocial: 'Servicio Social',
+			participacionComunidad: 'Participación de la comunidad, estudiantes y padres de familia',
+			prevencionRiesgosSociales: 'Prevención de Riesgos Sociales',
+			guardar: 'Guardar Modificaciones',
+			consultarPEI: 'Consultar P.E.I',
+			idead: 'Instituto de Educación a Distancia'
+		}
+	}),
+	new HtmlWebpackPlugin({
+		filename: gestionAdministrativaTHOutput,
+		template: gestionAdministrativaTHInput,
+		inject: true,
+		hash: true,
+		templateParameters: {
+			titulo: 'Gestión Administrativa y Talento Humano',
+			principal: 'Principal',
+			identificacion: 'Identificación',
+			horizonteInst: 'Horizonte Institucional',
+			gestionDir: 'Gestión Directiva',
+			gestionPed: 'Gestión Pedagógica',
+			gestionATH: 'Gestión Administrativa y Talento Humano',
+			gestionCom: 'Gestión de la Comunidad',
+			cerrarCesion: 'Cerrar Cesion',
+			procesoMatricula: 'Proceso de Matricula',
+			ayuda1: 'Ley 594 de 2000',
+			archivoAcademico: 'Archivo Académico ',
+			registroEvaluacion: 'Registro de Evaluación',
+			buscar: 'Buscar',
+			ayuda2: 'Decreto 4791 de 2008',
+			ayuda3: 'Ley 610 de 2000',
+			ayuda4: 'Normas Tecnicas Colombianas',
+			mantenimientoPlantaFisica: 'Proyecto de Mantenimiento de Planta Física',
+			seguimientoEspacios: 'Seguimiento al Uso de los Espacios',
+			suministroDotacion: 'Suministro y Dotación',
+			recursosAprendizaje: 'Recursos para el Aprendizaje',
+			ayuda5: 'Ley 1523 de 2012 ',
+			seguridadProteccion: 'Seguridad y Protección',
+			bienestarSocial: 'Bienestar Social',
+			talentoHumano: 'Talento Humano',
+			induccionDocentes: 'Inducción',
+			asignacionAcademica: 'Asignación Académica',
+			evaluacionDesempeño: 'Evaluación de Desempeño',
+			estimulos: 'Estímulos',
+			ayuda6: 'Decreto 1278 de Junio 19 de 2002',
+			apoyoInvestigacion: 'Apoyo a la Investigación',
+			bienestarTH: 'Bienestar del Talento Humano',
+			ayuda7: 'Resolución 355 de 2007',
+			ayuda8: 'Decreto 1170 de 2015 ',
+			contabilidad: 'Contabilidad',
+			guardar: 'Guardar',
+			continuar: 'Continuar',
+			idead: 'Instituto de Educación a Distancia'
 
-	}
-}),
-new HtmlWebpackPlugin({
-	filename: gestionAdministrativaTHModificarOutput,
-	template: gestionAdministrativaTHModificarInput,
-	inject: true,
-	hash: true,
-	templateParameters: {
-		titulo: 'Modificar Gestión Administrativa y Talento Humano',
-		consultar: 'Consultar Gestion Administrativa y TH',
-		procesoMatricula: 'Proceso de Matricula',
-		archivoAcademico: 'Archivo Académico ',
-		registroEvaluacion: 'Registro de Evaluación',
-		buscar: 'Buscar',
-		mantenimientoPlantaFisica: 'Proyecto de Mantenimiento de Planta Física',
-		seguimientoEspacios: 'Seguimiento al Uso de los Espacios',
-		suministroDotacion: 'Suministro y Dotación',
-		recursosAprendizaje: 'Recursos para el Aprendizaje',
-		seguridadProteccion: 'Seguridad y Protección',
-		bienestarSocial: 'Bienestar Social',
-		talentoHumano: 'Talento Humano',
-		induccionDocentes: 'Inducción',
-		asignacionAcademica: 'Asignación Académica',
-		evaluacionDesempeño: 'Evaluación de Desempeño',
-		estimulos: 'Estímulos',
-		apoyoInvestigacion: 'Apoyo a la Investigación',
-		bienestarTH: 'Bienestar del Talento Humano',
-		contabilidad: 'Contabilidad',
-		guardar: 'Guardar Modificaciones',
-		idead: 'Instituto de Educación a Distancia'
-	}
-}),
+		}
+	}),
+	new HtmlWebpackPlugin({
+		filename: gestionAdministrativaTHModificarOutput,
+		template: gestionAdministrativaTHModificarInput,
+		inject: true,
+		hash: true,
+		templateParameters: {
+			titulo: 'Modificar Gestión Administrativa y Talento Humano',
+			consultar: 'Consultar Gestion Administrativa y TH',
+			procesoMatricula: 'Proceso de Matricula',
+			archivoAcademico: 'Archivo Académico ',
+			registroEvaluacion: 'Registro de Evaluación',
+			buscar: 'Buscar',
+			mantenimientoPlantaFisica: 'Proyecto de Mantenimiento de Planta Física',
+			seguimientoEspacios: 'Seguimiento al Uso de los Espacios',
+			suministroDotacion: 'Suministro y Dotación',
+			recursosAprendizaje: 'Recursos para el Aprendizaje',
+			seguridadProteccion: 'Seguridad y Protección',
+			bienestarSocial: 'Bienestar Social',
+			talentoHumano: 'Talento Humano',
+			induccionDocentes: 'Inducción',
+			asignacionAcademica: 'Asignación Académica',
+			evaluacionDesempeño: 'Evaluación de Desempeño',
+			estimulos: 'Estímulos',
+			apoyoInvestigacion: 'Apoyo a la Investigación',
+			bienestarTH: 'Bienestar del Talento Humano',
+			contabilidad: 'Contabilidad',
+			guardar: 'Guardar Modificaciones',
+			idead: 'Instituto de Educación a Distancia'
+		}
+	}),
 
-new HtmlWebpackPlugin({
-	filename: principalOutput,
-	template: principalInput,
-	inject: true,
-	hash: true,
-	templateParameters: {
-		titulo: 'Plataforma de Administracion de Proyectos Educativos',
-		principal: 'Principal',
-		identificacion: 'Identificación',
-		horizonteInst: 'Horizonte Institucional',
-		gestionDir: 'Gestión Directiva',
-		gestionPed: 'Gestión Pedagógica',
-		gestionATH: 'Gestión Administrativa y Talento Humano',
-		gestionCom: 'Gestión de la Comunidad',
-		cerrarCesion: 'Cerrar Cesion',
-		crear: 'Crear nuevo',
-		consultar: 'Consultar',
-		modalTit: 'Comencemos',
-		modalParraf: 'En cada item podras digitar o pegar la información si esta ya existe. Las imágenes solicitadas dentro de los formularios se deberan adjuntar en formato .JPG',
-		idead: 'Instituto de Educación a Distancia'
-	}
-}),
-new HtmlWebpackPlugin({
-	filename: modificarOutput,
-	template: modificarInput,
-	inject: true,
-	hash: true,
-	templateParameters: {
-		titulo: 'Administrar Proyecto Educativo Institucional',
-		pei: 'P.E.I:',
-		gestiones: 'Gestiones',
-		modificar: 'Modificar',
-		identificacion: 'Identificación',
-		horizonteInst: 'Horizonte Institucional',
-		gestionDir: 'Gestión Directiva',
-		gestionPed: 'Gestión Pedagógica',
-		gestionATH: 'Gestión Administrativa y Talento Humano',
-		gestionCom: 'Gestión de la Comunidad',
-		principal: 'Ir a Principal',
-		ver: 'Ver P.E.I',
-		idead: 'Instituto de Educación a Distancia'
+	new HtmlWebpackPlugin({
+		filename: principalOutput,
+		template: principalInput,
+		inject: true,
+		hash: true,
+		templateParameters: {
+			titulo: 'Plataforma de Administracion de Proyectos Educativos',
+			principal: 'Principal',
+			identificacion: 'Identificación',
+			horizonteInst: 'Horizonte Institucional',
+			gestionDir: 'Gestión Directiva',
+			gestionPed: 'Gestión Pedagógica',
+			gestionATH: 'Gestión Administrativa y Talento Humano',
+			gestionCom: 'Gestión de la Comunidad',
+			cerrarCesion: 'Cerrar Cesion',
+			crear: 'Crear nuevo',
+			consultar: 'Consultar',
+			modalTit: 'Comencemos',
+			modalParraf: 'En cada item podras digitar o pegar la información si esta ya existe. Las imágenes solicitadas dentro de los formularios se deberan adjuntar en formato .JPG',
+			idead: 'Instituto de Educación a Distancia'
+		}
+	}),
+	new HtmlWebpackPlugin({
+		filename: modificarOutput,
+		template: modificarInput,
+		inject: true,
+		hash: true,
+		templateParameters: {
+			titulo: 'Administrar Proyecto Educativo Institucional',
+			pei: 'P.E.I:',
+			gestiones: 'Gestiones',
+			modificar: 'Modificar',
+			identificacion: 'Identificación',
+			horizonteInst: 'Horizonte Institucional',
+			gestionDir: 'Gestión Directiva',
+			gestionPed: 'Gestión Pedagógica',
+			gestionATH: 'Gestión Administrativa y Talento Humano',
+			gestionCom: 'Gestión de la Comunidad',
+			principal: 'Ir a Principal',
+			ver: 'Ver P.E.I',
+			idead: 'Instituto de Educación a Distancia'
 
-	}
-}),
-new HtmlWebpackPlugin({
-	filename: registroOutput,
-	template: registroInput,
-	inject: true,
-	hash: true,
-	templateParameters: {
-		titulo: 'Formulario de registro ',
-		tipoID: 'Tipo de identificacion',
-		cc: 'Cedula de ciudadania',
-		ce: 'Cedula de Extranjeria',
-		nit: 'NIT',
-		departamento: 'Departamento',
-		seleccione: 'Seleccione',
-		ciudad: 'Ciudad',
-		registrar: 'Registrar',
-		cancelar: 'Cancelar',
-		iniciar: 'Iniciar Sesión',
-		idead: 'Instituto de Educación a Distancia'
+		}
+	}),
+	new HtmlWebpackPlugin({
+		filename: registroOutput,
+		template: registroInput,
+		inject: true,
+		hash: true,
+		templateParameters: {
+			titulo: 'Formulario de registro ',
+			tipoID: 'Tipo de identificacion',
+			cc: 'Cedula de ciudadania',
+			ce: 'Cedula de Extranjeria',
+			nit: 'NIT',
+			departamento: 'Departamento',
+			seleccione: 'Seleccione',
+			ciudad: 'Ciudad',
+			registrar: 'Registrar',
+			cancelar: 'Cancelar',
+			iniciar: 'Iniciar Sesión',
+			idead: 'Instituto de Educación a Distancia'
 
-	}
-}),
-new HtmlWebpackPlugin({
-	filename: recuperarOutput,
-	template: recuperarInput,
-	inject: true,
-	hash: true,
-	templateParameters: {
-		titulo: 'Formulario de registro ',
-		idead: 'Instituto de Educación a Distancia'
-	}
-}),
-new MiniCSSExtractPlugin({
-  filename: "estilos.css",
-})
-],
-module: {
-	rules: [
-	{ 
-		test:/\.css$/,
-        use:['style-loader','css-loader']
-	}
+		}
+	}),
+	new HtmlWebpackPlugin({
+		filename: recuperarOutput,
+		template: recuperarInput,
+		inject: true,
+		hash: true,
+		templateParameters: {
+			titulo: 'Formulario de registro ',
+			idead: 'Instituto de Educación a Distancia'
+		}
+	}),
+	new MiniCSSExtractPlugin({
+		filename: "estilos.css",
+	})
 	]
-}
+
 };
 
 

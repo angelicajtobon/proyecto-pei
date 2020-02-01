@@ -1,3 +1,18 @@
+
+import miLogo from './../img/logo.png';
+import miUT from './../img/ut.png';
+
+const logo = new Image();
+logo.img = miLogo;
+element.appendChild(logo);
+
+const ut = new Image();
+ut.img = miUT;
+element.appendChild(ut);
+
+
+
+
 const axios = require("axios");
 
 axios.get("https://jsonplaceholder.typicode.com/todos/1")
