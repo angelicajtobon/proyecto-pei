@@ -61,7 +61,7 @@ module.exports = {
 	mode: "development",
 	entry: {
 
-		main: path.resolve(__dirname, './js/datospei.js'),
+		datospei: path.resolve(__dirname, './js/datospei.js'),
 		app: path.resolve(__dirname, './js/app.js'),
 		appService: path.resolve(__dirname, './js/appService.js'),
 		usuarios: path.resolve(__dirname, './js/usuarios.js')
