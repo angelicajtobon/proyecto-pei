@@ -1,5 +1,4 @@
-/* css */
-import './css/estilos.css';
+import './../css/estilos.css';
 
 var codigoDaneGlobal
 var comprobacion = false 
